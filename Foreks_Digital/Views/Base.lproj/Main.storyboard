@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F8z-fe-Ynv">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MainPage-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="MainPage" id="BYZ-38-t0r" customClass="MainPageController" customModule="Foreks_Digital" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="xAM-mP-4j3" userLabel="Main">
+                                <rect key="frame" x="0.0" y="50" width="375" height="679"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="VpO-Sy-fHl" userLabel="Top">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xM0-5u-awK" userLabel="Tabbar" customClass="Segmentio" customModule="Segmentio">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                                <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="jC6-7N-j15"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rmA-dv-cBR" userLabel="Sembol">
+                                                <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                                                <color key="backgroundColor" red="0.149019599" green="0.149019599" blue="0.149019599" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="WZL-kB-ijY"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="rmA-dv-cBR" secondAttribute="bottom" id="UUK-gr-aXv"/>
+                                            <constraint firstAttribute="height" constant="100" id="cff-hQ-X0s"/>
+                                            <constraint firstAttribute="trailing" secondItem="rmA-dv-cBR" secondAttribute="trailing" id="dDx-id-00E"/>
+                                            <constraint firstItem="xM0-5u-awK" firstAttribute="top" secondItem="VpO-Sy-fHl" secondAttribute="top" id="fbJ-mb-W3E"/>
+                                            <constraint firstItem="xM0-5u-awK" firstAttribute="leading" secondItem="VpO-Sy-fHl" secondAttribute="leading" id="j41-eo-3cx"/>
+                                            <constraint firstAttribute="trailing" secondItem="xM0-5u-awK" secondAttribute="trailing" id="nb2-ko-qAs"/>
+                                            <constraint firstItem="rmA-dv-cBR" firstAttribute="leading" secondItem="VpO-Sy-fHl" secondAttribute="leading" id="pMN-8P-JgX"/>
+                                        </constraints>
+                                    </stackView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Aug-hk-3i8">
+                                        <rect key="frame" x="0.0" y="100" width="375" height="579"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="VpO-Sy-fHl" firstAttribute="top" secondItem="xAM-mP-4j3" secondAttribute="top" id="1yX-cc-zPf"/>
+                                    <constraint firstAttribute="trailing" secondItem="Aug-hk-3i8" secondAttribute="trailing" id="hXL-lP-AIl"/>
+                                    <constraint firstItem="Aug-hk-3i8" firstAttribute="leading" secondItem="xAM-mP-4j3" secondAttribute="leading" id="lId-0Z-eBB"/>
+                                    <constraint firstItem="Aug-hk-3i8" firstAttribute="top" secondItem="VpO-Sy-fHl" secondAttribute="bottom" id="nf7-MC-7tv"/>
+                                    <constraint firstItem="VpO-Sy-fHl" firstAttribute="leading" secondItem="xAM-mP-4j3" secondAttribute="leading" id="r7B-z6-ScE"/>
+                                    <constraint firstAttribute="trailing" secondItem="VpO-Sy-fHl" secondAttribute="trailing" id="s8r-6b-EEe"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xAM-mP-4j3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="45W-CV-yaQ"/>
+                            <constraint firstAttribute="trailing" secondItem="xAM-mP-4j3" secondAttribute="trailing" id="8fb-d0-rEq"/>
+                            <constraint firstItem="xAM-mP-4j3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="eMg-As-8E9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xAM-mP-4j3" secondAttribute="bottom" id="fqT-Ly-fBh"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="My Page" image="person" catalog="system" id="eZq-53-LP6">
+                        <color key="badgeColor" red="0.149019599" green="0.149019599" blue="0.149019599" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="stockTableView" destination="Aug-hk-3i8" id="ia5-pe-rje"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="321" y="-2"/>
+        </scene>
+        <!--Markets-->
+        <scene sceneID="lFV-Hm-Apc">
+            <objects>
+                <viewController title="Markets" id="qHy-bU-PDV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZSp-ar-9ej">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="utD-gc-Vid"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Markets" image="chart.xyaxis.line" catalog="system" id="tc0-B3-OXg">
+                        <color key="badgeColor" red="0.149019599" green="0.149019599" blue="0.149019599" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I51-kI-nw8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1084" y="-2"/>
+        </scene>
+        <!--News-->
+        <scene sceneID="xCN-dh-Fqn">
+            <objects>
+                <viewController title="News" id="kGT-gE-qjI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BWE-oc-8qD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="E0C-fW-MAk"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="News" id="kCN-Ij-UY9">
+                        <imageReference key="image" image="newspaper" catalog="system" symbolScale="medium"/>
+                        <color key="badgeColor" red="0.149019599" green="0.149019599" blue="0.149019599" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t4c-7a-UfV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1839" y="-2"/>
+        </scene>
+        <!-- -->
+        <scene sceneID="zsl-Xm-iBc">
+            <objects>
+                <viewController title=" " id="g7u-YN-WKN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AnQ-Hc-BtX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="yvl-cv-ZM5"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Exchange" id="Caf-Ir-ojT">
+                        <imageReference key="image" image="dollarsign" catalog="system" symbolScale="medium"/>
+                        <imageReference key="selectedImage" image="dollarsign" catalog="system" symbolScale="medium"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pdm-9b-iXI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2538" y="-2"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="QdW-RW-KFk">
+            <objects>
+                <tabBarController id="F8z-fe-Ynv" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Bah-mO-HKm">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.1507426442" green="0.149019599" blue="0.149019599" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" systemColor="labelColor"/>
+                        <color key="barTintColor" red="1" green="0.149019599" blue="0.149019599" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" systemColor="systemYellowColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="JSk-w5-dcU"/>
+                        <segue destination="qHy-bU-PDV" kind="relationship" relationship="viewControllers" id="EUB-r9-Gnv"/>
+                        <segue destination="kGT-gE-qjI" kind="relationship" relationship="viewControllers" id="94F-kw-6gM"/>
+                        <segue destination="g7u-YN-WKN" kind="relationship" relationship="viewControllers" id="xbf-Cl-o9u"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qtK-oR-lem" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1423" y="-777"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chart.xyaxis.line" catalog="system" width="128" height="102"/>
+        <image name="dollarsign" catalog="system" width="89" height="128"/>
+        <image name="newspaper" catalog="system" width="128" height="111"/>
+        <image name="person" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
