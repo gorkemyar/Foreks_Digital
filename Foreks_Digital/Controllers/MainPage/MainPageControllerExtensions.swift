@@ -21,7 +21,14 @@ extension MainPageController: UITableViewDataSource{
 
 extension MainPageController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        //stockTableView.deselectRow(at: indexPath, animated: false)
+        performSegue(withIdentifier: "showDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if let destination = segue.destination as? DetailPageController {
+            destination.stock = stocks[(stockTableView.indexPathForSelectedRow?.row) ?? 0]
+        }
     }
     
 }

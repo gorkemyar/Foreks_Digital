@@ -16,6 +16,8 @@
 		066CE7CF2A76AA76004503CF /* StockItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CE7CD2A76AA76004503CF /* StockItemCell.swift */; };
 		066CE7D02A76AA76004503CF /* StockItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066CE7CE2A76AA76004503CF /* StockItemCell.xib */; };
 		066CE7D22A76DD6D004503CF /* MainPageControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CE7D12A76DD6D004503CF /* MainPageControllerExtensions.swift */; };
+		066CE7D62A77CA9D004503CF /* DetailPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CE7D52A77CA9D004503CF /* DetailPageController.swift */; };
+		066CE7D92A77E3CF004503CF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CE7D82A77E3CF004503CF /* Extensions.swift */; };
 		06DE53852A72E78D00358718 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53842A72E78D00358718 /* AppDelegate.swift */; };
 		06DE53872A72E78D00358718 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53862A72E78D00358718 /* SceneDelegate.swift */; };
 		06DE53892A72E78D00358718 /* MainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53882A72E78D00358718 /* MainPageController.swift */; };
@@ -35,6 +37,8 @@
 		066CE7CD2A76AA76004503CF /* StockItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItemCell.swift; sourceTree = "<group>"; };
 		066CE7CE2A76AA76004503CF /* StockItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockItemCell.xib; sourceTree = "<group>"; };
 		066CE7D12A76DD6D004503CF /* MainPageControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageControllerExtensions.swift; sourceTree = "<group>"; };
+		066CE7D52A77CA9D004503CF /* DetailPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageController.swift; sourceTree = "<group>"; };
+		066CE7D82A77E3CF004503CF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		06DE53812A72E78D00358718 /* Foreks_Digital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foreks_Digital.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DE53842A72E78D00358718 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06DE53862A72E78D00358718 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,10 +119,35 @@
 		066CE7C42A767BD7004503CF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				066CE7D42A77CA5C004503CF /* MainPage */,
+				066CE7D32A77CA53004503CF /* DetailPage */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		066CE7D32A77CA53004503CF /* DetailPage */ = {
+			isa = PBXGroup;
+			children = (
+				066CE7D52A77CA9D004503CF /* DetailPageController.swift */,
+			);
+			path = DetailPage;
+			sourceTree = "<group>";
+		};
+		066CE7D42A77CA5C004503CF /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
 				06DE53882A72E78D00358718 /* MainPageController.swift */,
 				066CE7D12A76DD6D004503CF /* MainPageControllerExtensions.swift */,
 			);
-			path = Controllers;
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		066CE7D72A77E3B5004503CF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				066CE7D82A77E3CF004503CF /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		06DE53782A72E78D00358718 = {
@@ -142,12 +171,13 @@
 		06DE53832A72E78D00358718 /* Foreks_Digital */ = {
 			isa = PBXGroup;
 			children = (
+				066CE7D72A77E3B5004503CF /* Extensions */,
 				066CE7AC2A7671D2004503CF /* NetworkManager */,
 				066CE7B62A76747F004503CF /* URLGeneration */,
 				066CE7AF2A767212004503CF /* Model */,
 				066CE7B92A767523004503CF /* Views */,
-				066CE7C42A767BD7004503CF /* Controllers */,
 				066CE7BF2A767AF1004503CF /* ViewModel */,
+				066CE7C42A767BD7004503CF /* Controllers */,
 				06DE53842A72E78D00358718 /* AppDelegate.swift */,
 				06DE53862A72E78D00358718 /* SceneDelegate.swift */,
 				06DE538D2A72E79100358718 /* Assets.xcassets */,
@@ -287,8 +317,10 @@
 				066CE7CA2A7681FC004503CF /* MainPageViewModel.swift in Sources */,
 				066CE7CF2A76AA76004503CF /* StockItemCell.swift in Sources */,
 				066CE7AE2A7671E2004503CF /* NetworkManager.swift in Sources */,
+				066CE7D62A77CA9D004503CF /* DetailPageController.swift in Sources */,
 				06DE53892A72E78D00358718 /* MainPageController.swift in Sources */,
 				06DE53852A72E78D00358718 /* AppDelegate.swift in Sources */,
+				066CE7D92A77E3CF004503CF /* Extensions.swift in Sources */,
 				066CE7B82A7674AC004503CF /* URLGeneration.swift in Sources */,
 				066CE7D22A76DD6D004503CF /* MainPageControllerExtensions.swift in Sources */,
 				06DE53872A72E78D00358718 /* SceneDelegate.swift in Sources */,
