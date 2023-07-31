@@ -1,16 +1,20 @@
 PODS:
+  - FontAwesome.swift (1.9.1)
   - Segmentio (4.1)
 
 DEPENDENCIES:
+  - FontAwesome.swift
   - Segmentio
 
 SPEC REPOS:
   trunk:
+    - FontAwesome.swift
     - Segmentio
 
 SPEC CHECKSUMS:
+  FontAwesome.swift: 6b52cb7be66eacd28cbfaa0ca7ffd0de4a186a1d
   Segmentio: ab29def64e1bff6e6e9b97671788a99bed3f1d9f
 
-PODFILE CHECKSUM: 6c54c3216e29943e6d3cbed2eaa971cb30a26750
+PODFILE CHECKSUM: 6cf5def874bb55ede836a735e9f4e594b2d50c1a
 
 COCOAPODS: 1.12.1

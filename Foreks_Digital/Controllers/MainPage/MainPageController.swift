@@ -9,8 +9,14 @@ class MainPageController: UIViewController {
     
     @IBOutlet weak var stockTableView: UITableView!
     
+    @IBOutlet weak var fieldButton1: UIButton!
+    @IBOutlet weak var fieldButton2: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fieldButton1.fillFieldButton(field: "field1", alignment: .right)
+        fieldButton2.fillFieldButton(field: "field2", alignment: .center)
         navigationItem.hidesBackButton = true
         
         stockTableView.delegate = self
@@ -18,6 +24,8 @@ class MainPageController: UIViewController {
         stockTableView.backgroundColor = UIColor.black
         
         stockTableView.register(UINib(nibName: "StockItemCell", bundle: nil), forCellReuseIdentifier: "StockItemCell")
+        
+        
         loadMainPage()
         startLoadingDataTimer()
     }
@@ -65,7 +73,29 @@ class MainPageController: UIViewController {
         let timeInterval: TimeInterval = 1.0
         timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(loadDataPeriodically), userInfo: nil, repeats: true)
     }
+    
 
 }
 
+extension UIButton{
+    func fillFieldButton(field: String, alignment: NSTextAlignment){
+        //self.titleLabel?.text = field
+        //self.titleLabel?.textAlignment = alignment
+        //self.titleLabel?.font.withSize(1.0)
 
+        self.setTitle(field, for: .normal)
+        
+        if #available(iOS 15.0, *){
+            //var configuration = UIButton.Configuration.borderless()
+            //configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing:5)
+            
+            //self.configuration?.updated(for: configuration.)
+            self.contentEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        }else{
+            self.contentEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        }
+        
+
+        
+    }
+}

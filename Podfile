@@ -8,5 +8,6 @@ target 'Foreks_Digital' do
   # Pods for Foreks_Digital
   
   pod 'Segmentio'
+  pod 'FontAwesome.swift'
 
 end
