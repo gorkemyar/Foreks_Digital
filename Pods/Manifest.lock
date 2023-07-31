@@ -1,0 +1,16 @@
+PODS:
+  - Segmentio (4.1)
+
+DEPENDENCIES:
+  - Segmentio
+
+SPEC REPOS:
+  trunk:
+    - Segmentio
+
+SPEC CHECKSUMS:
+  Segmentio: ab29def64e1bff6e6e9b97671788a99bed3f1d9f
+
+PODFILE CHECKSUM: 6c54c3216e29943e6d3cbed2eaa971cb30a26750
+
+COCOAPODS: 1.12.1
