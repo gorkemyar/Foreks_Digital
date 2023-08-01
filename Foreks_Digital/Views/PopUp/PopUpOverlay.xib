@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="PopUpOverlay" customClass="PopUpOverlay" customModule="Foreks_Digital" customModuleProvider="target">
             <connections>
-                <outlet property="backView" destination="aHB-XQ-L31" id="idW-Fy-gzq"/>
+                <outlet property="backView" destination="K28-HT-wGV" id="yA9-YJ-kCc"/>
                 <outlet property="contentView" destination="iHV-cM-Jxj" id="A3g-qQ-oNR"/>
                 <outlet property="tableView" destination="MQc-i5-dhJ" id="aRF-Sm-D3E"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -21,38 +21,45 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aHB-XQ-L31" userLabel="BackView">
+                <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K28-HT-wGV" userLabel="BackView" customClass="UIControl">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                    <color key="backgroundColor" systemColor="systemRedColor"/>
-                </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iHV-cM-Jxj" userLabel="ContentView">
-                    <rect key="frame" x="121.66666666666669" y="301" width="150" height="250"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MQc-i5-dhJ">
-                            <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        </tableView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iHV-cM-Jxj" userLabel="ContentView">
+                            <rect key="frame" x="121.66666666666669" y="301" width="150" height="250"/>
+                            <subviews>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MQc-i5-dhJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="150" id="5fs-hG-2K6"/>
+                                <constraint firstAttribute="trailing" secondItem="MQc-i5-dhJ" secondAttribute="trailing" id="6ym-se-DDZ"/>
+                                <constraint firstAttribute="bottom" secondItem="MQc-i5-dhJ" secondAttribute="bottom" id="IiO-OY-Vof"/>
+                                <constraint firstItem="MQc-i5-dhJ" firstAttribute="leading" secondItem="iHV-cM-Jxj" secondAttribute="leading" id="Rda-kR-7Sy"/>
+                                <constraint firstAttribute="height" constant="250" id="fvH-XE-c9t"/>
+                                <constraint firstItem="MQc-i5-dhJ" firstAttribute="top" secondItem="iHV-cM-Jxj" secondAttribute="top" id="irX-45-xgp"/>
+                            </constraints>
+                        </view>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    <color key="backgroundColor" systemColor="systemPinkColor"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="150" id="5fs-hG-2K6"/>
-                        <constraint firstAttribute="trailing" secondItem="MQc-i5-dhJ" secondAttribute="trailing" id="6ym-se-DDZ"/>
-                        <constraint firstAttribute="bottom" secondItem="MQc-i5-dhJ" secondAttribute="bottom" id="IiO-OY-Vof"/>
-                        <constraint firstItem="MQc-i5-dhJ" firstAttribute="leading" secondItem="iHV-cM-Jxj" secondAttribute="leading" id="Rda-kR-7Sy"/>
-                        <constraint firstAttribute="height" constant="250" id="fvH-XE-c9t"/>
-                        <constraint firstItem="MQc-i5-dhJ" firstAttribute="top" secondItem="iHV-cM-Jxj" secondAttribute="top" id="irX-45-xgp"/>
+                        <constraint firstItem="iHV-cM-Jxj" firstAttribute="centerY" secondItem="K28-HT-wGV" secondAttribute="centerY" id="TrG-4R-ukC"/>
+                        <constraint firstItem="iHV-cM-Jxj" firstAttribute="centerX" secondItem="K28-HT-wGV" secondAttribute="centerX" id="u0M-kt-zCY"/>
                     </constraints>
+                    <connections>
+                        <action selector="backClick:" destination="-1" eventType="touchDown" id="kXK-fn-kQI"/>
+                    </connections>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="iHV-cM-Jxj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1N5-18-Gc3"/>
-                <constraint firstItem="aHB-XQ-L31" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="H2s-K0-Shg"/>
-                <constraint firstAttribute="bottom" secondItem="aHB-XQ-L31" secondAttribute="bottom" id="TUq-dM-apR"/>
-                <constraint firstAttribute="trailing" secondItem="aHB-XQ-L31" secondAttribute="trailing" id="UdZ-e3-aC6"/>
-                <constraint firstItem="aHB-XQ-L31" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="i69-2e-CG8"/>
-                <constraint firstItem="iHV-cM-Jxj" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="mTG-Xj-7ip"/>
+                <constraint firstAttribute="bottom" secondItem="K28-HT-wGV" secondAttribute="bottom" id="Gpi-Af-zEH"/>
+                <constraint firstItem="K28-HT-wGV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="K5h-CY-bKe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="K28-HT-wGV" secondAttribute="trailing" id="ps6-P7-nqY"/>
+                <constraint firstItem="K28-HT-wGV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="r0E-GZ-8NU"/>
             </constraints>
             <point key="canvasLocation" x="-53" y="20"/>
         </view>
@@ -64,8 +71,8 @@
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

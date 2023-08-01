@@ -8,7 +8,6 @@ public struct URLGeneration{
     }
 
     static func GetFieldsURL(fields:[String], stockName: String) -> URL{
-
         var link: String = Constants.URLs.fields + Constants.URLs.fieldMarker
         for idx in 0..<fields.count{
             link += fields[idx]

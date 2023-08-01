@@ -6,9 +6,8 @@ class PopUpOverlay: UIViewController, UITableViewDelegate {
     var whichField: Int = 0
     var fillButtons: (()->Void)?
     
-    @IBOutlet weak var backView: UIImageView!
+    @IBOutlet weak var backView: UIView!
     @IBOutlet weak var contentView: UIView!
-
     @IBOutlet weak var tableView: UITableView!
     
     init(){
@@ -27,13 +26,10 @@ class PopUpOverlay: UIViewController, UITableViewDelegate {
         initTableView()
     }
     
-    func initTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.backgroundColor = UIColor.black
-        tableView.register(UINib(nibName: Constants.Identifiers.popupCell, bundle: nil), forCellReuseIdentifier: Constants.Identifiers.popupCell)
-        tableView.layer.cornerRadius = 10
+    @IBAction func backClick(_ sender: Any) {
+        hide()
     }
+    
 }
 
 
@@ -53,9 +49,6 @@ extension PopUpOverlay: UITableViewDataSource{
     }
     
     private func clickCell(field: SearchTypes){
-        
-        
-        
         MainPageViewModel.shared.changeField(field: field.key, whichField: whichField)
         if fillButtons != nil{
             fillButtons!()
@@ -63,13 +56,20 @@ extension PopUpOverlay: UITableViewDataSource{
         hide()
     }
     
+    func initTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.backgroundColor = UIColor.black
+        tableView.register(UINib(nibName: Constants.Identifiers.popupCell, bundle: nil), forCellReuseIdentifier: Constants.Identifiers.popupCell)
+        tableView.layer.cornerRadius = 10
+    }
 }
 
 // Popup open close extensions
 extension PopUpOverlay {
     func configView(){
         self.view.backgroundColor = .clear
-        self.backView.backgroundColor = .black.withAlphaComponent(0.3)
+        self.backView.backgroundColor = .black.withAlphaComponent(0.5)
         self.backView.alpha = 0
         self.contentView.alpha = 0
         self.contentView.layer.cornerRadius = 10
