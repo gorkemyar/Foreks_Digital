@@ -47,7 +47,6 @@ class MainPageController: UIViewController {
                 
                 self.vm.getMainPageStocks(fields: nil){stocks in
                     self.stocks = stocks
-                    self.stocks.sort{$0.id < $1.id}
                     DispatchQueue.main.async{
                         self.stockTableView.reloadData()
                     }
@@ -62,7 +61,6 @@ class MainPageController: UIViewController {
         self.vm.getMainPageStocks(fields: nil){
             stocks in
             self.stocks = stocks
-            self.stocks.sort{$0.id < $1.id}
             DispatchQueue.main.async{
                 self.stockTableView.reloadData()
             }
@@ -79,10 +77,6 @@ class MainPageController: UIViewController {
 
 extension UIButton{
     func fillFieldButton(field: String, alignment: NSTextAlignment){
-        //self.titleLabel?.text = field
-        //self.titleLabel?.textAlignment = alignment
-        //self.titleLabel?.font.withSize(1.0)
-
         self.setTitle(field, for: .normal)
         
         if #available(iOS 15.0, *){

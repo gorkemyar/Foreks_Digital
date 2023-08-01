@@ -47,7 +47,7 @@ class StockViewModel: ObservableObject {
                 switch result{
                     case .success(let data):
                         var item = StockDetailed(stockDict: data.l[0])
-                        item.changePositive = self.isChangePositive(newStock: item, idx: arr.count, fields: fields2)
+                        item.changePositive = self.isChangePositive(newStock: item, fields: fields2)
                         arr.append(item)
                         dg.leave()
                         
@@ -56,7 +56,10 @@ class StockViewModel: ObservableObject {
                 }
             }
         }
+        
+        
         dg.notify(queue: .main){
+            arr.sort{ $0.id < $1.id }
             self.stocks = arr
             completion(arr)
         }
@@ -93,27 +96,36 @@ class StockViewModel: ObservableObject {
 //        }
 //    }
 
-    private func isChangePositive(newStock: StockDetailed, idx: Int, fields:[String]) -> Bool?{
-        var changePositive: Bool? = nil
-
+    private func isChangePositive(newStock: StockDetailed, fields:[String]) -> Bool?{
+        let idx = stocks.firstIndex(where: {$0.id == newStock.id})
+        if idx == nil{return nil}
+        
         let f1: String = fields[0];
         let f2: String = fields[1];
-
-        if stocks.count > idx{
-            changePositive = stocks[idx].stockDict[f1] != nil
-                            && newStock.stockDict[f1] != nil ?
-            stocks[idx].stockDict[f1]! < newStock.stockDict[f1]!
-                                : changePositive
-
-
-            changePositive = stocks[idx].stockDict[f2] != nil
-                             && newStock.stockDict[f2] != nil ?
-                                stocks[idx].stockDict[f2]! < newStock.stockDict[f2]!
-                                || changePositive == true
-                                : changePositive
+        var changePositive: Bool? = stocks[idx!].changePositive
+        
+        // Check existence of the fields and decide whether the current is bigger or later
+        if stocks[idx!].stockDict[f1] != nil && newStock.stockDict[f1] != nil {
+            if stocks[idx!].stockDict[f1]! < newStock.stockDict[f1]!{
+                changePositive = true
+            }
+            else if stocks[idx!].stockDict[f1]! > newStock.stockDict[f1]!{
+                changePositive = false
+            }
+        }
+        
+        if stocks[idx!].stockDict[f2] != nil && newStock.stockDict[f2] != nil {
+            if stocks[idx!].stockDict[f2]! < newStock.stockDict[f2]!{
+                changePositive = true
+            }
+            else if stocks[idx!].stockDict[f2]! > newStock.stockDict[f2]!{
+                changePositive = false
+            }
         }
         
         return changePositive
     }
+    
+    
     
 }

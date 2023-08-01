@@ -59,6 +59,7 @@ extension StockItemCell{
         self.clockLabel.text = stock.stockDict["clo"] ?? "00.00"
         self.fieldLabel1.text = stock.stockDict[field1] ?? "00.00"
         self.fieldLabel2.text = stock.stockDict[field2] ?? "00.00"
+        
         if stock.changePositive == nil{
             self.changeImage.image = UIImage(systemName: "minus")
             let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)

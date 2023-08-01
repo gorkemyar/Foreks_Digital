@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		077964993B08A24201C4458ADCBED187 /* FontAwesome.swift-FontAwesome.swift in Resources */ = {isa = PBXBuildFile; fileRef = 3DA4F5DC4EB6E9DF6B4859D27EF8C9F5 /* FontAwesome.swift-FontAwesome.swift */; };
+		077964993B08A24201C4458ADCBED187 /* FontAwesome.swift.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3DA4F5DC4EB6E9DF6B4859D27EF8C9F5 /* FontAwesome.swift.bundle */; };
 		141A2FAEC4F4A57CB3D4A3F1890ACCC2 /* Segmentio-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 032E79EC8B9ACD364C1AE427536546AF /* Segmentio-dummy.m */; };
 		16ED4AD19196DEE73FC996FD7D3E2E92 /* Pods-Foreks_Digital-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DC396FF273131C8895D42D405CE7E9FC /* Pods-Foreks_Digital-dummy.m */; };
 		1E5E850FC8D5C3051DF29D08E75EB413 /* FontAwesomeStateRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984003A96311894389D394CA74EBE83A /* FontAwesomeStateRequirement.swift */; };
@@ -27,7 +27,7 @@
 		7E29A5A984554B002E40C07209CF75FC /* FontAwesomeTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A2D4FD3593730C0C58CE87FFED8AF /* FontAwesomeTabBarItem.swift */; };
 		83AE6249033A8D067BD881A24BB65A57 /* SegmentioCellWithImageOverLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23359E08E940B4219F26259F05747CF4 /* SegmentioCellWithImageOverLabel.swift */; };
 		852A868A984EB67068160C2987B5F039 /* SegmentioCellWithImageAfterLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD5026489817B709BF92E0DDFEC9865 /* SegmentioCellWithImageAfterLabel.swift */; };
-		866DFC022937069F38003035850BB546 /* Segmentio-Segmentio in Resources */ = {isa = PBXBuildFile; fileRef = C8F2C375082C9FA86026FA0A69016000 /* Segmentio-Segmentio */; };
+		866DFC022937069F38003035850BB546 /* Segmentio.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C8F2C375082C9FA86026FA0A69016000 /* Segmentio.bundle */; };
 		8F1592F425D54B55CC5E8390773D587F /* Pods-Foreks_Digital-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E7F298A7C631E09BC9A4D7F003DC26CF /* Pods-Foreks_Digital-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9747884EF079BEA6922AC6AADFA63DA7 /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0C4B957B95A3DB0EA60ED9E9E71845CC /* Font Awesome 5 Free-Solid-900.otf */; };
 		A45C6978B572456DB3BA5B4AF399C2F7 /* BadgeWithCounterViewBigSized.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C3467CA132505BD2D97F48C8321442 /* BadgeWithCounterViewBigSized.xib */; };
@@ -102,7 +102,7 @@
 		2DF26CFF1E862548F8E456C64372DC06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3189C2BB6430628AEC7960FC6FF04050 /* SegmentioCellWithLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegmentioCellWithLabel.swift; path = Segmentio/Source/Cells/SegmentioCellWithLabel.swift; sourceTree = "<group>"; };
 		3234879CFCBF5EB8D7A07EB1A033A2A1 /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "Font Awesome 5 Brands-Regular-400.otf"; path = "FontAwesome/Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
-		3DA4F5DC4EB6E9DF6B4859D27EF8C9F5 /* FontAwesome.swift-FontAwesome.swift */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "FontAwesome.swift-FontAwesome.swift"; path = FontAwesome.swift.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DA4F5DC4EB6E9DF6B4859D27EF8C9F5 /* FontAwesome.swift.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FontAwesome.swift.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F33A12A6F6CCEA5ED4028E0DA44CE43 /* Segmentio-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Segmentio-umbrella.h"; sourceTree = "<group>"; };
 		45BF3C9695F2BF8DCB466276469D9372 /* Segmentio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Segmentio.release.xcconfig; sourceTree = "<group>"; };
 		479E251BD9498434931BEF548B7E9A32 /* Pods-Foreks_Digital.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Foreks_Digital.modulemap"; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 		BF393F8F3950E27BA767FBA3D978B048 /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "Font Awesome 5 Free-Regular-400.otf"; path = "FontAwesome/Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
 		C0F54C637628C7CFF7ACC570F170E253 /* Pods-Foreks_Digital-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Foreks_Digital-Info.plist"; sourceTree = "<group>"; };
 		C3D3C88194DC1ADBDF7C0DA3F9D613AC /* SegmentioOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegmentioOptions.swift; path = Segmentio/Source/SegmentioOptions.swift; sourceTree = "<group>"; };
-		C8F2C375082C9FA86026FA0A69016000 /* Segmentio-Segmentio */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Segmentio-Segmentio"; path = Segmentio.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8F2C375082C9FA86026FA0A69016000 /* Segmentio.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Segmentio.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1A51D7E24C83A8B8AD464946CE0575 /* FontAwesome.swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FontAwesome.swift.debug.xcconfig; sourceTree = "<group>"; };
 		CFA76860B506E69F08B0B154D70C038E /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		DC396FF273131C8895D42D405CE7E9FC /* Pods-Foreks_Digital-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Foreks_Digital-dummy.m"; sourceTree = "<group>"; };
@@ -310,10 +310,10 @@
 			isa = PBXGroup;
 			children = (
 				28A3CCFDC77829170B0B12EB9E3391CF /* FontAwesome_swift.framework */,
-				3DA4F5DC4EB6E9DF6B4859D27EF8C9F5 /* FontAwesome.swift-FontAwesome.swift */,
+				3DA4F5DC4EB6E9DF6B4859D27EF8C9F5 /* FontAwesome.swift.bundle */,
 				27985C336734C044A5194B97EAFA7EC2 /* Pods-Foreks_Digital */,
 				E17D1F60CD1816128BD7D11434B9EDC6 /* Segmentio.framework */,
-				C8F2C375082C9FA86026FA0A69016000 /* Segmentio-Segmentio */,
+				C8F2C375082C9FA86026FA0A69016000 /* Segmentio.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -445,7 +445,7 @@
 			);
 			name = "FontAwesome.swift-FontAwesome.swift";
 			productName = FontAwesome.swift;
-			productReference = 3DA4F5DC4EB6E9DF6B4859D27EF8C9F5 /* FontAwesome.swift-FontAwesome.swift */;
+			productReference = 3DA4F5DC4EB6E9DF6B4859D27EF8C9F5 /* FontAwesome.swift.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		AFCF7D29EC7396E4018DB1E49BC64FFE /* Segmentio-Segmentio */ = {
@@ -462,7 +462,7 @@
 			);
 			name = "Segmentio-Segmentio";
 			productName = Segmentio;
-			productReference = C8F2C375082C9FA86026FA0A69016000 /* Segmentio-Segmentio */;
+			productReference = C8F2C375082C9FA86026FA0A69016000 /* Segmentio.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		BB240150692F32EC312F3CF346C8B9D1 /* FontAwesome.swift */ = {
@@ -520,7 +520,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				077964993B08A24201C4458ADCBED187 /* FontAwesome.swift-FontAwesome.swift in Resources */,
+				077964993B08A24201C4458ADCBED187 /* FontAwesome.swift.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,7 +556,7 @@
 			files = (
 				A45C6978B572456DB3BA5B4AF399C2F7 /* BadgeWithCounterViewBigSized.xib in Resources */,
 				A7D01C817C3D67F23DB842D897E60CAD /* BadgeWithCounterViewStandardSized.xib in Resources */,
-				866DFC022937069F38003035850BB546 /* Segmentio-Segmentio in Resources */,
+				866DFC022937069F38003035850BB546 /* Segmentio.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,7 +663,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/FontAwesome.swift";
 				IBSC_MODULE = FontAwesome_swift;
 				INFOPLIST_FILE = "Target Support Files/FontAwesome.swift/ResourceBundle-FontAwesome.swift-FontAwesome.swift-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = FontAwesome.swift;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -680,7 +680,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Segmentio";
 				IBSC_MODULE = Segmentio;
 				INFOPLIST_FILE = "Target Support Files/Segmentio/ResourceBundle-Segmentio-Segmentio-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = Segmentio;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -734,7 +734,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Segmentio";
 				IBSC_MODULE = Segmentio;
 				INFOPLIST_FILE = "Target Support Files/Segmentio/ResourceBundle-Segmentio-Segmentio-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = Segmentio;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -920,7 +920,7 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/FontAwesome.swift";
 				IBSC_MODULE = FontAwesome_swift;
 				INFOPLIST_FILE = "Target Support Files/FontAwesome.swift/ResourceBundle-FontAwesome.swift-FontAwesome.swift-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = FontAwesome.swift;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
