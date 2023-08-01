@@ -2,21 +2,25 @@ import UIKit
 
 class MainPageController: UIViewController {
 
-    let vm = StockViewModel()
     var page: Page?
     var stocks: [StockDetailed] = []
     var timer: Timer?
     
-    @IBOutlet weak var stockTableView: UITableView!
+    private let popUp = PopUpOverlay()
     
+    @IBOutlet weak var stockTableView: UITableView!
     @IBOutlet weak var fieldButton1: UIButton!
     @IBOutlet weak var fieldButton2: UIButton!
+    
+    @IBAction func fieldButton(_ sender: UIButton) {
+        let whichField = sender.currentTitle == MainPageViewModel.shared.field1 ? 1 : 2
+        popUp.appear(sender: self, whichField: whichField, fillButtons: fillButtons)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fieldButton1.fillFieldButton(field: "field1", alignment: .right)
-        fieldButton2.fillFieldButton(field: "field2", alignment: .center)
+        fillButtons()
         navigationItem.hidesBackButton = true
         
         stockTableView.delegate = self
@@ -40,12 +44,12 @@ class MainPageController: UIViewController {
     }
     
     func loadMainPage() {
-        vm.getMainPage() { result in
+        MainPageViewModel.shared.getMainPage() { result in
             switch result {
             case .success(let data):
                 self.page = data
                 
-                self.vm.getMainPageStocks(fields: nil){stocks in
+                MainPageViewModel.shared.getMainPageStocks{stocks in
                     self.stocks = stocks
                     DispatchQueue.main.async{
                         self.stockTableView.reloadData()
@@ -58,7 +62,7 @@ class MainPageController: UIViewController {
     }
     
     @objc func loadDataPeriodically() {
-        self.vm.getMainPageStocks(fields: nil){
+        MainPageViewModel.shared.getMainPageStocks{
             stocks in
             self.stocks = stocks
             DispatchQueue.main.async{
@@ -88,5 +92,12 @@ extension UIButton{
         }else{
             self.contentEdgeInsets = Constants.edgeInsets.leftRight5
         } 
+    }
+}
+
+extension MainPageController{
+    func fillButtons(){
+        fieldButton1.fillFieldButton(field: MainPageViewModel.shared.field1, alignment: .right)
+        fieldButton2.fillFieldButton(field: MainPageViewModel.shared.field2, alignment: .center)
     }
 }

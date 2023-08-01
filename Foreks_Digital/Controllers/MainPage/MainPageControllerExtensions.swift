@@ -14,7 +14,7 @@ extension MainPageController: UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Identifiers.stockCell, for: indexPath) as! StockItemCell
         let stockItem = stocks[indexPath.row]
         
-        cell.fillStock(stock: stockItem, field1: vm.field1, field2: vm.field2)
+        cell.fillStock(stock: stockItem, field1: MainPageViewModel.shared.field1, field2: MainPageViewModel.shared.field2)
         return cell
     }
 }

@@ -1,6 +1,9 @@
 import Foundation
 
-class StockViewModel: ObservableObject {
+class MainPageViewModel {
+    
+    static let shared = MainPageViewModel()
+    private init(){}
     
     private(set) var page: Page?
     private(set) var stocks: [StockDetailed] = []
@@ -21,30 +24,31 @@ class StockViewModel: ObservableObject {
         }
     }
 
-    func getStockDetailed(fields: [String] ,stockName: String, completion: @escaping (Result<StockDetailedHelper, Error>) -> Void){
+    func getStockDetailed(stockName: String, completion: @escaping (Result<StockDetailedHelper, Error>) -> Void){
+        let fields: [String] = [field1, field2]
         let url = URLGeneration.GetFieldsURL(fields: fields, stockName: stockName)
         NetworkManager.requestSession(resource: Resource<StockDetailedHelper>(url: url)) {
             result in completion(result)
         }
     }
 
-    func getMainPageStocks(fields: [String]?, completion: @escaping ([StockDetailed]) -> Void){
+    func getMainPageStocks(completion: @escaping ([StockDetailed]) -> Void){
         if self.page == nil{
             completion([])
             return;
         }
-        let fields2: [String] = fields ?? [field1, field2]
+        let fields: [String] = [field1, field2]
         var arr: [StockDetailed] = []
 
         let dg = DispatchGroup()
         for stock:Stock in self.page!.mainPageStocks{
             dg.enter()
-            self.getStockDetailed(fields: fields2, stockName: stock.tke){
+            self.getStockDetailed(stockName: stock.tke){
                 result in
                 switch result{
                     case .success(let data):
                         var item = StockDetailed(stockDict: data.l[0])
-                        item.changePositive = self.isChangePositive(newStock: item, fields: fields2)
+                        item.changePositive = self.isChangePositive(newStock: item, fields: fields)
                         arr.append(item)
                         dg.leave()
                         
@@ -90,6 +94,14 @@ class StockViewModel: ObservableObject {
 //            }
 //        }
 //    }
+    
+    func changeField(field: String, whichField: Int){
+        if whichField == 1 {
+            field1 = field
+        }else{
+            field2 = field
+        }
+    }
 
     // Check whether new stock price is bigger
     private func isChangePositive(newStock: StockDetailed, fields:[String]) -> Bool?{

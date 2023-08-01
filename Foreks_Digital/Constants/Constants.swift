@@ -13,6 +13,7 @@ struct Constants{
     struct Identifiers {
         static let stockCell: String = "StockItemCell"
         static let segueDetail: String = "showDetail"
+        static let popupCell: String = "PopUpCell"
     }
     
     struct edgeInsets {
