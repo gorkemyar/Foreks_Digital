@@ -11,7 +11,7 @@ extension MainPageController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "StockItemCell", for: indexPath) as! StockItemCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Identifiers.stockCell, for: indexPath) as! StockItemCell
         let stockItem = stocks[indexPath.row]
         
         cell.fillStock(stock: stockItem, field1: vm.field1, field2: vm.field2)
@@ -21,8 +21,7 @@ extension MainPageController: UITableViewDataSource{
 
 extension MainPageController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //stockTableView.deselectRow(at: indexPath, animated: false)
-        performSegue(withIdentifier: "showDetail", sender: self)
+        performSegue(withIdentifier: Constants.Identifiers.segueDetail, sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){

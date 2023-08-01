@@ -9,7 +9,5 @@ struct CurrencyInformation: Codable{
     var d_yon: String?
 }
 
-struct Currencies: Codable{
-    var currencyDict: [String: CurrencyInformation]
-}
+
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0635E51E2A78F233007C11B3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E51D2A78F233007C11B3 /* Constants.swift */; };
 		066CE7AE2A7671E2004503CF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CE7AD2A7671E2004503CF /* NetworkManager.swift */; };
 		066CE7B12A76723A004503CF /* MainPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CE7B02A76723A004503CF /* MainPageModel.swift */; };
 		066CE7B32A76725A004503CF /* DetailedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CE7B22A76725A004503CF /* DetailedModel.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0635E51D2A78F233007C11B3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		066CE7AD2A7671E2004503CF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		066CE7B02A76723A004503CF /* MainPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageModel.swift; sourceTree = "<group>"; };
 		066CE7B22A76725A004503CF /* DetailedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedModel.swift; sourceTree = "<group>"; };
@@ -70,6 +72,14 @@
 				B860D04059A68D6B7890DAE9 /* Pods_Foreks_Digital.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0635E51C2A78F223007C11B3 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				0635E51D2A78F233007C11B3 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		066CE7AC2A7671D2004503CF /* NetworkManager */ = {
@@ -171,6 +181,7 @@
 		06DE53832A72E78D00358718 /* Foreks_Digital */ = {
 			isa = PBXGroup;
 			children = (
+				0635E51C2A78F223007C11B3 /* Constants */,
 				066CE7D72A77E3B5004503CF /* Extensions */,
 				066CE7AC2A7671D2004503CF /* NetworkManager */,
 				066CE7B62A76747F004503CF /* URLGeneration */,
@@ -323,6 +334,7 @@
 				066CE7D92A77E3CF004503CF /* Extensions.swift in Sources */,
 				066CE7B82A7674AC004503CF /* URLGeneration.swift in Sources */,
 				066CE7D22A76DD6D004503CF /* MainPageControllerExtensions.swift in Sources */,
+				0635E51E2A78F233007C11B3 /* Constants.swift in Sources */,
 				06DE53872A72E78D00358718 /* SceneDelegate.swift in Sources */,
 				066CE7B32A76725A004503CF /* DetailedModel.swift in Sources */,
 			);

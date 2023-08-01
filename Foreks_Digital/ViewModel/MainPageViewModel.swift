@@ -8,7 +8,7 @@ class StockViewModel: ObservableObject {
     private(set) var field2: String = UserDefaults.standard.string(forKey: "field2") ?? "pdd"
     
     func getMainPage(completion: @escaping (Result<Page, Error>) -> Void){
-        let url = URLGeneration.GenerateLink()
+        let url = URLGeneration.GetMainPageURL()
         NetworkManager.requestSession(resource: Resource<Page>(url:url)) {
             result in
             switch result{
@@ -18,17 +18,14 @@ class StockViewModel: ObservableObject {
                     print("Error: \(result)")
             }
             completion(result)
-            
         }
-        
     }
 
     func getStockDetailed(fields: [String] ,stockName: String, completion: @escaping (Result<StockDetailedHelper, Error>) -> Void){
-        let url = URLGeneration.GenerateLink(fields: fields, stockName: stockName)
+        let url = URLGeneration.GetFieldsURL(fields: fields, stockName: stockName)
         NetworkManager.requestSession(resource: Resource<StockDetailedHelper>(url: url)) {
             result in completion(result)
         }
-        
     }
 
     func getMainPageStocks(fields: [String]?, completion: @escaping ([StockDetailed]) -> Void){
@@ -56,8 +53,7 @@ class StockViewModel: ObservableObject {
                 }
             }
         }
-        
-        
+  
         dg.notify(queue: .main){
             arr.sort{ $0.id < $1.id }
             self.stocks = arr
@@ -65,7 +61,6 @@ class StockViewModel: ObservableObject {
         }
     }
         
-    
     
 //    func changeFields(field: String, whichField: Int) async throws{
 //        do {
@@ -96,6 +91,7 @@ class StockViewModel: ObservableObject {
 //        }
 //    }
 
+    // Check whether new stock price is bigger
     private func isChangePositive(newStock: StockDetailed, fields:[String]) -> Bool?{
         let idx = stocks.firstIndex(where: {$0.id == newStock.id})
         if idx == nil{return nil}
@@ -125,7 +121,4 @@ class StockViewModel: ObservableObject {
         
         return changePositive
     }
-    
-    
-    
 }

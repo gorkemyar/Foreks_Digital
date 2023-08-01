@@ -23,7 +23,7 @@ class MainPageController: UIViewController {
         stockTableView.dataSource = self
         stockTableView.backgroundColor = UIColor.black
         
-        stockTableView.register(UINib(nibName: "StockItemCell", bundle: nil), forCellReuseIdentifier: "StockItemCell")
+        stockTableView.register(UINib(nibName: Constants.Identifiers.stockCell, bundle: nil), forCellReuseIdentifier: Constants.Identifiers.stockCell)
         
         
         loadMainPage()
@@ -84,12 +84,9 @@ extension UIButton{
             //configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing:5)
             
             //self.configuration?.updated(for: configuration.)
-            self.contentEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+            self.contentEdgeInsets = Constants.edgeInsets.leftRight5
         }else{
-            self.contentEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
-        }
-        
-
-        
+            self.contentEdgeInsets = Constants.edgeInsets.leftRight5
+        } 
     }
 }

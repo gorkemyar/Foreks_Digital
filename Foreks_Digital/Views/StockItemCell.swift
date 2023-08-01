@@ -61,17 +61,15 @@ extension StockItemCell{
         self.fieldLabel2.text = stock.stockDict[field2] ?? "00.00"
         
         if stock.changePositive == nil{
-            self.changeImage.image = UIImage(systemName: "minus")
-            let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
-            self.changeImage.setImageColor(color: color)
-            
+            self.changeImage.image = Constants.images.minus
+            self.changeImage.setImageColor(color: Constants.colors.lightwhite)
         }else{
             if stock.changePositive == true{
-                self.changeImage.image = UIImage(systemName: "arrow.up")
-                self.changeImage.setImageColor(color: UIColor.green.withAlphaComponent(0.8))
+                self.changeImage.image = Constants.images.arrowup
+                self.changeImage.setImageColor(color: Constants.colors.green)
             }else{
-                self.changeImage.image = UIImage(systemName: "arrow.down")
-                self.changeImage.setImageColor(color: UIColor.red.withAlphaComponent(0.8))
+                self.changeImage.image = Constants.images.arrowdown
+                self.changeImage.setImageColor(color: Constants.colors.red)
             }
         }
         dashedLine()
