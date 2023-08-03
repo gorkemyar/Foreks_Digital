@@ -2,9 +2,6 @@ import Foundation
 
 class MainPageViewModel {
     
-    static let shared = MainPageViewModel()
-    private init(){}
-    
     private(set) var page: Page?
     private(set) var stocks: [StockDetailed] = []
     private(set) var field1: String = UserDefaults.standard.string(forKey: "field1") ?? "las"

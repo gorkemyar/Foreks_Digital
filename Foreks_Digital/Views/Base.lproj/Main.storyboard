@@ -34,111 +34,9 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rmA-dv-cBR" userLabel="Sembol">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rmA-dv-cBR" userLabel="Sembol" customClass="BarWith2Buttons" customModule="Foreks_Digital" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="375" height="50"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DKC-xM-KjQ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                                        <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sk7-r7-zzH" userLabel="SembolLabel">
-                                                                <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Symbol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hR5-ER-psg">
-                                                                        <rect key="frame" x="25" y="0.0" width="80" height="50"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                                <color key="backgroundColor" red="0.1507426442" green="0.149019599" blue="0.149019599" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="bottom" secondItem="hR5-ER-psg" secondAttribute="bottom" id="PRm-tT-35L"/>
-                                                                    <constraint firstItem="hR5-ER-psg" firstAttribute="top" secondItem="sk7-r7-zzH" secondAttribute="top" id="QJF-PA-kab"/>
-                                                                    <constraint firstItem="hR5-ER-psg" firstAttribute="leading" secondItem="sk7-r7-zzH" secondAttribute="leading" constant="25" id="dkg-St-Sn0"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="hR5-ER-psg" secondAttribute="trailing" constant="20" symbolic="YES" id="pBk-eP-IKj"/>
-                                                                </constraints>
-                                                            </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbL-C9-9KT" userLabel="Field1">
-                                                                <rect key="frame" x="125" y="0.0" width="125" height="50"/>
-                                                                <subviews>
-                                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2s-xr-LyO">
-                                                                        <rect key="frame" x="72" y="10" width="53" height="30"/>
-                                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
-                                                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2" maxY="0.0"/>
-                                                                        <state key="normal" title="Button">
-                                                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            <imageReference key="image" image="chevron.down" catalog="system" symbolScale="small" renderingMode="hierarchical-single">
-                                                                                <hierarchicalColors>
-                                                                                    <color systemColor="systemYellowColor"/>
-                                                                                    <color systemColor="secondaryLabelColor"/>
-                                                                                    <color systemColor="tertiaryLabelColor"/>
-                                                                                </hierarchicalColors>
-                                                                            </imageReference>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
-                                                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
-                                                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                        <connections>
-                                                                            <action selector="fieldButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z8g-Wg-9MA"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                </subviews>
-                                                                <color key="backgroundColor" red="0.1507426442" green="0.149019599" blue="0.149019599" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <constraints>
-                                                                    <constraint firstItem="C2s-xr-LyO" firstAttribute="top" secondItem="dbL-C9-9KT" secondAttribute="top" constant="10" id="1fb-R3-BmN"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="C2s-xr-LyO" secondAttribute="trailing" id="9Mk-Yr-hUP"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="C2s-xr-LyO" secondAttribute="bottom" constant="10" id="uHH-vi-zJ4"/>
-                                                                </constraints>
-                                                            </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpZ-Jf-due" userLabel="Field2">
-                                                                <rect key="frame" x="250" y="0.0" width="125" height="50"/>
-                                                                <subviews>
-                                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQR-vd-Jgf">
-                                                                        <rect key="frame" x="36" y="10" width="53" height="30"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2" maxY="0.0"/>
-                                                                        <state key="normal" title="Button">
-                                                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            <imageReference key="image" image="chevron.down" catalog="system" symbolScale="small" renderingMode="hierarchical-single" variableValue="1">
-                                                                                <hierarchicalColors>
-                                                                                    <color systemColor="systemYellowColor"/>
-                                                                                    <color systemColor="secondaryLabelColor"/>
-                                                                                    <color systemColor="tertiaryLabelColor"/>
-                                                                                </hierarchicalColors>
-                                                                            </imageReference>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
-                                                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
-                                                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                </subviews>
-                                                                <color key="backgroundColor" red="0.1507426442" green="0.149019599" blue="0.149019599" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="bottom" secondItem="kQR-vd-Jgf" secondAttribute="bottom" constant="10" id="SKe-VM-eBO"/>
-                                                                    <constraint firstItem="kQR-vd-Jgf" firstAttribute="top" secondItem="cpZ-Jf-due" secondAttribute="top" constant="10" id="UcQ-eA-AE4"/>
-                                                                    <constraint firstItem="kQR-vd-Jgf" firstAttribute="centerX" secondItem="cpZ-Jf-due" secondAttribute="centerX" id="Xw8-Py-jGt"/>
-                                                                </constraints>
-                                                            </view>
-                                                        </subviews>
-                                                    </stackView>
-                                                </subviews>
                                                 <color key="backgroundColor" red="0.149019599" green="0.149019599" blue="0.149019599" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <constraints>
-                                                    <constraint firstItem="DKC-xM-KjQ" firstAttribute="top" secondItem="rmA-dv-cBR" secondAttribute="top" id="5pY-RK-pAD"/>
-                                                    <constraint firstAttribute="trailing" secondItem="DKC-xM-KjQ" secondAttribute="trailing" id="XsC-Fh-6bT"/>
-                                                    <constraint firstItem="DKC-xM-KjQ" firstAttribute="leading" secondItem="rmA-dv-cBR" secondAttribute="leading" id="lEZ-ct-S2B"/>
-                                                    <constraint firstAttribute="bottom" secondItem="DKC-xM-KjQ" secondAttribute="bottom" id="mZu-sp-KRG"/>
-                                                </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="2"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
@@ -186,8 +84,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="8hX-zc-fCP"/>
                     <connections>
-                        <outlet property="fieldButton1" destination="C2s-xr-LyO" id="30G-j1-9K6"/>
-                        <outlet property="fieldButton2" destination="kQR-vd-Jgf" id="3sI-Cz-2h0"/>
+                        <outlet property="barWith2Buttons" destination="rmA-dv-cBR" id="jkB-lf-cGd"/>
                         <outlet property="stockTableView" destination="Aug-hk-3i8" id="ia5-pe-rje"/>
                         <segue destination="E0l-Xy-yku" kind="show" identifier="showDetail" id="hN1-Jn-Ryj"/>
                     </connections>
@@ -333,15 +230,11 @@
     </scenes>
     <resources>
         <image name="chart.xyaxis.line" catalog="system" width="128" height="102"/>
-        <image name="chevron.down" catalog="system" width="128" height="70"/>
         <image name="dollarsign" catalog="system" width="89" height="128"/>
         <image name="newspaper" catalog="system" width="128" height="111"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -357,9 +250,6 @@
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

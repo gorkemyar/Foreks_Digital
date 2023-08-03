@@ -6,21 +6,19 @@ class MainPageController: UIViewController {
     var stocks: [StockDetailed] = []
     var timer: Timer?
     
-    private let popUp = PopUpOverlay()
+    var vm: MainPageViewModel = MainPageViewModel()
+    //private let popUp = PopUpOverlay()
+    private var popUp: PopUp!
     
     @IBOutlet weak var stockTableView: UITableView!
-    @IBOutlet weak var fieldButton1: UIButton!
-    @IBOutlet weak var fieldButton2: UIButton!
-    
-    @IBAction func fieldButton(_ sender: UIButton) {
-        let whichField = sender.currentTitle == MainPageViewModel.shared.field1 ? 1 : 2
-        popUp.appear(sender: self, whichField: whichField, fillButtons: fillButtons)
-    }
-    
+    @IBOutlet weak var barWith2Buttons: BarWith2Buttons!
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
         fillButtons()
+        setButtonClick()
+        
         navigationItem.hidesBackButton = true
         
         stockTableView.delegate = self
@@ -44,12 +42,12 @@ class MainPageController: UIViewController {
     }
     
     func loadMainPage() {
-        MainPageViewModel.shared.getMainPage() { result in
+        vm.getMainPage() { result in
             switch result {
             case .success(let data):
                 self.page = data
                 
-                MainPageViewModel.shared.getMainPageStocks{stocks in
+                self.vm.getMainPageStocks{stocks in
                     self.stocks = stocks
                     DispatchQueue.main.async{
                         self.stockTableView.reloadData()
@@ -62,7 +60,7 @@ class MainPageController: UIViewController {
     }
     
     @objc func loadDataPeriodically() {
-        MainPageViewModel.shared.getMainPageStocks{
+        vm.getMainPageStocks{
             stocks in
             self.stocks = stocks
             DispatchQueue.main.async{
@@ -75,29 +73,67 @@ class MainPageController: UIViewController {
         let timeInterval: TimeInterval = 1.0
         timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(loadDataPeriodically), userInfo: nil, repeats: true)
     }
-    
-
 }
 
-extension UIButton{
-    func fillFieldButton(field: String, alignment: NSTextAlignment){
-        self.setTitle(field, for: .normal)
-        
-        if #available(iOS 15.0, *){
-            //var configuration = UIButton.Configuration.borderless()
-            //configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing:5)
-            
-            //self.configuration?.updated(for: configuration.)
-            self.contentEdgeInsets = Constants.edgeInsets.leftRight5
-        }else{
-            self.contentEdgeInsets = Constants.edgeInsets.leftRight5
-        } 
-    }
-}
 
+// BarWith2Buttons extension functions
 extension MainPageController{
     func fillButtons(){
-        fieldButton1.fillFieldButton(field: MainPageViewModel.shared.field1, alignment: .right)
-        fieldButton2.fillFieldButton(field: MainPageViewModel.shared.field2, alignment: .center)
+        barWith2Buttons.button1.setTitleWithPadding(field: vm.field1)
+        barWith2Buttons.button2.setTitleWithPadding(field: vm.field2)
     }
+    
+    func setButtonClick() {
+        barWith2Buttons.setClick(newClick: popupAppear)
+    }
+    
+}
+
+// PopUp Extensions
+extension MainPageController{
+    
+    func popupAppear(whichField: Int, frame: CGRect) {
+//            popUp.appear(sender: self, whichField: whichField, fillButtons: fillButtons)
+        self.popUp = PopUp(frame: self.view.frame)
+        self.popUp.backController.addTarget(self, action: #selector(outsideClick), for: .touchUpInside)
+        
+        self.view.addSubview(popUp)
+    }
+    
+    
+    @objc func outsideClick(){
+        self.popUp.removeFromSuperview()
+    }
+}
+
+
+extension MainPageController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if page == nil || stocks.isEmpty{
+            return 0
+        }else{
+            return stocks.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Identifiers.stockCell, for: indexPath) as! StockItemCell
+        let stockItem = stocks[indexPath.row]
+        
+        cell.fillStock(stock: stockItem, field1: vm.field1, field2: vm.field2)
+        return cell
+    }
+}
+
+extension MainPageController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: Constants.Identifiers.segueDetail, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if let destination = segue.destination as? DetailPageController {
+            destination.stock = stocks[(stockTableView.indexPathForSelectedRow?.row) ?? 0]
+        }
+    }
+    
 }

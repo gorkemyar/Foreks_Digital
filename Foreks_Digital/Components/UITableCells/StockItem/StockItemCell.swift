@@ -11,13 +11,9 @@ class StockItemCell: UITableViewCell {
 
    
     @IBOutlet weak var changeImage: UIImageView!
- 
     @IBOutlet weak var stockLabel: UILabel!
-    
     @IBOutlet weak var clockLabel: UILabel!
-    
     @IBOutlet weak var fieldLabel1: UILabel!
-    
     @IBOutlet weak var fieldLabel2: UILabel!
     
     
@@ -32,6 +28,10 @@ class StockItemCell: UITableViewCell {
         // Configure the view for the selected state
     }
 }
+
+
+
+
 extension StockItemCell{
     
     private func dashedLine(){

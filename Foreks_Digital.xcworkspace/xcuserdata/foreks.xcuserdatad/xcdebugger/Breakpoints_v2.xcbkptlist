@@ -3,4 +3,54 @@
    uuid = "8C9E72DA-5328-47B9-A2F6-FD39C67AA6BB"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8DE96E29-3F7F-4BB1-8091-851ED11A3634"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Foreks_Digital/Components/CustomViews/Component.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "6"
+            endingLineNumber = "6"
+            landmarkName = "init(frame:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8DE96E29-3F7F-4BB1-8091-851ED11A3634 - 330ddbaa28690d6d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Foreks_Digital.Component.__allocating_init(frame: __C.CGRect) -&gt; Foreks_Digital.Component"
+                  moduleName = "Foreks_Digital"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/foreks/Coding/Foreks_Digital/Foreks_Digital/Components/CustomViews/Component.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "31">
+               </Location>
+               <Location
+                  uuid = "8DE96E29-3F7F-4BB1-8091-851ED11A3634 - 9ef949f17ba393ce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Foreks_Digital.Component.init(frame: __C.CGRect) -&gt; Foreks_Digital.Component"
+                  moduleName = "Foreks_Digital"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/foreks/Coding/Foreks_Digital/Foreks_Digital/Components/CustomViews/Component.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "7"
+                  endingLineNumber = "7"
+                  offsetFromSymbolStart = "85">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

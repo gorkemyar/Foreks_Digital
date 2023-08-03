@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BarWith2Buttons" customModule="Foreks_Digital" customModuleProvider="target">
+            <connections>
+                <outlet property="button1" destination="mgJ-D8-vnn" id="H99-hp-Egm"/>
+                <outlet property="button2" destination="Izn-cH-7yM" id="MYP-cV-LZM"/>
+                <outlet property="view" destination="iN0-l3-epB" id="BE3-Ul-tRU"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Yy1-Hy-AgP">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" id="KV2-0T-blO" userLabel="SembolLabel">
+                            <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Symbol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OeZ-4O-gIS">
+                                    <rect key="frame" x="25" y="0.0" width="80" height="50"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <viewLayoutGuide key="safeArea" id="xUn-uq-igM"/>
+                            <color key="backgroundColor" red="0.1507426442" green="0.149019599" blue="0.149019599" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstItem="OeZ-4O-gIS" firstAttribute="top" secondItem="KV2-0T-blO" secondAttribute="top" id="F0s-sM-dBM"/>
+                                <constraint firstItem="OeZ-4O-gIS" firstAttribute="leading" secondItem="KV2-0T-blO" secondAttribute="leading" constant="25" id="HMQ-8y-PiC"/>
+                                <constraint firstAttribute="trailing" secondItem="OeZ-4O-gIS" secondAttribute="trailing" constant="20" symbolic="YES" id="hOX-71-7Xg"/>
+                                <constraint firstAttribute="bottom" secondItem="OeZ-4O-gIS" secondAttribute="bottom" id="ryl-H1-o13"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XBN-I3-COj" userLabel="Field1">
+                            <rect key="frame" x="125" y="0.0" width="125" height="50"/>
+                            <subviews>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgJ-D8-vnn">
+                                    <rect key="frame" x="72" y="10" width="53" height="30"/>
+                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
+                                    <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2" maxY="0.0"/>
+                                    <state key="normal" title="Button">
+                                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <imageReference key="image" image="chevron.down" catalog="system" symbolScale="small" renderingMode="hierarchical-single">
+                                            <hierarchicalColors>
+                                                <color systemColor="systemYellowColor"/>
+                                                <color systemColor="secondaryLabelColor"/>
+                                                <color systemColor="tertiaryLabelColor"/>
+                                            </hierarchicalColors>
+                                        </imageReference>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                            <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="Click:" destination="-1" eventType="touchUpInside" id="3d9-OF-wgd"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.1507426442" green="0.149019599" blue="0.149019599" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="mgJ-D8-vnn" secondAttribute="trailing" id="9r8-Ff-2IT"/>
+                                <constraint firstAttribute="bottom" secondItem="mgJ-D8-vnn" secondAttribute="bottom" constant="10" id="GT1-cX-Z09"/>
+                                <constraint firstItem="mgJ-D8-vnn" firstAttribute="top" secondItem="XBN-I3-COj" secondAttribute="top" constant="10" id="vWf-36-tCB"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nx2-rW-TMT" userLabel="Field2">
+                            <rect key="frame" x="250" y="0.0" width="125" height="50"/>
+                            <subviews>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Izn-cH-7yM">
+                                    <rect key="frame" x="36" y="10" width="53" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2" maxY="0.0"/>
+                                    <state key="normal" title="Button">
+                                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <imageReference key="image" image="chevron.down" catalog="system" symbolScale="small" renderingMode="hierarchical-single" variableValue="1">
+                                            <hierarchicalColors>
+                                                <color systemColor="systemYellowColor"/>
+                                                <color systemColor="secondaryLabelColor"/>
+                                                <color systemColor="tertiaryLabelColor"/>
+                                            </hierarchicalColors>
+                                        </imageReference>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                            <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="Click:" destination="-1" eventType="touchUpInside" id="Ldd-f7-zfQ"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.1507426442" green="0.149019599" blue="0.149019599" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="Izn-cH-7yM" secondAttribute="bottom" constant="10" id="PdC-fW-1ic"/>
+                                <constraint firstItem="Izn-cH-7yM" firstAttribute="top" secondItem="Nx2-rW-TMT" secondAttribute="top" constant="10" id="YTK-FC-ITc"/>
+                                <constraint firstItem="Izn-cH-7yM" firstAttribute="centerX" secondItem="Nx2-rW-TMT" secondAttribute="centerX" id="g3d-oq-glc"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Yy1-Hy-AgP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="92r-ja-HI8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Yy1-Hy-AgP" secondAttribute="trailing" id="WyF-W0-nxj"/>
+                <constraint firstItem="Yy1-Hy-AgP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Ya8-pK-Lvg"/>
+                <constraint firstAttribute="bottom" secondItem="Yy1-Hy-AgP" secondAttribute="bottom" id="mLB-5P-CoM"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-238" y="-98"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chevron.down" catalog="system" width="128" height="70"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

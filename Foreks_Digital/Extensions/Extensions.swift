@@ -20,3 +20,19 @@ extension UIImageView {
     self.backgroundColor = color.withAlphaComponent(0.15)
   }
 }
+
+extension UIButton{
+    func setTitleWithPadding(field: String){
+        self.setTitle(field, for: .normal)
+        
+        if #available(iOS 15.0, *){
+            //var configuration = UIButton.Configuration.borderless()
+            //configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing:5)
+            
+            //self.configuration?.updated(for: configuration.)
+            self.contentEdgeInsets = Constants.edgeInsets.leftRight5
+        }else{
+            self.contentEdgeInsets = Constants.edgeInsets.leftRight5
+        }
+    }
+}
