@@ -1,6 +1,6 @@
 import UIKit
 
-@IBDesignable class BarWith2Buttons: Component {
+@IBDesignable class SembolBar: Component {
     
     private var click: ((Int, CGRect) -> Void)?
     

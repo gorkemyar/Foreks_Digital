@@ -34,7 +34,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rmA-dv-cBR" userLabel="Sembol" customClass="BarWith2Buttons" customModule="Foreks_Digital" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rmA-dv-cBR" userLabel="Sembol" customClass="SembolBar" customModule="Foreks_Digital" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="375" height="50"/>
                                                 <color key="backgroundColor" red="0.149019599" green="0.149019599" blue="0.149019599" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <userDefinedRuntimeAttributes>
@@ -84,7 +84,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="8hX-zc-fCP"/>
                     <connections>
-                        <outlet property="barWith2Buttons" destination="rmA-dv-cBR" id="jkB-lf-cGd"/>
+                        <outlet property="sembolBar" destination="rmA-dv-cBR" id="CcQ-Ox-XlB"/>
                         <outlet property="stockTableView" destination="Aug-hk-3i8" id="ia5-pe-rje"/>
                         <segue destination="E0l-Xy-yku" kind="show" identifier="showDetail" id="hN1-Jn-Ryj"/>
                     </connections>

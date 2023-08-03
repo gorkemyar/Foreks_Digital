@@ -2,17 +2,13 @@ import UIKit
 
 class MainPageController: UIViewController {
 
-    var page: Page?
-    var stocks: [StockDetailed] = []
-    var timer: Timer?
-    
-    var vm: MainPageViewModel = MainPageViewModel()
+    var viewModel: MainPageViewModel = MainPageViewModel()
     //private let popUp = PopUpOverlay()
     private var popUp: PopUp!
     
     @IBOutlet weak var stockTableView: UITableView!
-    @IBOutlet weak var barWith2Buttons: BarWith2Buttons!
-        
+    @IBOutlet var sembolBar: SembolBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,9 +23,8 @@ class MainPageController: UIViewController {
         
         stockTableView.register(UINib(nibName: Constants.Identifiers.stockCell, bundle: nil), forCellReuseIdentifier: Constants.Identifiers.stockCell)
         
+        setupViewModel()
         
-        loadMainPage()
-        startLoadingDataTimer()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -41,37 +36,18 @@ class MainPageController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    func loadMainPage() {
-        vm.getMainPage() { result in
-            switch result {
-            case .success(let data):
-                self.page = data
-                
-                self.vm.getMainPageStocks{stocks in
-                    self.stocks = stocks
-                    DispatchQueue.main.async{
-                        self.stockTableView.reloadData()
-                    }
-                }
-            case .failure(let error):
-                print("Async Task 1 Failed: \(error)")
+    
+    private func setupViewModel(){
+        viewModel.page.bind{ [weak self] res in
+            DispatchQueue.main.async {
+                self?.stockTableView.reloadData()
             }
         }
-    }
-    
-    @objc func loadDataPeriodically() {
-        vm.getMainPageStocks{
-            stocks in
-            self.stocks = stocks
-            DispatchQueue.main.async{
-                self.stockTableView.reloadData()
+        viewModel.stocks.bind{ [weak self] res in
+            DispatchQueue.main.async {
+                self?.stockTableView.reloadData()
             }
         }
-    }
-    
-    func startLoadingDataTimer() {
-        let timeInterval: TimeInterval = 1.0
-        timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(loadDataPeriodically), userInfo: nil, repeats: true)
     }
 }
 
@@ -79,12 +55,12 @@ class MainPageController: UIViewController {
 // BarWith2Buttons extension functions
 extension MainPageController{
     func fillButtons(){
-        barWith2Buttons.button1.setTitleWithPadding(field: vm.field1)
-        barWith2Buttons.button2.setTitleWithPadding(field: vm.field2)
+        sembolBar.button1.setTitleWithPadding(field: viewModel.field1.value)
+        sembolBar.button2.setTitleWithPadding(field: viewModel.field2.value)
     }
     
     func setButtonClick() {
-        barWith2Buttons.setClick(newClick: popupAppear)
+        sembolBar.setClick(newClick: popupAppear)
     }
     
 }
@@ -109,18 +85,17 @@ extension MainPageController{
 
 extension MainPageController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if page == nil || stocks.isEmpty{
+        if viewModel.page.value == nil || viewModel.stocks.value.isEmpty{
             return 0
         }else{
-            return stocks.count
+            return viewModel.stocks.value.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Identifiers.stockCell, for: indexPath) as! StockItemCell
-        let stockItem = stocks[indexPath.row]
-        
-        cell.fillStock(stock: stockItem, field1: vm.field1, field2: vm.field2)
+        let stockItem = viewModel.stocks.value[indexPath.row]
+        cell.fillStock(stock: stockItem, field1: viewModel.field1.value, field2: viewModel.field2.value)
         return cell
     }
 }
@@ -132,7 +107,7 @@ extension MainPageController: UITableViewDelegate{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if let destination = segue.destination as? DetailPageController {
-            destination.stock = stocks[(stockTableView.indexPathForSelectedRow?.row) ?? 0]
+            destination.stock = viewModel.stocks.value[(stockTableView.indexPathForSelectedRow?.row) ?? 0]
         }
     }
     
