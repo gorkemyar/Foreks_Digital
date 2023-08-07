@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F8z-fe-Ynv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,11 +13,11 @@
             <objects>
                 <viewController title="MainPage" id="BYZ-38-t0r" customClass="MainPageController" customModule="Foreks_Digital" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="xAM-mP-4j3" userLabel="Main">
-                                <rect key="frame" x="0.0" y="94" width="375" height="635"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="684"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VpO-Sy-fHl" userLabel="Top">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
@@ -57,7 +56,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4T-S6-chZ" customClass="StockTable" customModule="Foreks_Digital" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="100" width="375" height="535"/>
+                                        <rect key="frame" x="0.0" y="100" width="375" height="584"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
@@ -90,86 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1263.2" y="-2.2167487684729066"/>
-        </scene>
-        <!--Markets-->
-        <scene sceneID="lFV-Hm-Apc">
-            <objects>
-                <viewController title="Markets" id="qHy-bU-PDV" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ZSp-ar-9ej">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="utD-gc-Vid"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Markets" image="chart.xyaxis.line" catalog="system" id="tc0-B3-OXg">
-                        <color key="badgeColor" red="0.149019599" green="0.149019599" blue="0.149019599" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="I51-kI-nw8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2026.4000000000001" y="-2.2167487684729066"/>
-        </scene>
-        <!--News-->
-        <scene sceneID="xCN-dh-Fqn">
-            <objects>
-                <viewController title="News" id="kGT-gE-qjI" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="BWE-oc-8qD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="E0C-fW-MAk"/>
-                        <color key="backgroundColor" systemColor="systemRedColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="News" id="kCN-Ij-UY9">
-                        <imageReference key="image" image="newspaper" catalog="system" symbolScale="medium"/>
-                        <color key="badgeColor" red="0.149019599" green="0.149019599" blue="0.149019599" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="t4c-7a-UfV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2780" y="-2.2167487684729066"/>
-        </scene>
-        <!-- -->
-        <scene sceneID="zsl-Xm-iBc">
-            <objects>
-                <viewController title=" " id="g7u-YN-WKN" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="AnQ-Hc-BtX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="yvl-cv-ZM5"/>
-                        <color key="backgroundColor" systemColor="systemTealColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Exchange" id="Caf-Ir-ojT">
-                        <imageReference key="image" image="dollarsign" catalog="system" symbolScale="medium"/>
-                        <imageReference key="selectedImage" image="dollarsign" catalog="system" symbolScale="medium"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pdm-9b-iXI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3479.1999999999998" y="-2.2167487684729066"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="QdW-RW-KFk">
-            <objects>
-                <tabBarController id="F8z-fe-Ynv" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Bah-mO-HKm">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.1507426442" green="0.149019599" blue="0.149019599" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="tintColor" systemColor="labelColor"/>
-                        <color key="barTintColor" red="1" green="0.149019599" blue="0.149019599" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="selectedImageTintColor" systemColor="systemYellowColor"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="rXh-PT-lpc" kind="relationship" relationship="viewControllers" id="JSk-w5-dcU"/>
-                        <segue destination="qHy-bU-PDV" kind="relationship" relationship="viewControllers" id="EUB-r9-Gnv"/>
-                        <segue destination="kGT-gE-qjI" kind="relationship" relationship="viewControllers" id="94F-kw-6gM"/>
-                        <segue destination="g7u-YN-WKN" kind="relationship" relationship="viewControllers" id="xbf-Cl-o9u"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qtK-oR-lem" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1423" y="-777"/>
+            <point key="canvasLocation" x="1223" y="-2"/>
         </scene>
         <!--My Page-->
         <scene sceneID="gC7-zh-nWY">
@@ -193,18 +113,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Rx-KS-KdN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="320.80000000000001" y="-2.2167487684729066"/>
+            <point key="canvasLocation" x="158" y="30"/>
         </scene>
         <!--DetailPage-->
         <scene sceneID="Wb3-YF-98L">
             <objects>
                 <viewController id="E0l-Xy-yku" userLabel="DetailPage" customClass="DetailPageController" customModule="Foreks_Digital" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dgl-BW-01i">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zr-xP-VOX">
-                                <rect key="frame" x="160.33333333333334" y="350.66666666666669" width="54.333333333333343" height="27.666666666666686"/>
+                                <rect key="frame" x="160.33333333333334" y="392.33333333333331" width="54.333333333333343" height="27.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -224,31 +144,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PHn-MU-pob" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1263" y="742"/>
+            <point key="canvasLocation" x="2217" y="-2"/>
         </scene>
     </scenes>
     <resources>
-        <image name="chart.xyaxis.line" catalog="system" width="128" height="102"/>
-        <image name="dollarsign" catalog="system" width="89" height="128"/>
-        <image name="newspaper" catalog="system" width="128" height="111"/>
         <image name="person" catalog="system" width="128" height="121"/>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

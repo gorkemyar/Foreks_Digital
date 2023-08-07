@@ -30,5 +30,8 @@ struct Constants{
         static let lightwhite = UIColor.white.withAlphaComponent(0.5)
         static let green = UIColor.green.withAlphaComponent(0.8)
         static let red = UIColor.red.withAlphaComponent(0.8)
+        static let bg = UIColor(red: 38.0/255.0, green: 38.0/255.0, blue: 38.0/255.0, alpha: 1)
+        static let yellow = UIColor.yellow.withAlphaComponent(0.8)
+        static let gray = UIColor.gray.withAlphaComponent(0.6)
     }
 }
