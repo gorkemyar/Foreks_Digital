@@ -56,20 +56,19 @@
                                             <constraint firstItem="rmA-dv-cBR" firstAttribute="leading" secondItem="VpO-Sy-fHl" secondAttribute="leading" id="pMN-8P-JgX"/>
                                         </constraints>
                                     </stackView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Aug-hk-3i8">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4T-S6-chZ" customClass="StockTable" customModule="Foreks_Digital" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="100" width="375" height="535"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </tableView>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="VpO-Sy-fHl" firstAttribute="top" secondItem="xAM-mP-4j3" secondAttribute="top" id="1yX-cc-zPf"/>
-                                    <constraint firstAttribute="trailing" secondItem="Aug-hk-3i8" secondAttribute="trailing" id="hXL-lP-AIl"/>
-                                    <constraint firstItem="Aug-hk-3i8" firstAttribute="leading" secondItem="xAM-mP-4j3" secondAttribute="leading" id="lId-0Z-eBB"/>
-                                    <constraint firstItem="Aug-hk-3i8" firstAttribute="top" secondItem="VpO-Sy-fHl" secondAttribute="bottom" id="nf7-MC-7tv"/>
+                                    <constraint firstAttribute="trailing" secondItem="D4T-S6-chZ" secondAttribute="trailing" id="63I-uZ-usE"/>
+                                    <constraint firstItem="D4T-S6-chZ" firstAttribute="leading" secondItem="xAM-mP-4j3" secondAttribute="leading" id="8Y9-yl-aaw"/>
+                                    <constraint firstItem="D4T-S6-chZ" firstAttribute="top" secondItem="VpO-Sy-fHl" secondAttribute="bottom" id="QFp-32-zqK"/>
                                     <constraint firstItem="VpO-Sy-fHl" firstAttribute="leading" secondItem="xAM-mP-4j3" secondAttribute="leading" id="r7B-z6-ScE"/>
                                     <constraint firstAttribute="trailing" secondItem="VpO-Sy-fHl" secondAttribute="trailing" id="s8r-6b-EEe"/>
+                                    <constraint firstAttribute="bottom" secondItem="D4T-S6-chZ" secondAttribute="bottom" id="vpC-an-4NZ"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -85,7 +84,7 @@
                     <navigationItem key="navigationItem" id="8hX-zc-fCP"/>
                     <connections>
                         <outlet property="sembolBar" destination="rmA-dv-cBR" id="CcQ-Ox-XlB"/>
-                        <outlet property="stockTableView" destination="Aug-hk-3i8" id="ia5-pe-rje"/>
+                        <outlet property="tableView" destination="D4T-S6-chZ" id="rGZ-le-rMP"/>
                         <segue destination="E0l-Xy-yku" kind="show" identifier="showDetail" id="hN1-Jn-Ryj"/>
                     </connections>
                 </viewController>

@@ -14,11 +14,13 @@
 		0635E53C2A7A3799007C11B3 /* SembolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0635E53B2A7A3799007C11B3 /* SembolBar.xib */; };
 		0635E5412A7A53C9007C11B3 /* PopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0635E5402A7A53C9007C11B3 /* PopUp.xib */; };
 		0635E5432A7A53E6007C11B3 /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5422A7A53E6007C11B3 /* PopUp.swift */; };
-		0635E5462A7A7BEA007C11B3 /* TableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0635E5452A7A7BEA007C11B3 /* TableView.xib */; };
-		0635E5482A7A7BFF007C11B3 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5472A7A7BFF007C11B3 /* TableView.swift */; };
+		0635E5462A7A7BEA007C11B3 /* PopUpTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0635E5452A7A7BEA007C11B3 /* PopUpTable.xib */; };
+		0635E5482A7A7BFF007C11B3 /* PopUpTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5472A7A7BFF007C11B3 /* PopUpTable.swift */; };
 		0635E54A2A7B861A007C11B3 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5492A7B861A007C11B3 /* Component.swift */; };
 		0635E5542A7C2114007C11B3 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5532A7C2114007C11B3 /* Observable.swift */; };
 		0635E5592A7C2854007C11B3 /* MainPageNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5582A7C2854007C11B3 /* MainPageNetworkService.swift */; };
+		0635E55D2A7C3F24007C11B3 /* StockTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E55C2A7C3F24007C11B3 /* StockTable.swift */; };
+		0635E55F2A7C3F43007C11B3 /* StockTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0635E55E2A7C3F43007C11B3 /* StockTable.xib */; };
 		066CE7AE2A7671E2004503CF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CE7AD2A7671E2004503CF /* NetworkManager.swift */; };
 		066CE7B12A76723A004503CF /* MainPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CE7B02A76723A004503CF /* MainPageModel.swift */; };
 		066CE7B32A76725A004503CF /* DetailedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CE7B22A76725A004503CF /* DetailedModel.swift */; };
@@ -47,11 +49,13 @@
 		0635E53B2A7A3799007C11B3 /* SembolBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SembolBar.xib; sourceTree = "<group>"; };
 		0635E5402A7A53C9007C11B3 /* PopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUp.xib; sourceTree = "<group>"; };
 		0635E5422A7A53E6007C11B3 /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
-		0635E5452A7A7BEA007C11B3 /* TableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableView.xib; sourceTree = "<group>"; };
-		0635E5472A7A7BFF007C11B3 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		0635E5452A7A7BEA007C11B3 /* PopUpTable.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpTable.xib; sourceTree = "<group>"; };
+		0635E5472A7A7BFF007C11B3 /* PopUpTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpTable.swift; sourceTree = "<group>"; };
 		0635E5492A7B861A007C11B3 /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
 		0635E5532A7C2114007C11B3 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		0635E5582A7C2854007C11B3 /* MainPageNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageNetworkService.swift; sourceTree = "<group>"; };
+		0635E55C2A7C3F24007C11B3 /* StockTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTable.swift; sourceTree = "<group>"; };
+		0635E55E2A7C3F43007C11B3 /* StockTable.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockTable.xib; sourceTree = "<group>"; };
 		066CE7AD2A7671E2004503CF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		066CE7B02A76723A004503CF /* MainPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageModel.swift; sourceTree = "<group>"; };
 		066CE7B22A76725A004503CF /* DetailedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedModel.swift; sourceTree = "<group>"; };
@@ -153,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				0635E5342A7932FA007C11B3 /* StockItemCell */,
-				0635E51F2A7902DF007C11B3 /* PopUpCell */,
 			);
 			path = UITableCells;
 			sourceTree = "<group>";
@@ -161,10 +164,11 @@
 		0635E53E2A7A51AD007C11B3 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				0635E55B2A7C3F13007C11B3 /* StockTable */,
 				0635E5492A7B861A007C11B3 /* Component.swift */,
 				0635E5382A7A36E1007C11B3 /* SembolBar */,
 				0635E53F2A7A523C007C11B3 /* PopUp */,
-				0635E5442A7A74A5007C11B3 /* TableView */,
+				0635E5442A7A74A5007C11B3 /* PopUpTable */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -178,13 +182,14 @@
 			path = PopUp;
 			sourceTree = "<group>";
 		};
-		0635E5442A7A74A5007C11B3 /* TableView */ = {
+		0635E5442A7A74A5007C11B3 /* PopUpTable */ = {
 			isa = PBXGroup;
 			children = (
-				0635E5452A7A7BEA007C11B3 /* TableView.xib */,
-				0635E5472A7A7BFF007C11B3 /* TableView.swift */,
+				0635E51F2A7902DF007C11B3 /* PopUpCell */,
+				0635E5452A7A7BEA007C11B3 /* PopUpTable.xib */,
+				0635E5472A7A7BFF007C11B3 /* PopUpTable.swift */,
 			);
-			path = TableView;
+			path = PopUpTable;
 			sourceTree = "<group>";
 		};
 		0635E5552A7C27FB007C11B3 /* Network */ = {
@@ -203,6 +208,15 @@
 				0635E5582A7C2854007C11B3 /* MainPageNetworkService.swift */,
 			);
 			path = MainPage;
+			sourceTree = "<group>";
+		};
+		0635E55B2A7C3F13007C11B3 /* StockTable */ = {
+			isa = PBXGroup;
+			children = (
+				0635E55C2A7C3F24007C11B3 /* StockTable.swift */,
+				0635E55E2A7C3F43007C11B3 /* StockTable.xib */,
+			);
+			path = StockTable;
 			sourceTree = "<group>";
 		};
 		066CE7AC2A7671D2004503CF /* NetworkManager */ = {
@@ -390,8 +404,9 @@
 			files = (
 				06DE53912A72E79100358718 /* LaunchScreen.storyboard in Resources */,
 				0635E53C2A7A3799007C11B3 /* SembolBar.xib in Resources */,
-				0635E5462A7A7BEA007C11B3 /* TableView.xib in Resources */,
+				0635E5462A7A7BEA007C11B3 /* PopUpTable.xib in Resources */,
 				066CE7D02A76AA76004503CF /* StockItemCell.xib in Resources */,
+				0635E55F2A7C3F43007C11B3 /* StockTable.xib in Resources */,
 				06DE538E2A72E79100358718 /* Assets.xcassets in Resources */,
 				0635E52F2A791A3A007C11B3 /* PopUpCell.xib in Resources */,
 				0635E5412A7A53C9007C11B3 /* PopUp.xib in Resources */,
@@ -468,7 +483,8 @@
 				06DE53872A72E78D00358718 /* SceneDelegate.swift in Sources */,
 				0635E52E2A791A3A007C11B3 /* PopUpCell.swift in Sources */,
 				066CE7B32A76725A004503CF /* DetailedModel.swift in Sources */,
-				0635E5482A7A7BFF007C11B3 /* TableView.swift in Sources */,
+				0635E5482A7A7BFF007C11B3 /* PopUpTable.swift in Sources */,
+				0635E55D2A7C3F24007C11B3 /* StockTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

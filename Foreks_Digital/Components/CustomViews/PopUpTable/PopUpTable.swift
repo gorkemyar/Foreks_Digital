@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable class TableView: Component, UITableViewDelegate{
+@IBDesignable class PopUpTable: Component, UITableViewDelegate{
     
     
     var data: [Any] = ["a", "a", "a", "a"]
@@ -24,7 +24,7 @@ import UIKit
 }
 
 
-extension TableView: UITableViewDataSource{
+extension PopUpTable: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }

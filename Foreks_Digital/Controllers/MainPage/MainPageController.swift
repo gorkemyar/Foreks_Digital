@@ -3,27 +3,21 @@ import UIKit
 class MainPageController: UIViewController {
 
     var viewModel: MainPageViewModel = MainPageViewModel()
-    //private let popUp = PopUpOverlay()
     private var popUp: PopUp!
     
-    @IBOutlet weak var stockTableView: UITableView!
+    
+    @IBOutlet weak var tableView: StockTable!
     @IBOutlet var sembolBar: SembolBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        fillButtons()
-        setButtonClick()
-        
         navigationItem.hidesBackButton = true
         
-        stockTableView.delegate = self
-        stockTableView.dataSource = self
-        stockTableView.backgroundColor = UIColor.black
-        
-        stockTableView.register(UINib(nibName: Constants.Identifiers.stockCell, bundle: nil), forCellReuseIdentifier: Constants.Identifiers.stockCell)
-        
+        tableView.delegate = self
+        setButtonClick()
+        //setupTable()
         setupViewModel()
+        
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -40,75 +34,57 @@ class MainPageController: UIViewController {
     private func setupViewModel(){
         viewModel.page.bind{ [weak self] res in
             DispatchQueue.main.async {
-                self?.stockTableView.reloadData()
+                self?.tableView.tableView.reloadData()
             }
         }
         viewModel.stocks.bind{ [weak self] res in
             DispatchQueue.main.async {
-                self?.stockTableView.reloadData()
+                self?.tableView.data = res
+                self?.tableView.tableView.reloadData()
+            }
+        }
+        viewModel.field1.bind{ [weak self] res in
+            DispatchQueue.main.async {
+                self?.sembolBar.button1.setTitleWithPadding(field: res)
+                self?.tableView.field1 = res
+            }
+        }
+        viewModel.field2.bind{ [weak self] res in
+            DispatchQueue.main.async {
+                self?.sembolBar.button2.setTitleWithPadding(field: res)
+                self?.tableView.field2 = res
             }
         }
     }
 }
 
 
-// BarWith2Buttons extension functions
+// SembolBar and Popup setup
 extension MainPageController{
-    func fillButtons(){
-        sembolBar.button1.setTitleWithPadding(field: viewModel.field1.value)
-        sembolBar.button2.setTitleWithPadding(field: viewModel.field2.value)
-    }
-    
     func setButtonClick() {
         sembolBar.setClick(newClick: popupAppear)
     }
     
-}
-
-// PopUp Extensions
-extension MainPageController{
-    
     func popupAppear(whichField: Int, frame: CGRect) {
-//            popUp.appear(sender: self, whichField: whichField, fillButtons: fillButtons)
         self.popUp = PopUp(frame: self.view.frame)
         self.popUp.backController.addTarget(self, action: #selector(outsideClick), for: .touchUpInside)
-        
         self.view.addSubview(popUp)
     }
-    
     
     @objc func outsideClick(){
         self.popUp.removeFromSuperview()
     }
 }
 
-
-extension MainPageController: UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if viewModel.page.value == nil || viewModel.stocks.value.isEmpty{
-            return 0
-        }else{
-            return viewModel.stocks.value.count
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Identifiers.stockCell, for: indexPath) as! StockItemCell
-        let stockItem = viewModel.stocks.value[indexPath.row]
-        cell.fillStock(stock: stockItem, field1: viewModel.field1.value, field2: viewModel.field2.value)
-        return cell
-    }
-}
-
-extension MainPageController: UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+extension MainPageController: CellTapped{
+    func cellTapped(indexOfCell: Int) {
         performSegue(withIdentifier: Constants.Identifiers.segueDetail, sender: self)
     }
-    
+}
+extension MainPageController: UITableViewDelegate{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if let destination = segue.destination as? DetailPageController {
-            destination.stock = viewModel.stocks.value[(stockTableView.indexPathForSelectedRow?.row) ?? 0]
+            destination.stock = viewModel.stocks.value[(tableView.tableView.indexPathForSelectedRow?.row) ?? 0]
         }
     }
-    
 }

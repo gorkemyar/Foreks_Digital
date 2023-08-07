@@ -19,7 +19,7 @@ import UIKit
     }
     
     func appendView(){
-        let customView = TableView()
+        let customView = PopUpTable()
         self.addSubview(customView)
         customView.frame = CGRect(x: 100, y: 100, width: 150, height: 250)
         customView.backgroundColor = UIColor.black

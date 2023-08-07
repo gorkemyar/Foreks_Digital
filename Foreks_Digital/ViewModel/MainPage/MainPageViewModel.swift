@@ -5,9 +5,10 @@ class MainPageViewModel {
     init(){
         loadMainPage()
         startLoadingDataTimer()
+        mainPageNetworkService = MainPageNetworkService()
     }
     
-    private var mainPageNetworkService: MainPageNetworkService = MainPageNetworkService()
+    private var mainPageNetworkService: MainPageNetworkService!
     
     private var timer: Timer?
     private(set) var page: Observable<Page?> = Observable(nil)

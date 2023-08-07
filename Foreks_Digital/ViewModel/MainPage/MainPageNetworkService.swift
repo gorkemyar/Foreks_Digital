@@ -26,11 +26,10 @@ final class MainPageNetworkService{
         let dg = DispatchGroup()
         for stock:Stock in stocks{
             dg.enter()
-            self.getStockDetailed(stockName: stock.id, fields: fields){
+            self.getStockDetailed(stockName: stock.tke, fields: fields){
                 result in
                 switch result{
                     case .success(let data):
-            
                     if data.l.count > 0{
                         var item = StockDetailed(stockDict: data.l[0])
                         item.changePositive = self.isChangePositive(stocks: sd, newStock: item, fields: fields)
