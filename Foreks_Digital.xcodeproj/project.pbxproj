@@ -142,7 +142,10 @@
 		0635E5372A7A3659007C11B3 /* NibViews */ = {
 			isa = PBXGroup;
 			children = (
-				0635E53E2A7A51AD007C11B3 /* CustomViews */,
+				0635E5492A7B861A007C11B3 /* Component.swift */,
+				0635E55B2A7C3F13007C11B3 /* StockTable */,
+				0635E5382A7A36E1007C11B3 /* SembolBar */,
+				0635E53F2A7A523C007C11B3 /* PopUp */,
 			);
 			path = NibViews;
 			sourceTree = "<group>";
@@ -154,17 +157,6 @@
 				0635E53B2A7A3799007C11B3 /* SembolBar.xib */,
 			);
 			path = SembolBar;
-			sourceTree = "<group>";
-		};
-		0635E53E2A7A51AD007C11B3 /* CustomViews */ = {
-			isa = PBXGroup;
-			children = (
-				0635E5492A7B861A007C11B3 /* Component.swift */,
-				0635E55B2A7C3F13007C11B3 /* StockTable */,
-				0635E5382A7A36E1007C11B3 /* SembolBar */,
-				0635E53F2A7A523C007C11B3 /* PopUp */,
-			);
-			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		0635E53F2A7A523C007C11B3 /* PopUp */ = {
