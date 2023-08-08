@@ -4,13 +4,24 @@ import UIKit
 @IBDesignable class PopUp: Component {
     
     @IBOutlet weak var backController: UIControl!
-
+    var getData: (() -> [SearchTypes])!
+    var click: ((String) -> Void)!
+    
+    init(frame: CGRect, position: CGRect){
+        super.init(frame: frame)
+        setup()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.appendView(position: position)
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
     override func setup() {
         super.setup()
         backViewInit()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-           self.appendView()
-        }
     }
     
     func backViewInit(){
@@ -18,11 +29,21 @@ import UIKit
         
     }
     
-    func appendView(){
+    func appendView(position: CGRect){
         let customView = PopUpTable()
-        self.addSubview(customView)
-        customView.frame = CGRect(x: 100, y: 100, width: 150, height: 250)
+        customView.data = getData()
+        customView.click = click
+        
+        
+        let height: CGFloat = CGFloat(200.0)
+        let width: CGFloat = CGFloat(120.0)
+        let x: CGFloat = position.minX - (width - position.width) / 2
+        let y: CGFloat = position.minY + position.height + 10
+        
+        
+        customView.frame = CGRect(x: x, y: y, width: width, height: height)
         customView.backgroundColor = UIColor.black
         customView.layer.cornerRadius = 10
+        self.addSubview(customView)
     }
 }

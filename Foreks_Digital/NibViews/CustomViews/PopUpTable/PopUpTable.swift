@@ -1,12 +1,11 @@
 import Foundation
 import UIKit
 
-@IBDesignable class PopUpTable: Component, UITableViewDelegate{
+class PopUpTable: Component{
     
+    var data: [SearchTypes] = []
+    var click: ((String) -> Void)?
     
-    var data: [Any] = ["a", "a", "a", "a"]
-    
-    @IBOutlet var view: UIView!
     @IBOutlet weak var tableView: UITableView!
     
     override func setup() {
@@ -29,23 +28,19 @@ extension PopUpTable: UITableViewDataSource{
         return data.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Identifiers.popupCell, for: indexPath) as! PopUpCell
-        
         let field = data[indexPath.row]
-        
-        cell.buttonOutlet.setTitle(field as! String, for: .normal)
-//        cell.hide = {() in self.clickCell(field: field)}
+        cell.buttonOutlet.setTitle(field.name, for: .normal)
         return cell
     }
-    
-    private func clickCell(field: SearchTypes){
-//        MainPageViewModel.shared.changeField(field: field.key, whichField: whichField)
-//        if fillButtons != nil{
-//            fillButtons!()
-//        }
-//        hide()
+}
+
+
+extension PopUpTable: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("hello")
     }
-    
 
 }

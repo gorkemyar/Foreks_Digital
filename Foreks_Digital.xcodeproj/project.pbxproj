@@ -147,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				0635E53E2A7A51AD007C11B3 /* CustomViews */,
-				0635E53D2A7A5197007C11B3 /* UITableCells */,
 			);
 			path = NibViews;
 			sourceTree = "<group>";
@@ -159,14 +158,6 @@
 				0635E53B2A7A3799007C11B3 /* SembolBar.xib */,
 			);
 			path = SembolBar;
-			sourceTree = "<group>";
-		};
-		0635E53D2A7A5197007C11B3 /* UITableCells */ = {
-			isa = PBXGroup;
-			children = (
-				0635E5342A7932FA007C11B3 /* StockItemCell */,
-			);
-			path = UITableCells;
 			sourceTree = "<group>";
 		};
 		0635E53E2A7A51AD007C11B3 /* CustomViews */ = {
@@ -221,6 +212,7 @@
 		0635E55B2A7C3F13007C11B3 /* StockTable */ = {
 			isa = PBXGroup;
 			children = (
+				0635E5342A7932FA007C11B3 /* StockItemCell */,
 				0635E55C2A7C3F24007C11B3 /* StockTable.swift */,
 				0635E55E2A7C3F43007C11B3 /* StockTable.xib */,
 			);

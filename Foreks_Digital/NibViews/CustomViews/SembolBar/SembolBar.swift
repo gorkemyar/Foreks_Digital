@@ -11,7 +11,12 @@ import UIKit
     
     @IBAction func Click(_ sender: UIButton) {
         if click != nil {
-            click!(sender.tag, sender.frame)
+            if let window = UIApplication.shared.keyWindow {
+                let pos: CGPoint = sender.convert(sender.bounds.origin, to: window)
+                let size: CGSize = sender.bounds.size
+                let frame: CGRect = CGRect(origin: pos, size: size)
+                click!(sender.tag, frame)
+            }
         }
     }
 

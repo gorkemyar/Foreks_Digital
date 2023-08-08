@@ -14,11 +14,9 @@ class MainPageController: UIViewController {
         
         tableView.delegate = self
         setButtonClick()
-        //setupTable()
         setupViewModel()
-        
-        
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -57,15 +55,17 @@ class MainPageController: UIViewController {
     }
 }
 
-
 // SembolBar and Popup setup
 extension MainPageController{
     func setButtonClick() {
         sembolBar.setClick(newClick: popupAppear)
     }
     
-    func popupAppear(whichField: Int, frame: CGRect) {
-        self.popUp = PopUp(frame: self.view.frame)
+    func popupAppear(whichField: Int, pos: CGRect) {
+        self.popUp = PopUp(frame: self.view.frame, position: pos)
+        self.popUp.getData = getSearchTypes
+        self.popUp.click = {(field: String) -> Void in self.viewModel.changeField(field: field, whichField: whichField)}
+        
         self.popUp.backController.addTarget(self, action: #selector(outsideClick), for: .touchUpInside)
         self.view.addSubview(popUp)
     }
@@ -83,3 +83,10 @@ extension MainPageController: CellTapped{
         navigationController?.pushViewController(detail, animated: false)
     }
 }
+
+extension MainPageController{    
+    func getSearchTypes() -> [SearchTypes] {
+        return viewModel.page.value?.mainPageSearches ?? []
+    }
+}
+
