@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="xAM-mP-4j3" userLabel="Main">
-                                <rect key="frame" x="0.0" y="94" width="375" height="684"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="728"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VpO-Sy-fHl" userLabel="Top">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
@@ -56,7 +56,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4T-S6-chZ" customClass="StockTable" customModule="Foreks_Digital" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="100" width="375" height="584"/>
+                                        <rect key="frame" x="0.0" y="100" width="375" height="628"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
@@ -84,71 +84,14 @@
                     <connections>
                         <outlet property="sembolBar" destination="rmA-dv-cBR" id="CcQ-Ox-XlB"/>
                         <outlet property="tableView" destination="D4T-S6-chZ" id="rGZ-le-rMP"/>
-                        <segue destination="E0l-Xy-yku" kind="show" identifier="showDetail" id="hN1-Jn-Ryj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1223" y="-2"/>
         </scene>
-        <!--My Page-->
-        <scene sceneID="gC7-zh-nWY">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rXh-PT-lpc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Page" image="person" catalog="system" id="eZq-53-LP6">
-                        <color key="badgeColor" red="0.149019599" green="0.149019599" blue="0.149019599" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </tabBarItem>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lGg-d6-0Bc">
-                        <rect key="frame" x="0.0" y="50" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7gN-Nu-Gl1">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oPP-9L-cMD"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Rx-KS-KdN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="158" y="30"/>
-        </scene>
-        <!--DetailPage-->
-        <scene sceneID="Wb3-YF-98L">
-            <objects>
-                <viewController id="E0l-Xy-yku" userLabel="DetailPage" customClass="DetailPageController" customModule="Foreks_Digital" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dgl-BW-01i">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zr-xP-VOX">
-                                <rect key="frame" x="160.33333333333334" y="392.33333333333331" width="54.333333333333343" height="27.666666666666686"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="dAL-QF-pVc"/>
-                        <color key="backgroundColor" red="0.1507426442" green="0.149019599" blue="0.149019599" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="0zr-xP-VOX" firstAttribute="centerX" secondItem="dgl-BW-01i" secondAttribute="centerX" id="2sa-df-HHc"/>
-                            <constraint firstItem="0zr-xP-VOX" firstAttribute="centerY" secondItem="dgl-BW-01i" secondAttribute="centerY" id="H4Z-Xh-p1U"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="Mxl-we-nYd"/>
-                    <connections>
-                        <outlet property="titleLabel" destination="0zr-xP-VOX" id="sMP-FF-WOL"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PHn-MU-pob" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2217" y="-2"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="person" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

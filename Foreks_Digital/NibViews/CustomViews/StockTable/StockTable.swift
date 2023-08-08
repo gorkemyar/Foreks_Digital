@@ -43,6 +43,7 @@ extension StockTable: UITableViewDelegate{
         if (delegate != nil){
             delegate.cellTapped(indexOfCell: indexPath.row)
         }
+
     }
 }
 

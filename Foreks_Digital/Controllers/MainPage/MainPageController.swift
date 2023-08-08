@@ -5,7 +5,6 @@ class MainPageController: UIViewController {
     var viewModel: MainPageViewModel = MainPageViewModel()
     private var popUp: PopUp!
     
-    
     @IBOutlet weak var tableView: StockTable!
     @IBOutlet var sembolBar: SembolBar!
     
@@ -78,13 +77,9 @@ extension MainPageController{
 
 extension MainPageController: CellTapped{
     func cellTapped(indexOfCell: Int) {
-        performSegue(withIdentifier: Constants.Identifiers.segueDetail, sender: self)
-    }
-}
-extension MainPageController: UITableViewDelegate{
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        if let destination = segue.destination as? DetailPageController {
-            destination.stock = viewModel.stocks.value[(tableView.tableView.indexPathForSelectedRow?.row) ?? 0]
-        }
+        let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
+        let detail = storyBoard.instantiateInitialViewController() as! DetailPageController
+        detail.stock = tableView.data?[indexOfCell]
+        navigationController?.pushViewController(detail, animated: false)
     }
 }
