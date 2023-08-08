@@ -60,11 +60,12 @@ extension MainPageController{
     func setButtonClick() {
         sembolBar.setClick(newClick: popupAppear)
     }
-    
     func popupAppear(whichField: Int, pos: CGRect) {
-        self.popUp = PopUp(frame: self.view.frame, position: pos)
-        self.popUp.getData = getSearchTypes
-        self.popUp.click = {(field: String) -> Void in self.viewModel.changeField(field: field, whichField: whichField)}
+        self.popUp = PopUp(frame: self.view.frame, position: pos, data: viewModel.page.value?.mainPageSearches ?? [])
+        self.popUp.click = {(field: String) -> Void in
+            self.viewModel.changeField(field: field, whichField: whichField);
+            self.outsideClick();
+        }
         
         self.popUp.backController.addTarget(self, action: #selector(outsideClick), for: .touchUpInside)
         self.view.addSubview(popUp)
@@ -83,10 +84,3 @@ extension MainPageController: CellTapped{
         navigationController?.pushViewController(detail, animated: false)
     }
 }
-
-extension MainPageController{    
-    func getSearchTypes() -> [SearchTypes] {
-        return viewModel.page.value?.mainPageSearches ?? []
-    }
-}
-

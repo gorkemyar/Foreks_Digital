@@ -10,7 +10,8 @@ import UIKit
 class PopUpCell: UITableViewCell {
 
     var hide: (() -> Void)?
-    @IBOutlet weak var buttonOutlet: UIButton!
+    
+    @IBOutlet weak var label: UILabel!
     @IBAction func clickPopUpButton(_ sender: Any) {
         if hide != nil {
             hide!()
