@@ -62,7 +62,8 @@ extension MainPageController{
     }
     func popupAppear(whichField: Int, pos: CGRect) {
         self.popUp = PopUp(frame: self.view.frame, position: pos, data: viewModel.page.value?.mainPageSearches ?? [])
-        self.popUp.click = {(field: String) -> Void in
+        self.popUp.click = {(idx: Int) -> Void in
+            let field: String = self.viewModel.page.value?.mainPageSearches[idx].key ?? "error"
             self.viewModel.changeField(field: field, whichField: whichField);
             self.outsideClick();
         }
@@ -78,9 +79,8 @@ extension MainPageController{
 
 extension MainPageController: CellTapped{
     func cellTapped(indexOfCell: Int) {
-        let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
-        let detail = storyBoard.instantiateInitialViewController() as! DetailPageController
-        detail.stock = tableView.data?[indexOfCell]
-        navigationController?.pushViewController(detail, animated: false)
+        let detail = navigationController?.pushController(name: "Detail") as! DetailPageController
+        detail.stock.value = self.tableView.data?[indexOfCell]
     }
 }
+

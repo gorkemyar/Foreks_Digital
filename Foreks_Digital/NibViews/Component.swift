@@ -33,3 +33,11 @@ extension UIView {
         view.addSubview(self)
     }
 }
+
+extension UINavigationController{
+    func pushController(name: String) -> UIViewController{
+        let controller = UIStoryboard(name: name, bundle: nil).instantiateInitialViewController()!
+        pushViewController(controller, animated: false)
+        return controller
+    }
+}

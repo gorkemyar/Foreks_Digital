@@ -11,13 +11,19 @@ class DetailPageController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     
-    var stock: StockDetailed?
+    var stock: Observable<StockDetailed?> = Observable(nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        titleLabel.text = stock?.id ?? "Empty"
+        setup()
     }
     
 
+    private func setup(){
+        stock.bind{ [weak self] res in
+            DispatchQueue.main.async {
+                self?.titleLabel.text = self?.stock.value?.id ?? "Empty"
+            }
+        }
+    }
 }

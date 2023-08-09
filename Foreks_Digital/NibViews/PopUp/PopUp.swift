@@ -5,7 +5,7 @@ import UIKit
     
     @IBOutlet weak var backController: UIControl!
     
-    var click: ((String) -> Void)!
+    var click: ((Int) -> Void)!
     var tableView: UITableView = UITableView()
     var data: [SearchTypes] = []
     
@@ -69,6 +69,6 @@ extension PopUp: UITableViewDataSource{
 
 extension PopUp: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        click(data[indexPath.row].key)
+        click(indexPath.row)
     }
 }
