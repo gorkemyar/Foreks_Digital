@@ -16,26 +16,14 @@ class StockItemCell: UITableViewCell {
     @IBOutlet weak var fieldLabel1: UILabel!
     @IBOutlet weak var fieldLabel2: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         dashedLine()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    
-    
-}
-
-
-
-
-extension StockItemCell{
     
     private func dashedLine(){
           let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7).cgColor
@@ -55,13 +43,14 @@ extension StockItemCell{
           
           self.layer.addSublayer(shapeLayer)
     }
-    
-    
+}
+
+extension StockItemCell{
     func fillStock(stock: StockDetailed, field1: String, field2: String){
         self.stockLabel.text = stock.id
         self.clockLabel.text = stock.stockDict["clo"] ?? "00.00"
-        self.fieldLabel1.text = stock.stockDict[field1] ?? "00.00"
-        self.fieldLabel2.text = stock.stockDict[field2] ?? "00.00"
+        self.fieldLabel1.setFieldLabel(field: field1, stock: stock)
+        self.fieldLabel2.setFieldLabel(field: field2, stock: stock)
         
         if stock.changePositive == nil{
             self.changeImage.image = Constants.images.minus
@@ -75,8 +64,30 @@ extension StockItemCell{
                 self.changeImage.setImageColor(color: Constants.colors.red)
             }
         }
-        
     }
 }
 
+extension UILabel{
+    func setFieldLabel(field: String, stock: StockDetailed){
+        var text = stock.stockDict[field] ?? "00.00"
+        
+        if (field == "pdd"){
+            if (text[0] == "-"){
+                text = "-%" + text[1..<text.count]
+                self.textColor = Constants.colors.red
+            }else if (text != "00.00"){
+                text = "%" + text
+                self.textColor = Constants.colors.green
+            }else{
+                text = "%0.00" 
+                self.textColor = UIColor.white
+            }
+        }
+        else{
+            self.textColor = UIColor.white
+        }
+        self.text = text
+
+    }
+}
 

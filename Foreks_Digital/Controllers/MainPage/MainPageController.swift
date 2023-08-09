@@ -42,13 +42,13 @@ class MainPageController: UIViewController {
         }
         viewModel.field1.bind{ [weak self] res in
             DispatchQueue.main.async {
-                self?.sembolBar.button1.setTitleWithPadding(field: res)
+                self?.sembolBar.button1.setTitleWithPadding(field: res.name)
                 self?.tableView.field1 = res
             }
         }
         viewModel.field2.bind{ [weak self] res in
             DispatchQueue.main.async {
-                self?.sembolBar.button2.setTitleWithPadding(field: res)
+                self?.sembolBar.button2.setTitleWithPadding(field: res.name)
                 self?.tableView.field2 = res
             }
         }
@@ -63,7 +63,7 @@ extension MainPageController{
     func popupAppear(whichField: Int, pos: CGRect) {
         self.popUp = PopUp(frame: self.view.frame, position: pos, data: viewModel.page.value?.mainPageSearches ?? [])
         self.popUp.click = {(idx: Int) -> Void in
-            let field: String = self.viewModel.page.value?.mainPageSearches[idx].key ?? "error"
+            let field: SearchTypes = self.viewModel.page.value!.mainPageSearches[idx]
             self.viewModel.changeField(field: field, whichField: whichField);
             self.outsideClick();
         }

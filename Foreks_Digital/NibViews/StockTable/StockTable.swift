@@ -4,8 +4,8 @@ class StockTable: Component{
     
     var delegate: CellTapped!
     var data: [StockDetailed]?
-    var field1: String = ""
-    var field2: String = ""
+    var field1: SearchTypes?
+    var field2: SearchTypes?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -13,9 +13,8 @@ class StockTable: Component{
         super.setup()
         setupTable()
     }
-    
-
 }
+
 extension StockTable: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -25,7 +24,7 @@ extension StockTable: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Identifiers.stockCell, for: indexPath) as! StockItemCell
         let stockItem = data![indexPath.row]
-        cell.fillStock(stock: stockItem, field1: field1, field2: field2)
+        cell.fillStock(stock: stockItem, field1: field1?.key ?? "las", field2: field2?.key ?? "pdd")
         return cell
     }
     

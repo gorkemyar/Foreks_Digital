@@ -12,8 +12,8 @@ class MainPageViewModel {
     private var timer: Timer?
     private(set) var page: Observable<Page?> = Observable(nil)
     private(set) var stocks: Observable<[StockDetailed]> = Observable([])
-    private(set) var field1: Observable<String> = Observable(UserDefaults.standard.string(forKey: "field1") ?? "las")
-    private(set) var field2: Observable<String> = Observable(UserDefaults.standard.string(forKey: "field2") ?? "pdd")
+    private(set) var field1: Observable<SearchTypes> = Observable(SearchTypes(name: "Son", key: "las"))
+    private(set) var field2: Observable<SearchTypes> = Observable(SearchTypes(name: "%Fark", key: "pdd"))
     
 
     func loadMainPage() {
@@ -29,7 +29,7 @@ class MainPageViewModel {
     }
     
     func loadStocks(){
-        let fields: [String] = [self.field1.value, self.field2.value]
+        let fields: [String] = [self.field1.value.key, self.field2.value.key]
         self.mainPageNetworkService.getMainPageStocks(
             fields: fields,
             stocks: self.page.value?.mainPageStocks ?? [],
@@ -47,7 +47,7 @@ class MainPageViewModel {
         timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(loadStocksPeriodically), userInfo: nil, repeats: true)
     }
 
-    func changeField(field: String, whichField: Int){
+    func changeField(field: SearchTypes, whichField: Int){
         if whichField == 1 {
             field1.value = field
         }else{
