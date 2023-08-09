@@ -1,9 +1,11 @@
 import UIKit
 
-class TabController: UITabBarController {
-
+class TabController: UITabBarController, Coordinating {
+    var coordinator: Coordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(true, animated: false)
         self.setupTabs()
         
         self.tabBar.tintColor = Constants.colors.yellow
