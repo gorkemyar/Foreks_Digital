@@ -19,6 +19,7 @@ class StockItemCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        dashedLine()
         // Initialization code
     }
 
@@ -27,6 +28,8 @@ class StockItemCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
 }
 
 
@@ -72,7 +75,7 @@ extension StockItemCell{
                 self.changeImage.setImageColor(color: Constants.colors.red)
             }
         }
-        dashedLine()
+        
     }
 }
 
