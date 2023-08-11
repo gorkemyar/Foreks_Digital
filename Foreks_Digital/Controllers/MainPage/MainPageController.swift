@@ -1,12 +1,20 @@
 import UIKit
 
-class MainPageController: UIViewController {
+class MainPageController: UIViewController, MainPageBaseCoordinated {
+    
+    var coordinator: MainPageBaseCoordinator?
 
     var viewModel: MainPageViewModel = MainPageViewModel()
     private var popUp: PopUp!
     
     @IBOutlet weak var tableView: StockTable!
     @IBOutlet var sembolBar: SembolBar!
+    
+    static func initializeVC(coordinator: MainPageBaseCoordinator) -> MainPageController{
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! MainPageController
+        vc.coordinator = coordinator
+        return vc
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,8 +87,7 @@ extension MainPageController{
 
 extension MainPageController: CellTapped{
     func cellTapped(indexOfCell: Int) {
-        let detail = navigationController?.pushController(name: "Detail") as! DetailPageController
-        detail.stock.value = self.tableView.data?[indexOfCell]
+        coordinator?.moveTo(flow: .main(.detailScreen), userData: ["stock": self.tableView.data?[indexOfCell] as Any])
     }
 }
 

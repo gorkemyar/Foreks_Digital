@@ -22,10 +22,22 @@
 		0635E5612A80FF71007C11B3 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5602A80FF71007C11B3 /* NewsController.swift */; };
 		0635E5632A80FFB5007C11B3 /* ExchangeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5622A80FFB5007C11B3 /* ExchangeController.swift */; };
 		0635E5652A810007007C11B3 /* MarketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5642A810007007C11B3 /* MarketController.swift */; };
-		0635E5672A8100A3007C11B3 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5662A8100A3007C11B3 /* TabController.swift */; };
 		0635E56C2A823EE1007C11B3 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0635E56B2A823EE1007C11B3 /* Detail.storyboard */; };
 		0635E5702A83A0CD007C11B3 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E56F2A83A0CD007C11B3 /* Coordinator.swift */; };
-		0635E5722A83A184007C11B3 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5712A83A184007C11B3 /* MainCoordinator.swift */; };
+		0635E5722A83A184007C11B3 /* TabBarBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5712A83A184007C11B3 /* TabBarBaseCoordinator.swift */; };
+		0635E5742A84F183007C11B3 /* deneme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5732A84F183007C11B3 /* deneme.swift */; };
+		0635E5762A84F3F6007C11B3 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5752A84F3F5007C11B3 /* TabBarCoordinator.swift */; };
+		0635E5782A84F411007C11B3 /* DeepLinkBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5772A84F411007C11B3 /* DeepLinkBaseController.swift */; };
+		0635E57A2A84F41F007C11B3 /* DeepLinkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5792A84F41F007C11B3 /* DeepLinkCoordinator.swift */; };
+		0635E5802A84F7A4007C11B3 /* NewsBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E57F2A84F7A4007C11B3 /* NewsBaseCoordinator.swift */; };
+		0635E5822A84F7B5007C11B3 /* MarketBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5812A84F7B5007C11B3 /* MarketBaseCoordinator.swift */; };
+		0635E5852A84F7CE007C11B3 /* MainPageBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5842A84F7CE007C11B3 /* MainPageBaseCoordinator.swift */; };
+		0635E5872A84F7DE007C11B3 /* ExchangeBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5862A84F7DE007C11B3 /* ExchangeBaseCoordinator.swift */; };
+		0635E58A2A84F7F5007C11B3 /* ExchangeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5892A84F7F5007C11B3 /* ExchangeCoordinator.swift */; };
+		0635E58C2A84F804007C11B3 /* MainPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E58B2A84F804007C11B3 /* MainPageCoordinator.swift */; };
+		0635E58E2A84F817007C11B3 /* MarketCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E58D2A84F817007C11B3 /* MarketCoordinator.swift */; };
+		0635E5902A84F824007C11B3 /* NewsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E58F2A84F824007C11B3 /* NewsCoordinator.swift */; };
+		0635E5922A863345007C11B3 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5912A863345007C11B3 /* AppFlow.swift */; };
 		066CE7AE2A7671E2004503CF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CE7AD2A7671E2004503CF /* NetworkManager.swift */; };
 		066CE7B12A76723A004503CF /* MainPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CE7B02A76723A004503CF /* MainPageModel.swift */; };
 		066CE7B32A76725A004503CF /* DetailedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CE7B22A76725A004503CF /* DetailedModel.swift */; };
@@ -61,10 +73,22 @@
 		0635E5602A80FF71007C11B3 /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
 		0635E5622A80FFB5007C11B3 /* ExchangeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeController.swift; sourceTree = "<group>"; };
 		0635E5642A810007007C11B3 /* MarketController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketController.swift; sourceTree = "<group>"; };
-		0635E5662A8100A3007C11B3 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		0635E56B2A823EE1007C11B3 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		0635E56F2A83A0CD007C11B3 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		0635E5712A83A184007C11B3 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		0635E5712A83A184007C11B3 /* TabBarBaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBaseCoordinator.swift; sourceTree = "<group>"; };
+		0635E5732A84F183007C11B3 /* deneme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deneme.swift; sourceTree = "<group>"; };
+		0635E5752A84F3F5007C11B3 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		0635E5772A84F411007C11B3 /* DeepLinkBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkBaseController.swift; sourceTree = "<group>"; };
+		0635E5792A84F41F007C11B3 /* DeepLinkCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkCoordinator.swift; sourceTree = "<group>"; };
+		0635E57F2A84F7A4007C11B3 /* NewsBaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsBaseCoordinator.swift; sourceTree = "<group>"; };
+		0635E5812A84F7B5007C11B3 /* MarketBaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketBaseCoordinator.swift; sourceTree = "<group>"; };
+		0635E5842A84F7CE007C11B3 /* MainPageBaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageBaseCoordinator.swift; sourceTree = "<group>"; };
+		0635E5862A84F7DE007C11B3 /* ExchangeBaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeBaseCoordinator.swift; sourceTree = "<group>"; };
+		0635E5892A84F7F5007C11B3 /* ExchangeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCoordinator.swift; sourceTree = "<group>"; };
+		0635E58B2A84F804007C11B3 /* MainPageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageCoordinator.swift; sourceTree = "<group>"; };
+		0635E58D2A84F817007C11B3 /* MarketCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketCoordinator.swift; sourceTree = "<group>"; };
+		0635E58F2A84F824007C11B3 /* NewsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCoordinator.swift; sourceTree = "<group>"; };
+		0635E5912A863345007C11B3 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		066CE7AD2A7671E2004503CF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		066CE7B02A76723A004503CF /* MainPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageModel.swift; sourceTree = "<group>"; };
 		066CE7B22A76725A004503CF /* DetailedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedModel.swift; sourceTree = "<group>"; };
@@ -204,6 +228,7 @@
 		0635E5682A8124B8007C11B3 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				0635E57B2A84F757007C11B3 /* Coordinator */,
 				0635E5602A80FF71007C11B3 /* NewsController.swift */,
 			);
 			path = News;
@@ -212,6 +237,7 @@
 		0635E5692A8124C3007C11B3 /* Exchange */ = {
 			isa = PBXGroup;
 			children = (
+				0635E57E2A84F781007C11B3 /* Coordinator */,
 				0635E5622A80FFB5007C11B3 /* ExchangeController.swift */,
 			);
 			path = Exchange;
@@ -220,6 +246,7 @@
 		0635E56A2A8124DE007C11B3 /* Market */ = {
 			isa = PBXGroup;
 			children = (
+				0635E57C2A84F76C007C11B3 /* Coordinator */,
 				0635E5642A810007007C11B3 /* MarketController.swift */,
 			);
 			path = Market;
@@ -228,7 +255,8 @@
 		0635E56D2A824545007C11B3 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				0635E5662A8100A3007C11B3 /* TabController.swift */,
+				0635E5712A83A184007C11B3 /* TabBarBaseCoordinator.swift */,
+				0635E5752A84F3F5007C11B3 /* TabBarCoordinator.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -237,7 +265,45 @@
 			isa = PBXGroup;
 			children = (
 				0635E56F2A83A0CD007C11B3 /* Coordinator.swift */,
-				0635E5712A83A184007C11B3 /* MainCoordinator.swift */,
+				0635E5772A84F411007C11B3 /* DeepLinkBaseController.swift */,
+				0635E5792A84F41F007C11B3 /* DeepLinkCoordinator.swift */,
+				0635E5912A863345007C11B3 /* AppFlow.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		0635E57B2A84F757007C11B3 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0635E57F2A84F7A4007C11B3 /* NewsBaseCoordinator.swift */,
+				0635E58F2A84F824007C11B3 /* NewsCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		0635E57C2A84F76C007C11B3 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0635E5812A84F7B5007C11B3 /* MarketBaseCoordinator.swift */,
+				0635E58D2A84F817007C11B3 /* MarketCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		0635E57D2A84F775007C11B3 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0635E5842A84F7CE007C11B3 /* MainPageBaseCoordinator.swift */,
+				0635E58B2A84F804007C11B3 /* MainPageCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		0635E57E2A84F781007C11B3 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0635E5862A84F7DE007C11B3 /* ExchangeBaseCoordinator.swift */,
+				0635E5892A84F7F5007C11B3 /* ExchangeCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -311,6 +377,7 @@
 		066CE7D42A77CA5C004503CF /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
+				0635E57D2A84F775007C11B3 /* Coordinator */,
 				06DE53882A72E78D00358718 /* MainPageController.swift */,
 			);
 			path = MainPage;
@@ -357,6 +424,7 @@
 				066CE7C42A767BD7004503CF /* Controllers */,
 				06DE538D2A72E79100358718 /* Assets.xcassets */,
 				06DE53922A72E79100358718 /* Info.plist */,
+				0635E5732A84F183007C11B3 /* deneme.swift */,
 			);
 			path = Foreks_Digital;
 			sourceTree = "<group>";
@@ -492,29 +560,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				0635E5592A7C2854007C11B3 /* MainPageNetworkService.swift in Sources */,
+				0635E5762A84F3F6007C11B3 /* TabBarCoordinator.swift in Sources */,
+				0635E5802A84F7A4007C11B3 /* NewsBaseCoordinator.swift in Sources */,
+				0635E5872A84F7DE007C11B3 /* ExchangeBaseCoordinator.swift in Sources */,
 				0635E5652A810007007C11B3 /* MarketController.swift in Sources */,
 				0635E53A2A7A375D007C11B3 /* SembolBar.swift in Sources */,
 				066CE7B52A767281004503CF /* CurrencyModel.swift in Sources */,
 				0635E5612A80FF71007C11B3 /* NewsController.swift in Sources */,
 				066CE7B12A76723A004503CF /* MainPageModel.swift in Sources */,
+				0635E58C2A84F804007C11B3 /* MainPageCoordinator.swift in Sources */,
 				066CE7CA2A7681FC004503CF /* MainPageViewModel.swift in Sources */,
+				0635E57A2A84F41F007C11B3 /* DeepLinkCoordinator.swift in Sources */,
 				066CE7CF2A76AA76004503CF /* StockItemCell.swift in Sources */,
 				066CE7AE2A7671E2004503CF /* NetworkManager.swift in Sources */,
 				066CE7D62A77CA9D004503CF /* DetailPageController.swift in Sources */,
-				0635E5672A8100A3007C11B3 /* TabController.swift in Sources */,
+				0635E5742A84F183007C11B3 /* deneme.swift in Sources */,
+				0635E5902A84F824007C11B3 /* NewsCoordinator.swift in Sources */,
+				0635E5922A863345007C11B3 /* AppFlow.swift in Sources */,
+				0635E58E2A84F817007C11B3 /* MarketCoordinator.swift in Sources */,
+				0635E5852A84F7CE007C11B3 /* MainPageBaseCoordinator.swift in Sources */,
 				06DE53892A72E78D00358718 /* MainPageController.swift in Sources */,
 				06DE53852A72E78D00358718 /* AppDelegate.swift in Sources */,
 				0635E54A2A7B861A007C11B3 /* Component.swift in Sources */,
 				0635E5542A7C2114007C11B3 /* Observable.swift in Sources */,
 				0635E5632A80FFB5007C11B3 /* ExchangeController.swift in Sources */,
 				066CE7D92A77E3CF004503CF /* Extensions.swift in Sources */,
+				0635E58A2A84F7F5007C11B3 /* ExchangeCoordinator.swift in Sources */,
 				0635E5432A7A53E6007C11B3 /* PopUp.swift in Sources */,
 				066CE7B82A7674AC004503CF /* URLGeneration.swift in Sources */,
+				0635E5782A84F411007C11B3 /* DeepLinkBaseController.swift in Sources */,
+				0635E5822A84F7B5007C11B3 /* MarketBaseCoordinator.swift in Sources */,
 				0635E51E2A78F233007C11B3 /* Constants.swift in Sources */,
 				06DE53872A72E78D00358718 /* SceneDelegate.swift in Sources */,
 				0635E52E2A791A3A007C11B3 /* PopUpCell.swift in Sources */,
 				0635E5702A83A0CD007C11B3 /* Coordinator.swift in Sources */,
-				0635E5722A83A184007C11B3 /* MainCoordinator.swift in Sources */,
+				0635E5722A83A184007C11B3 /* TabBarBaseCoordinator.swift in Sources */,
 				066CE7B32A76725A004503CF /* DetailedModel.swift in Sources */,
 				0635E55D2A7C3F24007C11B3 /* StockTable.swift in Sources */,
 			);

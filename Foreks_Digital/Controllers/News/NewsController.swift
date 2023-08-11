@@ -7,7 +7,19 @@
 
 import UIKit
 
-class NewsController: UIViewController {
+class NewsController: UIViewController, NewsBaseCoordinated {
+    
+    var coordinator: NewsBaseCoordinator?
+    
+    init(coordinator: NewsBaseCoordinator?) {
+        super.init(nibName: nil, bundle: nil)
+        self.coordinator = coordinator
+        title = "Exchange"
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

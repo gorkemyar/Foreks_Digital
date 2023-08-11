@@ -7,7 +7,19 @@
 
 import UIKit
 
-class MarketController: UIViewController {
+class MarketController: UIViewController, MarketBaseCoordinated {
+    
+    var coordinator: MarketBaseCoordinator?
+    
+    init(coordinator: MarketBaseCoordinator?) {
+        super.init(nibName: nil, bundle: nil)
+        self.coordinator = coordinator
+        title = "Exchange"
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,16 +1,26 @@
-import Foundation
 import UIKit
-enum Event{
-    case pushVC(name: String)
+
+protocol FlowCoordinator: AnyObject {
+    var parentCoordinator: TabBarBaseCoordinator? { get set }
 }
 
-protocol Coordinator{
-    var navigationController: UINavigationController? {get set}
+protocol Coordinator: FlowCoordinator {
+    var rootViewController: UIViewController { get set }
+    func start() -> UIViewController
+    func moveTo(flow: AppFlow, userData: [String: Any]?)
+    @discardableResult func resetToRoot(animated: Bool) -> Self
+}
+
+extension Coordinator {
+    var navigationRootViewController: UINavigationController? {
+        get {
+            (rootViewController as? UINavigationController)
+        }
+    }
     
-    func eventOccured(with type: Event) -> Any
-    func start()
+    func resetToRoot(animated: Bool) -> Self {
+        navigationRootViewController?.popToRootViewController(animated: animated)
+        return self
+    }
 }
 
-protocol Coordinating{
-    var coordinator: Coordinator? {get set}
-}
