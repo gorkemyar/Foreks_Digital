@@ -25,10 +25,7 @@
 		0635E56C2A823EE1007C11B3 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0635E56B2A823EE1007C11B3 /* Detail.storyboard */; };
 		0635E5702A83A0CD007C11B3 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E56F2A83A0CD007C11B3 /* Coordinator.swift */; };
 		0635E5722A83A184007C11B3 /* TabBarBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5712A83A184007C11B3 /* TabBarBaseCoordinator.swift */; };
-		0635E5742A84F183007C11B3 /* deneme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5732A84F183007C11B3 /* deneme.swift */; };
 		0635E5762A84F3F6007C11B3 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5752A84F3F5007C11B3 /* TabBarCoordinator.swift */; };
-		0635E5782A84F411007C11B3 /* DeepLinkBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5772A84F411007C11B3 /* DeepLinkBaseController.swift */; };
-		0635E57A2A84F41F007C11B3 /* DeepLinkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5792A84F41F007C11B3 /* DeepLinkCoordinator.swift */; };
 		0635E5802A84F7A4007C11B3 /* NewsBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E57F2A84F7A4007C11B3 /* NewsBaseCoordinator.swift */; };
 		0635E5822A84F7B5007C11B3 /* MarketBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5812A84F7B5007C11B3 /* MarketBaseCoordinator.swift */; };
 		0635E5852A84F7CE007C11B3 /* MainPageBaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5842A84F7CE007C11B3 /* MainPageBaseCoordinator.swift */; };
@@ -76,10 +73,7 @@
 		0635E56B2A823EE1007C11B3 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		0635E56F2A83A0CD007C11B3 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		0635E5712A83A184007C11B3 /* TabBarBaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBaseCoordinator.swift; sourceTree = "<group>"; };
-		0635E5732A84F183007C11B3 /* deneme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deneme.swift; sourceTree = "<group>"; };
 		0635E5752A84F3F5007C11B3 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
-		0635E5772A84F411007C11B3 /* DeepLinkBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkBaseController.swift; sourceTree = "<group>"; };
-		0635E5792A84F41F007C11B3 /* DeepLinkCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkCoordinator.swift; sourceTree = "<group>"; };
 		0635E57F2A84F7A4007C11B3 /* NewsBaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsBaseCoordinator.swift; sourceTree = "<group>"; };
 		0635E5812A84F7B5007C11B3 /* MarketBaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketBaseCoordinator.swift; sourceTree = "<group>"; };
 		0635E5842A84F7CE007C11B3 /* MainPageBaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageBaseCoordinator.swift; sourceTree = "<group>"; };
@@ -265,8 +259,6 @@
 			isa = PBXGroup;
 			children = (
 				0635E56F2A83A0CD007C11B3 /* Coordinator.swift */,
-				0635E5772A84F411007C11B3 /* DeepLinkBaseController.swift */,
-				0635E5792A84F41F007C11B3 /* DeepLinkCoordinator.swift */,
 				0635E5912A863345007C11B3 /* AppFlow.swift */,
 			);
 			path = Coordinator;
@@ -424,7 +416,6 @@
 				066CE7C42A767BD7004503CF /* Controllers */,
 				06DE538D2A72E79100358718 /* Assets.xcassets */,
 				06DE53922A72E79100358718 /* Info.plist */,
-				0635E5732A84F183007C11B3 /* deneme.swift */,
 			);
 			path = Foreks_Digital;
 			sourceTree = "<group>";
@@ -570,11 +561,9 @@
 				066CE7B12A76723A004503CF /* MainPageModel.swift in Sources */,
 				0635E58C2A84F804007C11B3 /* MainPageCoordinator.swift in Sources */,
 				066CE7CA2A7681FC004503CF /* MainPageViewModel.swift in Sources */,
-				0635E57A2A84F41F007C11B3 /* DeepLinkCoordinator.swift in Sources */,
 				066CE7CF2A76AA76004503CF /* StockItemCell.swift in Sources */,
 				066CE7AE2A7671E2004503CF /* NetworkManager.swift in Sources */,
 				066CE7D62A77CA9D004503CF /* DetailPageController.swift in Sources */,
-				0635E5742A84F183007C11B3 /* deneme.swift in Sources */,
 				0635E5902A84F824007C11B3 /* NewsCoordinator.swift in Sources */,
 				0635E5922A863345007C11B3 /* AppFlow.swift in Sources */,
 				0635E58E2A84F817007C11B3 /* MarketCoordinator.swift in Sources */,
@@ -588,7 +577,6 @@
 				0635E58A2A84F7F5007C11B3 /* ExchangeCoordinator.swift in Sources */,
 				0635E5432A7A53E6007C11B3 /* PopUp.swift in Sources */,
 				066CE7B82A7674AC004503CF /* URLGeneration.swift in Sources */,
-				0635E5782A84F411007C11B3 /* DeepLinkBaseController.swift in Sources */,
 				0635E5822A84F7B5007C11B3 /* MarketBaseCoordinator.swift in Sources */,
 				0635E51E2A78F233007C11B3 /* Constants.swift in Sources */,
 				06DE53872A72E78D00358718 /* SceneDelegate.swift in Sources */,

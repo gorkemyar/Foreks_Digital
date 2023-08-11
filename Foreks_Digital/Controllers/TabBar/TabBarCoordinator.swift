@@ -8,7 +8,6 @@ class TabBarCoordinator: TabBarBaseCoordinator {
     lazy var exchangeCoordinator: ExchangeBaseCoordinator = ExchangeCoordinator()
     lazy var marketCoordinator: MarketBaseCoordinator = MarketCoordinator()
     lazy var newsCoordinator: NewsBaseCoordinator = NewsCoordinator()
-    lazy var deepLinkCoordinator: DeepLinkBaseCoordinator = DeepLinkCoordinator(tabBarBaseCoordinator: self)
     
     lazy var rootViewController: UIViewController = UITabBarController()
     
@@ -79,9 +78,7 @@ class TabBarCoordinator: TabBarBaseCoordinator {
         exchangeCoordinator.moveTo(flow: flow, userData: nil)
         (rootViewController as? UITabBarController)?.selectedIndex = 3
     }
-    func handleDeepLink(text: String) {
-        deepLinkCoordinator.handleDeeplink(deepLink: text)
-    }
+    
     func resetToRoot() -> Self {
         mainPageCoordinator.resetToRoot(animated: false)
         moveTo(flow: .main(.initialScreen), userData: nil)

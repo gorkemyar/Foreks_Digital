@@ -5,8 +5,6 @@ protocol TabBarBaseCoordinator: Coordinator {
     var exchangeCoordinator: ExchangeBaseCoordinator { get }
     var marketCoordinator: MarketBaseCoordinator { get }
     var newsCoordinator: NewsBaseCoordinator { get }
-    var deepLinkCoordinator: DeepLinkBaseCoordinator { get }
-    func handleDeepLink(text: String)
 }
 
 

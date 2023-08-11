@@ -72,22 +72,37 @@ extension UILabel{
         var text = stock.stockDict[field] ?? "00.00"
         
         if (field == "pdd"){
-            if (text[0] == "-"){
-                text = "-%" + text[1..<text.count]
-                self.textColor = Constants.colors.red
-            }else if (text != "00.00"){
-                text = "%" + text
-                self.textColor = Constants.colors.green
-            }else{
-                text = "%0.00" 
-                self.textColor = UIColor.white
-            }
+            text = setTextPdd(txt: text)
+            setTextColor(txt: text)
+        }else if (field == "ddi"){
+            setTextColor(txt: text)
         }
         else{
             self.textColor = UIColor.white
         }
         self.text = text
 
+    }
+    
+    private func setTextPdd(txt: String) -> String{
+        var text: String = txt
+        if (text[0] == "-"){
+            text = "-%" + text[1..<text.count]
+        }else if (text != "00.00"){
+            text = "%" + text
+        }else{
+            text = "%0.00"
+        }
+        return text
+    }
+    private func setTextColor(txt: String){
+        if (txt[0] == "-"){
+            self.textColor = Constants.colors.red
+        }else if (txt != "%0.00"){
+            self.textColor = Constants.colors.green
+        }else{
+            self.textColor = UIColor.white
+        }
     }
 }
 

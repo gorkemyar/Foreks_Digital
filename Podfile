@@ -7,7 +7,7 @@ target 'Foreks_Digital' do
 
   # Pods for Foreks_Digital
   
-  pod 'Segmentio'
-  pod 'FontAwesome.swift'
+  pod 'Segmentio', :inhibit_warnings => true
+  pod 'FontAwesome.swift', :inhibit_warnings => true
 
 end

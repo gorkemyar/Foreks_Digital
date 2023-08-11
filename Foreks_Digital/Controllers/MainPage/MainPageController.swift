@@ -90,4 +90,3 @@ extension MainPageController: CellTapped{
         coordinator?.moveTo(flow: .main(.detailScreen), userData: ["stock": self.tableView.data?[indexOfCell] as Any])
     }
 }
-
