@@ -7,7 +7,9 @@ class MainPageCoordinator: MainPageBaseCoordinator {
     lazy var rootViewController: UIViewController = UIViewController()
     
     func start() -> UIViewController {
-        let vc = MainPageController.initializeVC(coordinator: self)
+        let vc = MainPageController.instantiate(name: "Main")
+        vc.viewModel = MainPageViewModel()
+        vc.coordinator = self
         rootViewController = UINavigationController(rootViewController: vc)
         return rootViewController
     }
@@ -31,27 +33,13 @@ class MainPageCoordinator: MainPageBaseCoordinator {
     }
     
     func goToDetailScreenWith(data: [String: Any]?) {
-        let detailVC = DetailPageController.initalizeVC(coordinator: self, data: data)
+        let detailVC = DetailPageController.instantiate(name: "Detail")
+        detailVC.coordinator = self
+        if (data != nil){
+            detailVC.stock.value = data!["stock"] as? StockDetailed
+        }
         navigationRootViewController?.pushViewController(detailVC, animated: true)
     }
-//
-//    func goToFavoritesFlow() {
-//        parentCoordinator?.moveTo(flow: .orders(.firstScreen))
-//    }
-//
-//    func goToDeepViewInFavoriteTab() {
-//
-//        DispatchQueue.main.asyncAfter(deadline: .now()) { [weak self] in
-//                self?.parentCoordinator?.ordersCoordinator
-//                    .resetToRoot(animated: false)
-//            }
-//            DispatchQueue.main.asyncAfter(deadline: .now()+0.1) { [weak self] in
-//                self?.parentCoordinator?.ordersCoordinator
-//                    .goToOrder2Screen(animated: false)
-//                    .goToOrder3Screen(animated: false)
-//                self?.parentCoordinator?.moveTo(flow: .orders)
-//            }
-//    }
     
     func resetToRoot() -> Self {
         navigationRootViewController?.popToRootViewController(animated: false)

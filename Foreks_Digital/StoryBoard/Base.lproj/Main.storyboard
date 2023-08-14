@@ -11,7 +11,7 @@
         <!--MainPage-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="MainPage" id="BYZ-38-t0r" customClass="MainPageController" customModule="Foreks_Digital" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainPageController" title="MainPage" id="BYZ-38-t0r" customClass="MainPageController" customModule="Foreks_Digital" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,7 +22,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VpO-Sy-fHl" userLabel="Top">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xM0-5u-awK" userLabel="Tabbar" customClass="Segmentio" customModule="Segmentio">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xM0-5u-awK" userLabel="Tabbar" customClass="BasketBar" customModule="Foreks_Digital" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                 <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <userDefinedRuntimeAttributes>

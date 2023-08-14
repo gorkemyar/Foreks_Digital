@@ -1,20 +1,16 @@
 import UIKit
 
-class MainPageController: UIViewController, MainPageBaseCoordinated {
+class MainPageController: UIViewController, MainPageBaseCoordinated, Storyboardable {
+    
     
     var coordinator: MainPageBaseCoordinator?
 
-    var viewModel: MainPageViewModel = MainPageViewModel()
+    var viewModel: MainPageViewModel!
     private var popUp: PopUp!
     
     @IBOutlet weak var tableView: StockTable!
     @IBOutlet var sembolBar: SembolBar!
-    
-    static func initializeVC(coordinator: MainPageBaseCoordinator) -> MainPageController{
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! MainPageController
-        vc.coordinator = coordinator
-        return vc
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -45,6 +45,9 @@
 		066CE7D02A76AA76004503CF /* StockItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066CE7CE2A76AA76004503CF /* StockItemCell.xib */; };
 		066CE7D62A77CA9D004503CF /* DetailPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CE7D52A77CA9D004503CF /* DetailPageController.swift */; };
 		066CE7D92A77E3CF004503CF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CE7D82A77E3CF004503CF /* Extensions.swift */; };
+		066E854B2A8640C4000A8A82 /* BasketBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E854A2A8640C4000A8A82 /* BasketBar.swift */; };
+		066E854D2A8640DD000A8A82 /* BasketBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066E854C2A8640DD000A8A82 /* BasketBar.xib */; };
+		066E854F2A8A56B4000A8A82 /* Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E854E2A8A56B4000A8A82 /* Storyboardable.swift */; };
 		06DE53852A72E78D00358718 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53842A72E78D00358718 /* AppDelegate.swift */; };
 		06DE53872A72E78D00358718 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53862A72E78D00358718 /* SceneDelegate.swift */; };
 		06DE53892A72E78D00358718 /* MainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53882A72E78D00358718 /* MainPageController.swift */; };
@@ -93,6 +96,9 @@
 		066CE7CE2A76AA76004503CF /* StockItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StockItemCell.xib; sourceTree = "<group>"; };
 		066CE7D52A77CA9D004503CF /* DetailPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageController.swift; sourceTree = "<group>"; };
 		066CE7D82A77E3CF004503CF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		066E854A2A8640C4000A8A82 /* BasketBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketBar.swift; sourceTree = "<group>"; };
+		066E854C2A8640DD000A8A82 /* BasketBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketBar.xib; sourceTree = "<group>"; };
+		066E854E2A8A56B4000A8A82 /* Storyboardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboardable.swift; sourceTree = "<group>"; };
 		06DE53812A72E78D00358718 /* Foreks_Digital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foreks_Digital.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DE53842A72E78D00358718 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06DE53862A72E78D00358718 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +170,7 @@
 		0635E5372A7A3659007C11B3 /* NibViews */ = {
 			isa = PBXGroup;
 			children = (
+				066E85472A86404B000A8A82 /* BasketBar */,
 				0635E5492A7B861A007C11B3 /* Component.swift */,
 				0635E55B2A7C3F13007C11B3 /* StockTable */,
 				0635E5382A7A36E1007C11B3 /* SembolBar */,
@@ -379,8 +386,18 @@
 			isa = PBXGroup;
 			children = (
 				066CE7D82A77E3CF004503CF /* Extensions.swift */,
+				066E854E2A8A56B4000A8A82 /* Storyboardable.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		066E85472A86404B000A8A82 /* BasketBar */ = {
+			isa = PBXGroup;
+			children = (
+				066E854A2A8640C4000A8A82 /* BasketBar.swift */,
+				066E854C2A8640DD000A8A82 /* BasketBar.xib */,
+			);
+			path = BasketBar;
 			sourceTree = "<group>";
 		};
 		06DE53782A72E78D00358718 = {
@@ -494,6 +511,7 @@
 				0635E56C2A823EE1007C11B3 /* Detail.storyboard in Resources */,
 				066CE7D02A76AA76004503CF /* StockItemCell.xib in Resources */,
 				0635E55F2A7C3F43007C11B3 /* StockTable.xib in Resources */,
+				066E854D2A8640DD000A8A82 /* BasketBar.xib in Resources */,
 				06DE538E2A72E79100358718 /* Assets.xcassets in Resources */,
 				0635E52F2A791A3A007C11B3 /* PopUpCell.xib in Resources */,
 				0635E5412A7A53C9007C11B3 /* PopUp.xib in Resources */,
@@ -552,6 +570,7 @@
 			files = (
 				0635E5592A7C2854007C11B3 /* MainPageNetworkService.swift in Sources */,
 				0635E5762A84F3F6007C11B3 /* TabBarCoordinator.swift in Sources */,
+				066E854F2A8A56B4000A8A82 /* Storyboardable.swift in Sources */,
 				0635E5802A84F7A4007C11B3 /* NewsBaseCoordinator.swift in Sources */,
 				0635E5872A84F7DE007C11B3 /* ExchangeBaseCoordinator.swift in Sources */,
 				0635E5652A810007007C11B3 /* MarketController.swift in Sources */,
@@ -567,6 +586,7 @@
 				0635E5902A84F824007C11B3 /* NewsCoordinator.swift in Sources */,
 				0635E5922A863345007C11B3 /* AppFlow.swift in Sources */,
 				0635E58E2A84F817007C11B3 /* MarketCoordinator.swift in Sources */,
+				066E854B2A8640C4000A8A82 /* BasketBar.swift in Sources */,
 				0635E5852A84F7CE007C11B3 /* MainPageBaseCoordinator.swift in Sources */,
 				06DE53892A72E78D00358718 /* MainPageController.swift in Sources */,
 				06DE53852A72E78D00358718 /* AppDelegate.swift in Sources */,

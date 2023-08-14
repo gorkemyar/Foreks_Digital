@@ -7,20 +7,11 @@
 
 import UIKit
 
-class DetailPageController: UIViewController {
+class DetailPageController: UIViewController, MainPageBaseCoordinated, Storyboardable {
 
     var coordinator: MainPageBaseCoordinator?
     var stock: Observable<StockDetailed?> = Observable(nil)
     @IBOutlet weak var titleLabel: UILabel!
-    
-    static func initalizeVC(coordinator: MainPageBaseCoordinator, data: [String: Any]?) -> DetailPageController{
-        let vc = UIStoryboard(name: "Detail", bundle: nil).instantiateInitialViewController() as! DetailPageController
-        vc.coordinator = coordinator
-        if (data != nil){
-            vc.stock.value = data!["stock"] as? StockDetailed
-        }
-        return vc
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
