@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BasketBar" customModule="Foreks_Digital" customModuleProvider="target">
             <connections>
+                <outlet property="addButton" destination="hvX-Cd-rg9" id="Znf-KD-h0I"/>
                 <outlet property="segmentio" destination="c86-yW-fiR" id="8IE-5g-GM9"/>
             </connections>
         </placeholder>
@@ -18,23 +19,67 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c86-yW-fiR" customClass="Segmentio" customModule="Segmentio">
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FBx-Fs-Hgl">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                    <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                </view>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VW9-xC-Yj0" userLabel="SegmentioView">
+                            <rect key="frame" x="0.0" y="0.0" width="305" height="50"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c86-yW-fiR" customClass="Segmentio" customModule="Segmentio">
+                                    <rect key="frame" x="0.0" y="0.0" width="305" height="50"/>
+                                    <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="c86-yW-fiR" firstAttribute="leading" secondItem="VW9-xC-Yj0" secondAttribute="leading" id="3qX-un-YYR"/>
+                                <constraint firstAttribute="trailing" secondItem="c86-yW-fiR" secondAttribute="trailing" id="BAJ-7q-2od"/>
+                                <constraint firstAttribute="bottom" secondItem="c86-yW-fiR" secondAttribute="bottom" id="PQO-La-RUP"/>
+                                <constraint firstItem="c86-yW-fiR" firstAttribute="top" secondItem="VW9-xC-Yj0" secondAttribute="top" id="e8K-ew-5Fh"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFR-ej-7hl" userLabel="ButtonView">
+                            <rect key="frame" x="305" y="0.0" width="70" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvX-Cd-rg9">
+                                    <rect key="frame" x="0.0" y="0.0" width="70" height="50"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain"/>
+                                    <connections>
+                                        <action selector="click:" destination="-1" eventType="touchUpInside" id="jnb-5d-vME"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="DjD-lm-x1g"/>
+                                <constraint firstItem="hvX-Cd-rg9" firstAttribute="top" secondItem="FFR-ej-7hl" secondAttribute="top" id="fy5-vE-UTt"/>
+                                <constraint firstAttribute="trailing" secondItem="hvX-Cd-rg9" secondAttribute="trailing" id="jsw-sI-Xv3"/>
+                                <constraint firstAttribute="bottom" secondItem="hvX-Cd-rg9" secondAttribute="bottom" id="noN-xY-ywO"/>
+                                <constraint firstItem="hvX-Cd-rg9" firstAttribute="leading" secondItem="FFR-ej-7hl" secondAttribute="leading" id="wuk-m3-gUU"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="FFR-ej-7hl" secondAttribute="trailing" id="44I-qu-PBi"/>
+                        <constraint firstAttribute="bottom" secondItem="FFR-ej-7hl" secondAttribute="bottom" id="VuJ-KX-ebF"/>
+                        <constraint firstItem="FFR-ej-7hl" firstAttribute="top" secondItem="FBx-Fs-Hgl" secondAttribute="top" id="fR4-wi-sIC"/>
+                        <constraint firstAttribute="trailing" secondItem="VW9-xC-Yj0" secondAttribute="trailing" constant="70" id="s2M-X6-gwN"/>
+                    </constraints>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="c86-yW-fiR" secondAttribute="bottom" id="2zg-5q-DRt"/>
-                <constraint firstAttribute="trailing" secondItem="c86-yW-fiR" secondAttribute="trailing" id="B7x-Me-pUg"/>
-                <constraint firstItem="c86-yW-fiR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Xib-sK-57W"/>
-                <constraint firstItem="c86-yW-fiR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="sZ6-Zy-kq8"/>
+                <constraint firstItem="FBx-Fs-Hgl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6GO-EF-ePd"/>
+                <constraint firstAttribute="bottom" secondItem="FBx-Fs-Hgl" secondAttribute="bottom" id="aAt-gd-kWZ"/>
+                <constraint firstAttribute="trailing" secondItem="FBx-Fs-Hgl" secondAttribute="trailing" id="ly8-kD-z3r"/>
+                <constraint firstItem="FBx-Fs-Hgl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ucx-gz-scu"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="97" y="306"/>
+            <point key="canvasLocation" x="96.946564885496173" y="305.63380281690144"/>
         </view>
     </objects>
     <resources>

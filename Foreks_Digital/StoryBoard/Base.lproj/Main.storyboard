@@ -82,6 +82,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="8hX-zc-fCP"/>
                     <connections>
+                        <outlet property="basketBar" destination="xM0-5u-awK" id="dnu-Z1-pxw"/>
                         <outlet property="sembolBar" destination="rmA-dv-cBR" id="CcQ-Ox-XlB"/>
                         <outlet property="tableView" destination="D4T-S6-chZ" id="rGZ-le-rMP"/>
                     </connections>

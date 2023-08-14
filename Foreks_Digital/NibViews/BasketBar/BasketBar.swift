@@ -3,49 +3,35 @@ import Segmentio
 
 @IBDesignable class BasketBar: Component {
 
-
-    @IBOutlet weak var segmentio: Segmentio!
+    var delegate: AddButtonClicked?
     
+    @IBOutlet weak var segmentio: Segmentio!
+    @IBOutlet weak var addButton: UIButton!
+    
+    @IBAction func click(_ sender: Any) {
+        delegate?.clickButton()
+    }
     override func setup(){
         super.setup()
         segmentioSetup()
+        buttonSetup()
     }
     
     
     private func segmentioSetup(){
-        segmentio.backgroundColor = UIColor.white
-        let items: [SegmentioItem] = segmentioCreateItems()
-        segmentio.setup(content: items, style: SegmentioStyle.imageBeforeLabel, options: segmentioOptions())
-        segmentio.valueDidChange = { segmentio, segmentIndex in
-            print("Selected item: ", segmentIndex)
+        SegmentioBuilder.buildSegmentioView(segmentioView: segmentio, segmentioStyle: SegmentioStyle.onlyLabel)
+        segmentio.valueDidChange = { [weak self] item, segmentIndex in
+            print(segmentIndex)
         }
     }
     
-    private func segmentioCreateItems() -> [SegmentioItem]{
-        
-        var items = [SegmentioItem]()
-        var item1 = SegmentioItem(
-            title: "Person",
-            image: nil
-        )
-        var item2 = SegmentioItem(
-            title: "Person",
-            image: nil
-        )
-        item1.badgeColor = UIColor.red
-        item2.badgeColor = UIColor.blue
-        items.append(item1)
-        items.append(item2)
-        return items
+    private func buttonSetup(){
+        let image: UIImage = Constants.images.plus
+        addButton.setImage(image, for: .normal)
+        addButton.tintColor = Constants.colors.yellow
     }
-    
-    private func segmentioOptions() -> SegmentioOptions{
-        return SegmentioOptions(
-            backgroundColor: Constants.colors.bg,
-                    segmentPosition: SegmentioPosition.dynamic,
-                    scrollEnabled: true,
-                    indicatorOptions: nil,
-                    horizontalSeparatorOptions: SegmentioHorizontalSeparatorOptions(color: Constants.colors.lightwhite)
-        )
-    }
+}
+
+protocol AddButtonClicked{
+    func clickButton();
 }

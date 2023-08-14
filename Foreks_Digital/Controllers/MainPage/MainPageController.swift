@@ -2,21 +2,20 @@ import UIKit
 
 class MainPageController: UIViewController, MainPageBaseCoordinated, Storyboardable {
     
-    
     var coordinator: MainPageBaseCoordinator?
-
     var viewModel: MainPageViewModel!
     private var popUp: PopUp!
     
     @IBOutlet weak var tableView: StockTable!
     @IBOutlet var sembolBar: SembolBar!
-
+    @IBOutlet weak var basketBar: BasketBar!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
-        
         tableView.delegate = self
+        basketBar.delegate = self
         setButtonClick()
         setupViewModel()
     }
@@ -84,5 +83,11 @@ extension MainPageController{
 extension MainPageController: CellTapped{
     func cellTapped(indexOfCell: Int) {
         coordinator?.moveTo(flow: .main(.detailScreen), userData: ["stock": self.tableView.data?[indexOfCell] as Any])
+    }
+}
+
+extension MainPageController: AddButtonClicked{
+    func clickButton() {
+        coordinator?.moveTo(flow: .main(.basketScreen), userData: nil)
     }
 }

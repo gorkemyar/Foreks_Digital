@@ -29,6 +29,8 @@ class MainPageCoordinator: MainPageBaseCoordinator {
             navigationRootViewController?.popToRootViewController(animated: true)
         case .detailScreen:
             goToDetailScreenWith(data: userData)
+        case .basketScreen:
+            goToBasketScreen()
         }
     }
     
@@ -39,6 +41,12 @@ class MainPageCoordinator: MainPageBaseCoordinator {
             detailVC.stock.value = data!["stock"] as? StockDetailed
         }
         navigationRootViewController?.pushViewController(detailVC, animated: true)
+    }
+    
+    func goToBasketScreen(){
+        let basketVC = BasketPageController.instantiate(name: "Basket")
+        basketVC.coordinator = self
+        navigationRootViewController?.pushViewController(basketVC, animated: true)
     }
     
     func resetToRoot() -> Self {

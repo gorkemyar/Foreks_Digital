@@ -48,6 +48,9 @@
 		066E854B2A8640C4000A8A82 /* BasketBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E854A2A8640C4000A8A82 /* BasketBar.swift */; };
 		066E854D2A8640DD000A8A82 /* BasketBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066E854C2A8640DD000A8A82 /* BasketBar.xib */; };
 		066E854F2A8A56B4000A8A82 /* Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E854E2A8A56B4000A8A82 /* Storyboardable.swift */; };
+		066E85512A8A61D6000A8A82 /* SegmentioBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E85502A8A61D6000A8A82 /* SegmentioBuilder.swift */; };
+		066E85542A8A74A5000A8A82 /* Basket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 066E85532A8A74A5000A8A82 /* Basket.storyboard */; };
+		066E85572A8A74DE000A8A82 /* BasketPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E85562A8A74DE000A8A82 /* BasketPageController.swift */; };
 		06DE53852A72E78D00358718 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53842A72E78D00358718 /* AppDelegate.swift */; };
 		06DE53872A72E78D00358718 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53862A72E78D00358718 /* SceneDelegate.swift */; };
 		06DE53892A72E78D00358718 /* MainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53882A72E78D00358718 /* MainPageController.swift */; };
@@ -99,6 +102,9 @@
 		066E854A2A8640C4000A8A82 /* BasketBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketBar.swift; sourceTree = "<group>"; };
 		066E854C2A8640DD000A8A82 /* BasketBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketBar.xib; sourceTree = "<group>"; };
 		066E854E2A8A56B4000A8A82 /* Storyboardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboardable.swift; sourceTree = "<group>"; };
+		066E85502A8A61D6000A8A82 /* SegmentioBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentioBuilder.swift; sourceTree = "<group>"; };
+		066E85532A8A74A5000A8A82 /* Basket.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Basket.storyboard; sourceTree = "<group>"; };
+		066E85562A8A74DE000A8A82 /* BasketPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketPageController.swift; sourceTree = "<group>"; };
 		06DE53812A72E78D00358718 /* Foreks_Digital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foreks_Digital.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DE53842A72E78D00358718 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06DE53862A72E78D00358718 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -338,6 +344,7 @@
 			children = (
 				06DE538A2A72E78D00358718 /* Main.storyboard */,
 				0635E56B2A823EE1007C11B3 /* Detail.storyboard */,
+				066E85532A8A74A5000A8A82 /* Basket.storyboard */,
 				06DE538F2A72E79100358718 /* LaunchScreen.storyboard */,
 			);
 			path = StoryBoard;
@@ -355,6 +362,7 @@
 		066CE7C42A767BD7004503CF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				066E85522A8A747A000A8A82 /* BasketPage */,
 				066CE7D32A77CA53004503CF /* DetailPage */,
 				0635E5692A8124C3007C11B3 /* Exchange */,
 				066CE7D42A77CA5C004503CF /* MainPage */,
@@ -396,8 +404,17 @@
 			children = (
 				066E854A2A8640C4000A8A82 /* BasketBar.swift */,
 				066E854C2A8640DD000A8A82 /* BasketBar.xib */,
+				066E85502A8A61D6000A8A82 /* SegmentioBuilder.swift */,
 			);
 			path = BasketBar;
+			sourceTree = "<group>";
+		};
+		066E85522A8A747A000A8A82 /* BasketPage */ = {
+			isa = PBXGroup;
+			children = (
+				066E85562A8A74DE000A8A82 /* BasketPageController.swift */,
+			);
+			path = BasketPage;
 			sourceTree = "<group>";
 		};
 		06DE53782A72E78D00358718 = {
@@ -506,6 +523,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				066E85542A8A74A5000A8A82 /* Basket.storyboard in Resources */,
 				06DE53912A72E79100358718 /* LaunchScreen.storyboard in Resources */,
 				0635E53C2A7A3799007C11B3 /* SembolBar.xib in Resources */,
 				0635E56C2A823EE1007C11B3 /* Detail.storyboard in Resources */,
@@ -583,6 +601,7 @@
 				066CE7CF2A76AA76004503CF /* StockItemCell.swift in Sources */,
 				066CE7AE2A7671E2004503CF /* NetworkManager.swift in Sources */,
 				066CE7D62A77CA9D004503CF /* DetailPageController.swift in Sources */,
+				066E85512A8A61D6000A8A82 /* SegmentioBuilder.swift in Sources */,
 				0635E5902A84F824007C11B3 /* NewsCoordinator.swift in Sources */,
 				0635E5922A863345007C11B3 /* AppFlow.swift in Sources */,
 				0635E58E2A84F817007C11B3 /* MarketCoordinator.swift in Sources */,
@@ -600,6 +619,7 @@
 				0635E5822A84F7B5007C11B3 /* MarketBaseCoordinator.swift in Sources */,
 				0635E51E2A78F233007C11B3 /* Constants.swift in Sources */,
 				06DE53872A72E78D00358718 /* SceneDelegate.swift in Sources */,
+				066E85572A8A74DE000A8A82 /* BasketPageController.swift in Sources */,
 				0635E52E2A791A3A007C11B3 /* PopUpCell.swift in Sources */,
 				0635E5702A83A0CD007C11B3 /* Coordinator.swift in Sources */,
 				0635E5722A83A184007C11B3 /* TabBarBaseCoordinator.swift in Sources */,
