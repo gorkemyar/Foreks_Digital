@@ -1,8 +1,10 @@
 import Foundation
 
+
+
 struct Stock: Codable, Identifiable{
     var id: String {
-        return cod
+        return tke
     }
     let gro: String
     let cod: String
@@ -42,9 +44,8 @@ struct Page: Codable{
     }
 }
 
-
-
 struct Segment{
     let key: String
+    let search: [Stock]
     var value: [StockDetailed]
 }

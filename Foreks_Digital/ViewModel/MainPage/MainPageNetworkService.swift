@@ -20,13 +20,13 @@ final class MainPageNetworkService{
     }
     
     
-    func getMainPageStocks(fields: [String], stocks: [Stock], sd: [StockDetailed], completion: @escaping ([StockDetailed]) -> Void){
+    func getMainPageStocks(fields: [String], stocks: [any Identifiable], sd: [StockDetailed], completion: @escaping ([StockDetailed]) -> Void){
         
         var arr: [StockDetailed] = []
         let dg = DispatchGroup()
-        for stock:Stock in stocks{
+        for stock in stocks{
             dg.enter()
-            self.getStockDetailed(stockName: stock.tke, fields: fields){
+            self.getStockDetailed(stockName: stock.id as! String, fields: fields){
                 result in
                 switch result{
                     case .success(let data):

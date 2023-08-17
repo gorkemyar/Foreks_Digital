@@ -24,16 +24,18 @@ class MainPageController: UIViewController, MainPageBaseCoordinated, Storyboarda
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.tabBarController?.tabBar.isHidden = false
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
+
     
     
     private func setupViewModel(){
-        viewModel.page.bind{ [weak self] res in
+        viewModel.mainPage.bind{ [weak self] res in
             DispatchQueue.main.async {
                 self?.tableView.tableView.reloadData()
             }
@@ -64,9 +66,6 @@ class MainPageController: UIViewController, MainPageBaseCoordinated, Storyboarda
             DispatchQueue.main.async {
                 if (self?.viewModel.segments.value != nil){
                     self?.tableView.data = self?.viewModel.segments.value![res].value
-                    self?.tableView.tableView.reloadData()
-                    print("hello")
-                    
                 }
             }
             
@@ -80,9 +79,9 @@ extension MainPageController{
         sembolBar.setClick(newClick: popupAppear)
     }
     func popupAppear(whichField: Int, pos: CGRect) {
-        self.popUp = PopUp(frame: self.view.frame, position: pos, data: viewModel.page.value?.mainPageSearches ?? [])
+        self.popUp = PopUp(frame: self.view.frame, position: pos, data: viewModel.mainPage.value?.mainPageSearches ?? [])
         self.popUp.click = {(idx: Int) -> Void in
-            let field: SearchTypes = self.viewModel.page.value!.mainPageSearches[idx]
+            let field: SearchTypes = self.viewModel.mainPage.value!.mainPageSearches[idx]
             self.viewModel.changeField(field: field, whichField: whichField);
             self.outsideClick();
         }
@@ -104,8 +103,7 @@ extension MainPageController: CellTapped{
 
 extension MainPageController: BasketBarDelegate{
     func clickButton() {
-        let data: [String: Any] = ["stocks": self.viewModel.page.value?.mainPageStocks as Any]
-        coordinator?.moveTo(flow: .main(.basketScreen), userData: data)
+        coordinator?.moveTo(flow: .main(.basketScreen), userData: nil)
     }
     func changeSegment(index: Int){
         viewModel.selectedSegment.value = index

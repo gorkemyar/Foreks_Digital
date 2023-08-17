@@ -5,10 +5,12 @@ class MainPageCoordinator: MainPageBaseCoordinator {
     var parentCoordinator: TabBarBaseCoordinator?
     
     lazy var rootViewController: UIViewController = UIViewController()
+    let viewModel = MainPageViewModel()
+    
     
     func start() -> UIViewController {
         let vc = MainPageController.instantiate(name: "Main")
-        vc.viewModel = MainPageViewModel()
+        vc.viewModel = viewModel
         vc.coordinator = self
         rootViewController = UINavigationController(rootViewController: vc)
         return rootViewController
@@ -46,9 +48,7 @@ class MainPageCoordinator: MainPageBaseCoordinator {
     func goToBasketScreen(data: [String: Any]?){
         let basketVC = BasketPageController.instantiate(name: "Basket")
         basketVC.coordinator = self
-        if (data != nil){
-            basketVC.data = data!["stocks"] as? [Stock] ?? []
-        }
+        basketVC.viewModel = viewModel
         navigationRootViewController?.pushViewController(basketVC, animated: true)
     }
     
