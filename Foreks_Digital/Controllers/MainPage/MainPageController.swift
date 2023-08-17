@@ -9,13 +9,14 @@ class MainPageController: UIViewController, MainPageBaseCoordinated, Storyboarda
     @IBOutlet weak var tableView: StockTable!
     @IBOutlet var sembolBar: SembolBar!
     @IBOutlet weak var basketBar: BasketBar!
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
         tableView.delegate = self
         basketBar.delegate = self
+        basketBar.segments = self.viewModel.segments.value ?? []
+        basketBar.segmentio.selectedSegmentioIndex = viewModel.selectedSegment.value
         setButtonClick()
         setupViewModel()
     }
@@ -37,10 +38,14 @@ class MainPageController: UIViewController, MainPageBaseCoordinated, Storyboarda
                 self?.tableView.tableView.reloadData()
             }
         }
-        viewModel.stocks.bind{ [weak self] res in
+        viewModel.segments.bind{ [weak self] res in
             DispatchQueue.main.async {
-                self?.tableView.data = res
-                self?.tableView.tableView.reloadData()
+                if res != nil {
+                    self?.basketBar.segmentioSetup()
+                    self?.tableView.data = res![self?.viewModel.selectedSegment.value ?? 0].value
+                    self?.basketBar.segments = res!
+                    self?.tableView.tableView.reloadData()
+                }
             }
         }
         viewModel.field1.bind{ [weak self] res in
@@ -54,6 +59,17 @@ class MainPageController: UIViewController, MainPageBaseCoordinated, Storyboarda
                 self?.sembolBar.button2.setTitleWithPadding(field: res.name)
                 self?.tableView.field2 = res
             }
+        }
+        viewModel.selectedSegment.bind{ [weak self] res in
+            DispatchQueue.main.async {
+                if (self?.viewModel.segments.value != nil){
+                    self?.tableView.data = self?.viewModel.segments.value![res].value
+                    self?.tableView.tableView.reloadData()
+                    print("hello")
+                    
+                }
+            }
+            
         }
     }
 }
@@ -86,8 +102,15 @@ extension MainPageController: CellTapped{
     }
 }
 
-extension MainPageController: AddButtonClicked{
+extension MainPageController: BasketBarDelegate{
     func clickButton() {
-        coordinator?.moveTo(flow: .main(.basketScreen), userData: nil)
+        let data: [String: Any] = ["stocks": self.viewModel.page.value?.mainPageStocks as Any]
+        coordinator?.moveTo(flow: .main(.basketScreen), userData: data)
+    }
+    func changeSegment(index: Int){
+        viewModel.selectedSegment.value = index
     }
 }
+
+
+

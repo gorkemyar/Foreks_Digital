@@ -3,7 +3,8 @@ import Segmentio
 
 @IBDesignable class BasketBar: Component {
 
-    var delegate: AddButtonClicked?
+    var delegate: BasketBarDelegate?
+    var segments: [Segment] = []
     
     @IBOutlet weak var segmentio: Segmentio!
     @IBOutlet weak var addButton: UIButton!
@@ -13,15 +14,14 @@ import Segmentio
     }
     override func setup(){
         super.setup()
-        segmentioSetup()
         buttonSetup()
     }
     
     
-    private func segmentioSetup(){
-        SegmentioBuilder.buildSegmentioView(segmentioView: segmentio, segmentioStyle: SegmentioStyle.onlyLabel)
+    func segmentioSetup(){
+        SegmentioBuilder.buildSegmentioView(segmentioView: segmentio, segmentioStyle: SegmentioStyle.onlyLabel, segments: segmentioContent())
         segmentio.valueDidChange = { [weak self] item, segmentIndex in
-            print(segmentIndex)
+            self?.delegate?.changeSegment(index: segmentIndex)
         }
     }
     
@@ -30,8 +30,19 @@ import Segmentio
         addButton.setImage(image, for: .normal)
         addButton.tintColor = Constants.colors.yellow
     }
+    
+    private func segmentioContent() -> [SegmentioItem] {
+        var content: [SegmentioItem] = []
+        for segment in segments {
+            content.append(SegmentioItem(title: segment.key, image: nil))
+        }
+        
+        return content
+    }
 }
 
-protocol AddButtonClicked{
+protocol BasketBarDelegate{
     func clickButton();
+    func changeSegment(index: Int);
 }
+

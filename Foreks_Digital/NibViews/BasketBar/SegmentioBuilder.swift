@@ -11,24 +11,15 @@ struct SegmentioBuilder {
         )
     }
     
-    static func buildSegmentioView(segmentioView: Segmentio, segmentioStyle: SegmentioStyle, segmentioPosition: SegmentioPosition = .fixed(maxVisibleItems: 3)) {
+    static func buildSegmentioView(segmentioView: Segmentio, segmentioStyle: SegmentioStyle, segments: [SegmentioItem], segmentioPosition: SegmentioPosition = .fixed(maxVisibleItems: 3)) {
         segmentioView.setup(
-            content: segmentioContent(),
+            content: segments,
             style: segmentioStyle,
             options: segmentioOptions(segmentioStyle: segmentioStyle, segmentioPosition: segmentioPosition)
         )
     }
     
-    private static func segmentioContent() -> [SegmentioItem] {
-        return [
-            SegmentioItem(title: "Tornado", image: nil),
-            SegmentioItem(title: "Earthquakes", image: nil),
-            SegmentioItem(title: "Extreme heat", image: nil),
-            SegmentioItem(title: "Eruption", image: nil),
-            SegmentioItem(title: "Floods", image: nil),
-            SegmentioItem(title: "Wildfires", image: nil)
-        ]
-    }
+
     
     private static func segmentioOptions(segmentioStyle: SegmentioStyle, segmentioPosition: SegmentioPosition = .fixed(maxVisibleItems: 3)) -> SegmentioOptions {
         var imageContentMode = UIView.ContentMode.center

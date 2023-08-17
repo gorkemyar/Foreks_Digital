@@ -164,5 +164,145 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A44A3FA9-22B3-4770-9CF9-D55AF2787267"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Foreks_Digital/ViewModel/MainPage/MainPageViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "loadStocks()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2939815E-7818-425F-82AD-FC00702E270F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Foreks_Digital/Controllers/BasketPage/BasketPageController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "6"
+            endingLineNumber = "6"
+            landmarkName = "BasketPageController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "2939815E-7818-425F-82AD-FC00702E270F - 338258d2f53d8dce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Foreks_Digital.BasketPageController.coordinator.getter : Swift.Optional&lt;Foreks_Digital.MainPageBaseCoordinator&gt;"
+                  moduleName = "Foreks_Digital"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/foreks/Coding/Foreks_Digital/Foreks_Digital/Controllers/BasketPage/BasketPageController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "7"
+                  endingLineNumber = "7"
+                  offsetFromSymbolStart = "103">
+               </Location>
+               <Location
+                  uuid = "2939815E-7818-425F-82AD-FC00702E270F - b05bf314acd915fa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Foreks_Digital.BasketPageController.coordinator.setter : Swift.Optional&lt;Foreks_Digital.MainPageBaseCoordinator&gt;"
+                  moduleName = "Foreks_Digital"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/foreks/Coding/Foreks_Digital/Foreks_Digital/Controllers/BasketPage/BasketPageController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "7"
+                  endingLineNumber = "7"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "2939815E-7818-425F-82AD-FC00702E270F - 7c119a024851bbcb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Foreks_Digital.BasketPageController.coordinator.modify : Swift.Optional&lt;Foreks_Digital.MainPageBaseCoordinator&gt;"
+                  moduleName = "Foreks_Digital"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/foreks/Coding/Foreks_Digital/Foreks_Digital/Controllers/BasketPage/BasketPageController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "7"
+                  endingLineNumber = "7"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "2939815E-7818-425F-82AD-FC00702E270F - 38ca1eadfc5d59e3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Foreks_Digital.BasketPageController.coordinator.modify : Swift.Optional&lt;Foreks_Digital.MainPageBaseCoordinator&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Foreks_Digital"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/foreks/Coding/Foreks_Digital/Foreks_Digital/Controllers/BasketPage/BasketPageController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "7"
+                  endingLineNumber = "7"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  uuid = "2939815E-7818-425F-82AD-FC00702E270F - 3822125a676a6836"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Foreks_Digital.BasketPageController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Foreks_Digital.BasketPageController"
+                  moduleName = "Foreks_Digital"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/foreks/Coding/Foreks_Digital/Foreks_Digital/Controllers/BasketPage/BasketPageController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "7"
+                  endingLineNumber = "7"
+                  offsetFromSymbolStart = "239">
+               </Location>
+               <Location
+                  uuid = "2939815E-7818-425F-82AD-FC00702E270F - 7c8a15c2882aa678"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Foreks_Digital.BasketPageController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Foreks_Digital.BasketPageController&gt;"
+                  moduleName = "Foreks_Digital"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/foreks/Coding/Foreks_Digital/Foreks_Digital/Controllers/BasketPage/BasketPageController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "7"
+                  endingLineNumber = "7"
+                  offsetFromSymbolStart = "196">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9789F2AC-CD2B-422E-A6E2-A1E88EC47D48"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Foreks_Digital/Controllers/BasketPage/BasketPageController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

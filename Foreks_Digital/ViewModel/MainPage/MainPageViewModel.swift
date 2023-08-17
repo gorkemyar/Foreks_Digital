@@ -11,10 +11,10 @@ class MainPageViewModel {
     
     private var timer: Timer?
     private(set) var page: Observable<Page?> = Observable(nil)
-    private(set) var stocks: Observable<[StockDetailed]> = Observable([])
     private(set) var field1: Observable<SearchTypes> = Observable(SearchTypes(name: "Son", key: "las"))
     private(set) var field2: Observable<SearchTypes> = Observable(SearchTypes(name: "%Fark", key: "pdd"))
-    
+    private(set) var segments: Observable<[Segment]?> = Observable(nil)
+    private(set) var selectedSegment: Observable<Int> = Observable(0)
 
     func loadMainPage() {
         mainPageNetworkService.getMainPage() { result in
@@ -33,8 +33,12 @@ class MainPageViewModel {
         self.mainPageNetworkService.getMainPageStocks(
             fields: fields,
             stocks: self.page.value?.mainPageStocks ?? [],
-            sd: self.stocks.value){stocks in
-                self.stocks.value = stocks
+            sd: self.segments.value?[0].value ?? []){stocks in
+                if (self.segments.value == nil){
+                    self.segments.value = [Segment(key: "Default", value: stocks)]
+                }else{
+                    self.segments.value![0].value = stocks
+                }
         }
     }
 

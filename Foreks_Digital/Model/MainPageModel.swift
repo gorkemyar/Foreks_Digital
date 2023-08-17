@@ -44,3 +44,7 @@ struct Page: Codable{
 
 
 
+struct Segment{
+    let key: String
+    var value: [StockDetailed]
+}

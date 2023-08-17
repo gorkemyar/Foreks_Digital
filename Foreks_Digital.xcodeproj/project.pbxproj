@@ -51,6 +51,8 @@
 		066E85512A8A61D6000A8A82 /* SegmentioBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E85502A8A61D6000A8A82 /* SegmentioBuilder.swift */; };
 		066E85542A8A74A5000A8A82 /* Basket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 066E85532A8A74A5000A8A82 /* Basket.storyboard */; };
 		066E85572A8A74DE000A8A82 /* BasketPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E85562A8A74DE000A8A82 /* BasketPageController.swift */; };
+		066E855F2A8B6B59000A8A82 /* BasketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E855D2A8B6B59000A8A82 /* BasketCell.swift */; };
+		066E85602A8B6B59000A8A82 /* BasketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066E855E2A8B6B59000A8A82 /* BasketCell.xib */; };
 		06DE53852A72E78D00358718 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53842A72E78D00358718 /* AppDelegate.swift */; };
 		06DE53872A72E78D00358718 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53862A72E78D00358718 /* SceneDelegate.swift */; };
 		06DE53892A72E78D00358718 /* MainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53882A72E78D00358718 /* MainPageController.swift */; };
@@ -105,6 +107,8 @@
 		066E85502A8A61D6000A8A82 /* SegmentioBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentioBuilder.swift; sourceTree = "<group>"; };
 		066E85532A8A74A5000A8A82 /* Basket.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Basket.storyboard; sourceTree = "<group>"; };
 		066E85562A8A74DE000A8A82 /* BasketPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketPageController.swift; sourceTree = "<group>"; };
+		066E855D2A8B6B59000A8A82 /* BasketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketCell.swift; sourceTree = "<group>"; };
+		066E855E2A8B6B59000A8A82 /* BasketCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketCell.xib; sourceTree = "<group>"; };
 		06DE53812A72E78D00358718 /* Foreks_Digital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foreks_Digital.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DE53842A72E78D00358718 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06DE53862A72E78D00358718 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 		0635E5372A7A3659007C11B3 /* NibViews */ = {
 			isa = PBXGroup;
 			children = (
+				066E85582A8B664E000A8A82 /* BasketCell */,
 				066E85472A86404B000A8A82 /* BasketBar */,
 				0635E5492A7B861A007C11B3 /* Component.swift */,
 				0635E55B2A7C3F13007C11B3 /* StockTable */,
@@ -417,6 +422,15 @@
 			path = BasketPage;
 			sourceTree = "<group>";
 		};
+		066E85582A8B664E000A8A82 /* BasketCell */ = {
+			isa = PBXGroup;
+			children = (
+				066E855D2A8B6B59000A8A82 /* BasketCell.swift */,
+				066E855E2A8B6B59000A8A82 /* BasketCell.xib */,
+			);
+			path = BasketCell;
+			sourceTree = "<group>";
+		};
 		06DE53782A72E78D00358718 = {
 			isa = PBXGroup;
 			children = (
@@ -526,6 +540,7 @@
 				066E85542A8A74A5000A8A82 /* Basket.storyboard in Resources */,
 				06DE53912A72E79100358718 /* LaunchScreen.storyboard in Resources */,
 				0635E53C2A7A3799007C11B3 /* SembolBar.xib in Resources */,
+				066E85602A8B6B59000A8A82 /* BasketCell.xib in Resources */,
 				0635E56C2A823EE1007C11B3 /* Detail.storyboard in Resources */,
 				066CE7D02A76AA76004503CF /* StockItemCell.xib in Resources */,
 				0635E55F2A7C3F43007C11B3 /* StockTable.xib in Resources */,
@@ -623,6 +638,7 @@
 				0635E52E2A791A3A007C11B3 /* PopUpCell.swift in Sources */,
 				0635E5702A83A0CD007C11B3 /* Coordinator.swift in Sources */,
 				0635E5722A83A184007C11B3 /* TabBarBaseCoordinator.swift in Sources */,
+				066E855F2A8B6B59000A8A82 /* BasketCell.swift in Sources */,
 				066CE7B32A76725A004503CF /* DetailedModel.swift in Sources */,
 				0635E55D2A7C3F24007C11B3 /* StockTable.swift in Sources */,
 			);

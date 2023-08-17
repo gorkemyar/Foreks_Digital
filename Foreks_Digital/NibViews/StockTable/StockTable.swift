@@ -25,6 +25,7 @@ extension StockTable: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Identifiers.stockCell, for: indexPath) as! StockItemCell
         let stockItem = data![indexPath.row]
         cell.fillStock(stock: stockItem, field1: field1?.key ?? "las", field2: field2?.key ?? "pdd")
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none;
         return cell
     }
     

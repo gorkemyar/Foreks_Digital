@@ -14,6 +14,7 @@ struct Constants{
         static let stockCell: String = "StockItemCell"
         static let segueDetail: String = "showDetail"
         static let popupCell: String = "PopUpCell"
+        static let basketCell: String = "BasketCell"
     }
     
     struct edgeInsets {

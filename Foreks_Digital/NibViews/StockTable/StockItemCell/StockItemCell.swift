@@ -24,25 +24,6 @@ class StockItemCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
-    private func dashedLine(){
-          let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0.7).cgColor
-          let shapeLayer:CAShapeLayer = CAShapeLayer()
-          let frameSize = self.frame.size
-          let fsize = UIScreen.main.bounds
-          let shapeRect = CGRect(x: 0, y: 0, width: fsize.width/1.1, height: 0)
-          
-          shapeLayer.bounds = shapeRect
-          shapeLayer.position = CGPoint(x: fsize.width/2, y: frameSize.height)
-          shapeLayer.fillColor = UIColor.clear.cgColor
-          shapeLayer.strokeColor = color
-          shapeLayer.lineWidth = 1
-          shapeLayer.lineJoin = CAShapeLayerLineJoin.round
-          shapeLayer.lineDashPattern = [2,4]
-          shapeLayer.path = UIBezierPath(roundedRect: CGRect(x: 0, y: shapeRect.height, width: shapeRect.width, height: 0), cornerRadius: 0).cgPath
-          
-          self.layer.addSublayer(shapeLayer)
-    }
 }
 
 extension StockItemCell{
