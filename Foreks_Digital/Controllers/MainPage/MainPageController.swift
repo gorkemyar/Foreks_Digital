@@ -16,7 +16,7 @@ class MainPageController: UIViewController, MainPageBaseCoordinated, Storyboarda
         tableView.delegate = self
         basketBar.delegate = self
         basketBar.segments = self.viewModel.segments.value ?? []
-        basketBar.segmentio.selectedSegmentioIndex = viewModel.selectedSegment.value
+        basketBar.segmentio.selectedSegmentioIndex = viewModel.selectedSegment
         setButtonClick()
         setupViewModel()
     }
@@ -44,7 +44,7 @@ class MainPageController: UIViewController, MainPageBaseCoordinated, Storyboarda
             DispatchQueue.main.async {
                 if res != nil {
                     self?.basketBar.segmentioSetup()
-                    self?.tableView.data = res![self?.viewModel.selectedSegment.value ?? 0].value
+                    self?.tableView.data = res![self?.viewModel.selectedSegment ?? 0].value
                     self?.basketBar.segments = res!
                     self?.tableView.tableView.reloadData()
                 }
@@ -61,14 +61,6 @@ class MainPageController: UIViewController, MainPageBaseCoordinated, Storyboarda
                 self?.sembolBar.button2.setTitleWithPadding(field: res.name)
                 self?.tableView.field2 = res
             }
-        }
-        viewModel.selectedSegment.bind{ [weak self] res in
-            DispatchQueue.main.async {
-                if (self?.viewModel.segments.value != nil){
-                    self?.tableView.data = self?.viewModel.segments.value![res].value
-                }
-            }
-            
         }
     }
 }
@@ -106,7 +98,7 @@ extension MainPageController: BasketBarDelegate{
         coordinator?.moveTo(flow: .main(.basketScreen), userData: nil)
     }
     func changeSegment(index: Int){
-        viewModel.selectedSegment.value = index
+        viewModel.selectedSegment = index
     }
 }
 

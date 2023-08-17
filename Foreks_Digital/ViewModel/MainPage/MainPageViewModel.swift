@@ -15,7 +15,7 @@ class MainPageViewModel {
     private(set) var field1: Observable<SearchTypes> = Observable(SearchTypes(name: "Son", key: "las"))
     private(set) var field2: Observable<SearchTypes> = Observable(SearchTypes(name: "%Fark", key: "pdd"))
     private(set) var segments: Observable<[Segment]?> = Observable(nil)
-    private(set) var selectedSegment: Observable<Int> = Observable(0)
+    var selectedSegment: Int = 0
 
     func loadMainPage() {
         mainPageNetworkService.getMainPage() { result in
@@ -35,14 +35,14 @@ class MainPageViewModel {
             return;
         }
         let fields: [String] = [self.field1.value.key, self.field2.value.key]
-        let stocks: [Stock] = self.segments.value![self.selectedSegment.value].search
-        let sd: [StockDetailed] = self.segments.value![self.selectedSegment.value].value
+        let stocks: [Stock] = self.segments.value![self.selectedSegment].search
+        let sd: [StockDetailed] = self.segments.value![self.selectedSegment].value
         
         self.mainPageNetworkService.getMainPageStocks(
             fields: fields,
             stocks: stocks,
             sd: sd){stocks in
-                self.segments.value![self.selectedSegment.value].value = stocks
+                self.segments.value![self.selectedSegment].value = stocks
         }
     }
 
