@@ -13,8 +13,8 @@ class BasketPageController: UIViewController, MainPageBaseCoordinated , Storyboa
     
     @IBAction func createList(_ sender: Any) {
         let key: String = "Stock List-" + String(viewModel.segments.value?.count ?? 0)
-        let newSegment: Segment = Segment(key: key, search: stockList, value: [])
-        viewModel.segments.value!.append(newSegment)
+        let newSegment: Segment = Segment(key: key, search: stockList)
+        viewModel.appendNewSegment(segment: newSegment)
         stockList = []
         coordinator?.resetToRoot(animated: true)
         

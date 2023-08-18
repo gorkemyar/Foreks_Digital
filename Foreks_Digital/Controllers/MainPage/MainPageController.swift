@@ -15,7 +15,6 @@ class MainPageController: UIViewController, MainPageBaseCoordinated, Storyboarda
         navigationController?.setNavigationBarHidden(true, animated: false)
         tableView.delegate = self
         basketBar.delegate = self
-        basketBar.segments = self.viewModel.segments.value ?? []
         basketBar.segmentio.selectedSegmentioIndex = viewModel.selectedSegment
         setButtonClick()
         setupViewModel()
@@ -25,11 +24,13 @@ class MainPageController: UIViewController, MainPageBaseCoordinated, Storyboarda
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = false
+        viewModel.startLoadingDataTimer()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        viewModel.stopTimer()
     }
 
     
@@ -40,14 +41,10 @@ class MainPageController: UIViewController, MainPageBaseCoordinated, Storyboarda
                 self?.tableView.tableView.reloadData()
             }
         }
-        viewModel.segments.bind{ [weak self] res in
+        viewModel.currentStocks.bind{ [weak self] res in
             DispatchQueue.main.async {
-                if res != nil {
-                    self?.basketBar.segmentioSetup()
-                    self?.tableView.data = res![self?.viewModel.selectedSegment ?? 0].value
-                    self?.basketBar.segments = res!
-                    self?.tableView.tableView.reloadData()
-                }
+                self?.tableView.data = res
+                self?.tableView.tableView.reloadData()
             }
         }
         viewModel.field1.bind{ [weak self] res in
@@ -62,6 +59,13 @@ class MainPageController: UIViewController, MainPageBaseCoordinated, Storyboarda
                 self?.tableView.field2 = res
             }
         }
+        viewModel.segments.bind{ [weak self] res in
+            DispatchQueue.main.async {
+                self?.basketBar.segments = res ?? []
+                self?.basketBar.segmentioSetup()
+            }
+        }
+        
     }
 }
 
@@ -98,7 +102,12 @@ extension MainPageController: BasketBarDelegate{
         coordinator?.moveTo(flow: .main(.basketScreen), userData: nil)
     }
     func changeSegment(index: Int){
-        viewModel.selectedSegment = index
+        viewModel.stopTimer()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
+            self.viewModel.currentStocks.value = nil
+            self.viewModel.selectedSegment = index
+            self.viewModel.startLoadingDataTimer()
+        }
     }
 }
 
