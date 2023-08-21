@@ -53,6 +53,8 @@
 		066E85572A8A74DE000A8A82 /* BasketPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E85562A8A74DE000A8A82 /* BasketPageController.swift */; };
 		066E855F2A8B6B59000A8A82 /* BasketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E855D2A8B6B59000A8A82 /* BasketCell.swift */; };
 		066E85602A8B6B59000A8A82 /* BasketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066E855E2A8B6B59000A8A82 /* BasketCell.xib */; };
+		066E856B2A93A475000A8A82 /* SegmentNamePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E856A2A93A475000A8A82 /* SegmentNamePopUp.swift */; };
+		066E856D2A93A48E000A8A82 /* SegmentNamePopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066E856C2A93A48E000A8A82 /* SegmentNamePopUp.xib */; };
 		06DE53852A72E78D00358718 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53842A72E78D00358718 /* AppDelegate.swift */; };
 		06DE53872A72E78D00358718 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53862A72E78D00358718 /* SceneDelegate.swift */; };
 		06DE53892A72E78D00358718 /* MainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53882A72E78D00358718 /* MainPageController.swift */; };
@@ -109,6 +111,8 @@
 		066E85562A8A74DE000A8A82 /* BasketPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketPageController.swift; sourceTree = "<group>"; };
 		066E855D2A8B6B59000A8A82 /* BasketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketCell.swift; sourceTree = "<group>"; };
 		066E855E2A8B6B59000A8A82 /* BasketCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketCell.xib; sourceTree = "<group>"; };
+		066E856A2A93A475000A8A82 /* SegmentNamePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentNamePopUp.swift; sourceTree = "<group>"; };
+		066E856C2A93A48E000A8A82 /* SegmentNamePopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentNamePopUp.xib; sourceTree = "<group>"; };
 		06DE53812A72E78D00358718 /* Foreks_Digital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foreks_Digital.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DE53842A72E78D00358718 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06DE53862A72E78D00358718 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -180,9 +184,10 @@
 		0635E5372A7A3659007C11B3 /* NibViews */ = {
 			isa = PBXGroup;
 			children = (
+				066E85692A93A42A000A8A82 /* SegmentNamePopUp */,
+				0635E5492A7B861A007C11B3 /* Component.swift */,
 				066E85582A8B664E000A8A82 /* BasketCell */,
 				066E85472A86404B000A8A82 /* BasketBar */,
-				0635E5492A7B861A007C11B3 /* Component.swift */,
 				0635E55B2A7C3F13007C11B3 /* StockTable */,
 				0635E5382A7A36E1007C11B3 /* SembolBar */,
 				0635E53F2A7A523C007C11B3 /* PopUp */,
@@ -431,6 +436,15 @@
 			path = BasketCell;
 			sourceTree = "<group>";
 		};
+		066E85692A93A42A000A8A82 /* SegmentNamePopUp */ = {
+			isa = PBXGroup;
+			children = (
+				066E856A2A93A475000A8A82 /* SegmentNamePopUp.swift */,
+				066E856C2A93A48E000A8A82 /* SegmentNamePopUp.xib */,
+			);
+			path = SegmentNamePopUp;
+			sourceTree = "<group>";
+		};
 		06DE53782A72E78D00358718 = {
 			isa = PBXGroup;
 			children = (
@@ -541,6 +555,7 @@
 				06DE53912A72E79100358718 /* LaunchScreen.storyboard in Resources */,
 				0635E53C2A7A3799007C11B3 /* SembolBar.xib in Resources */,
 				066E85602A8B6B59000A8A82 /* BasketCell.xib in Resources */,
+				066E856D2A93A48E000A8A82 /* SegmentNamePopUp.xib in Resources */,
 				0635E56C2A823EE1007C11B3 /* Detail.storyboard in Resources */,
 				066CE7D02A76AA76004503CF /* StockItemCell.xib in Resources */,
 				0635E55F2A7C3F43007C11B3 /* StockTable.xib in Resources */,
@@ -626,6 +641,7 @@
 				06DE53852A72E78D00358718 /* AppDelegate.swift in Sources */,
 				0635E54A2A7B861A007C11B3 /* Component.swift in Sources */,
 				0635E5542A7C2114007C11B3 /* Observable.swift in Sources */,
+				066E856B2A93A475000A8A82 /* SegmentNamePopUp.swift in Sources */,
 				0635E5632A80FFB5007C11B3 /* ExchangeController.swift in Sources */,
 				066CE7D92A77E3CF004503CF /* Extensions.swift in Sources */,
 				0635E58A2A84F7F5007C11B3 /* ExchangeCoordinator.swift in Sources */,

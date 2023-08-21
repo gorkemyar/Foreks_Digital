@@ -5,6 +5,7 @@ class BasketPageController: UIViewController, MainPageBaseCoordinated , Storyboa
     var data: [Stock]?
     var delegate: BasketPageDelegate?
     var coordinator: MainPageBaseCoordinator?
+    private var segmentNamePopUp: SegmentNamePopUp!
     
     var stockList: [Stock] = []
     
@@ -18,6 +19,8 @@ class BasketPageController: UIViewController, MainPageBaseCoordinated , Storyboa
         delegate?.addSegment(segment: segment)
         stockList = []
         coordinator?.resetToRoot(animated: true)
+        
+        //segmentNamePopUpAppear()
         
         
     }
@@ -67,7 +70,24 @@ extension BasketPageController{
     }
 }
 
+extension BasketPageController{
+    func segmentNamePopUpAppear(){
+        self.segmentNamePopUp = SegmentNamePopUp(frame: self.view.frame)
+        
+        
+        self.segmentNamePopUp.backController.addTarget(self, action: #selector(outsideClick), for: .touchUpInside)
+        self.view.addSubview(segmentNamePopUp)
+    }
+    
+    @objc func outsideClick(){
+        self.segmentNamePopUp.removeFromSuperview()
+    }
+}
+
 
 protocol BasketPageDelegate{
     func addSegment(segment: Segment)
 }
+
+
+
