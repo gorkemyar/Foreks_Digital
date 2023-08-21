@@ -2,7 +2,8 @@ import UIKit
 
 class BasketPageController: UIViewController, MainPageBaseCoordinated , Storyboardable{
 
-    var viewModel: MainPageViewModel!
+    var data: [Stock]?
+    var delegate: BasketPageDelegate?
     var coordinator: MainPageBaseCoordinator?
     
     var stockList: [Stock] = []
@@ -12,11 +13,12 @@ class BasketPageController: UIViewController, MainPageBaseCoordinated , Storyboa
     @IBOutlet weak var createButton: UIButton!
     
     @IBAction func createList(_ sender: Any) {
-        let key: String = "Stock List-" + String(viewModel.segments.value?.count ?? 0)
-        let newSegment: Segment = Segment(key: key, search: stockList)
-        viewModel.appendNewSegment(segment: newSegment)
+        let key: String = "Stock List-1"
+        let segment: Segment = Segment(key: key, search: stockList)
+        delegate?.addSegment(segment: segment)
         stockList = []
         coordinator?.resetToRoot(animated: true)
+        
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -36,12 +38,12 @@ class BasketPageController: UIViewController, MainPageBaseCoordinated , Storyboa
 }
 extension BasketPageController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.mainPage.value?.mainPageStocks.count ?? 0
+        return data?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Identifiers.basketCell, for: indexPath) as! BasketCell
-        let stockItem = viewModel.mainPage.value!.mainPageStocks[indexPath.row]
+        let stockItem = data![indexPath.row]
         cell.fillStock(stock: stockItem, add: addStock, remove: removeStock)
         cell.selectionStyle = UITableViewCell.SelectionStyle.none;
         return cell
@@ -63,4 +65,9 @@ extension BasketPageController{
             self.createButton.isEnabled = false
         }
     }
+}
+
+
+protocol BasketPageDelegate{
+    func addSegment(segment: Segment)
 }

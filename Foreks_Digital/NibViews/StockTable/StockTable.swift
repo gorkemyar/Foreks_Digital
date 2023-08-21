@@ -2,7 +2,7 @@ import UIKit
 
 class StockTable: Component{
     
-    var delegate: CellTapped!
+    var delegate: StockTableDelegate!
     var data: [StockDetailed]?
     var field1: SearchTypes?
     var field2: SearchTypes?
@@ -41,12 +41,12 @@ extension StockTable: UITableViewDataSource {
 extension StockTable: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (delegate != nil){
-            delegate.cellTapped(indexOfCell: indexPath.row)
+            delegate.goToDetailPage(indexOfCell: indexPath.row)
         }
 
     }
 }
 
-protocol CellTapped {
-    func cellTapped(indexOfCell: Int)
+protocol StockTableDelegate {
+    func goToDetailPage(indexOfCell: Int)
 }

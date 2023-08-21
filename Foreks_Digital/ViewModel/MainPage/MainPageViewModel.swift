@@ -2,10 +2,12 @@ import Foundation
 
 class MainPageViewModel {
     
-    init(){
+    init(coordinator: MainPageBaseCoordinator){
+        self.coordinator = coordinator
         loadMainPage()
     }
     
+    private var coordinator: MainPageBaseCoordinator
     private var mainPageNetworkService: MainPageNetworkService! = MainPageNetworkService()
     
     private var timer: Timer?
@@ -71,5 +73,32 @@ class MainPageViewModel {
     
     func appendNewSegment(segment: Segment){
         segments.value?.append(segment)
+    }
+}
+
+
+extension MainPageViewModel: StockTableDelegate{
+    func goToDetailPage(indexOfCell: Int) {
+        coordinator.moveTo(flow: .main(.detailScreen), userData: ["stock": self.currentStocks.value?[indexOfCell] as Any])
+    }
+}
+
+extension MainPageViewModel: BasketBarDelegate{
+    func clickButton() {
+        coordinator.moveTo(flow: .main(.basketScreen), userData: nil)
+    }
+    func changeSegment(index: Int){
+        self.stopTimer()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
+            self.currentStocks.value = nil
+            self.selectedSegment = index
+            self.startLoadingDataTimer()
+        }
+    }
+}
+
+extension MainPageViewModel: BasketPageDelegate{
+    func addSegment(segment: Segment) {
+        self.appendNewSegment(segment: segment)
     }
 }

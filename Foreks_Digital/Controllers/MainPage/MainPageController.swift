@@ -13,8 +13,8 @@ class MainPageController: UIViewController, MainPageBaseCoordinated, Storyboarda
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
-        tableView.delegate = self
-        basketBar.delegate = self
+        tableView.delegate = viewModel
+        basketBar.delegate = viewModel
         basketBar.segmentio.selectedSegmentioIndex = viewModel.selectedSegment
         setButtonClick()
         setupViewModel()
@@ -90,26 +90,3 @@ extension MainPageController{
         self.popUp.removeFromSuperview()
     }
 }
-
-extension MainPageController: CellTapped{
-    func cellTapped(indexOfCell: Int) {
-        coordinator?.moveTo(flow: .main(.detailScreen), userData: ["stock": self.tableView.data?[indexOfCell] as Any])
-    }
-}
-
-extension MainPageController: BasketBarDelegate{
-    func clickButton() {
-        coordinator?.moveTo(flow: .main(.basketScreen), userData: nil)
-    }
-    func changeSegment(index: Int){
-        viewModel.stopTimer()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
-            self.viewModel.currentStocks.value = nil
-            self.viewModel.selectedSegment = index
-            self.viewModel.startLoadingDataTimer()
-        }
-    }
-}
-
-
-

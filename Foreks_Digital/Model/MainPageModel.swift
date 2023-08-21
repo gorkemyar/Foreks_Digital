@@ -10,6 +10,10 @@ struct Stock: Codable, Identifiable{
     let cod: String
     let tke: String
     let def: String
+    
+    func copy() -> Stock{
+        return Stock(gro: gro, cod: cod, tke: tke, def: def)
+    }
 }
 
 struct StockDetailed: Codable, Identifiable{
