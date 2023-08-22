@@ -26,7 +26,7 @@
                 <constraint firstItem="jxV-Q5-W8d" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Bu8-91-nJw"/>
                 <constraint firstAttribute="bottom" secondItem="jxV-Q5-W8d" secondAttribute="bottom" id="Obs-gC-Bv8"/>
                 <constraint firstItem="jxV-Q5-W8d" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="fFZ-E9-aBm"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jxV-Q5-W8d" secondAttribute="trailing" id="vqs-wa-J6m"/>
+                <constraint firstAttribute="trailing" secondItem="jxV-Q5-W8d" secondAttribute="trailing" id="vqs-wa-J6m"/>
             </constraints>
             <point key="canvasLocation" x="51" y="21"/>
         </view>

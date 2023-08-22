@@ -14,15 +14,7 @@ class BasketPageController: UIViewController, MainPageBaseCoordinated , Storyboa
     @IBOutlet weak var createButton: UIButton!
     
     @IBAction func createList(_ sender: Any) {
-        let key: String = "Stock List-1"
-        let segment: Segment = Segment(key: key, search: stockList)
-        delegate?.addSegment(segment: segment)
-        stockList = []
-        coordinator?.resetToRoot(animated: true)
-        
-        //segmentNamePopUpAppear()
-        
-        
+        segmentNamePopUpAppear()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -74,7 +66,7 @@ extension BasketPageController{
     func segmentNamePopUpAppear(){
         self.segmentNamePopUp = SegmentNamePopUp(frame: self.view.frame)
         
-        
+        self.segmentNamePopUp.buttonClick = createSegment
         self.segmentNamePopUp.backController.addTarget(self, action: #selector(outsideClick), for: .touchUpInside)
         self.view.addSubview(segmentNamePopUp)
     }
@@ -82,12 +74,16 @@ extension BasketPageController{
     @objc func outsideClick(){
         self.segmentNamePopUp.removeFromSuperview()
     }
+    
+    func createSegment(name: String){
+        let segment: Segment = Segment(key: name, search: stockList)
+        delegate?.addSegment(segment: segment)
+        stockList = []
+        coordinator?.resetToRoot(animated: true)
+    }
 }
 
 
 protocol BasketPageDelegate{
     func addSegment(segment: Segment)
 }
-
-
-
