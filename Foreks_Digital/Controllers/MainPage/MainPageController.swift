@@ -15,7 +15,7 @@ class MainPageController: UIViewController, MainPageBaseCoordinated, Storyboarda
         navigationController?.setNavigationBarHidden(true, animated: false)
         tableView.delegate = viewModel
         basketBar.delegate = viewModel
-        basketBar.segmentio.selectedSegmentioIndex = viewModel.selectedSegment
+        basketBar.segmentio.selectedSegmentioIndex = viewModel.selectedSegment.value
         setButtonClick()
         setupViewModel()
     }
@@ -43,7 +43,7 @@ class MainPageController: UIViewController, MainPageBaseCoordinated, Storyboarda
         }
         viewModel.currentStocks.bind{ [weak self] res in
             DispatchQueue.main.async {
-                self?.tableView.data = res
+                self?.tableView.data = res[self?.viewModel.selectedSegment.value ?? 0]
                 self?.tableView.tableView.reloadData()
             }
         }
@@ -65,7 +65,12 @@ class MainPageController: UIViewController, MainPageBaseCoordinated, Storyboarda
                 self?.basketBar.segmentioSetup()
             }
         }
-        
+        viewModel.selectedSegment.bind{ [weak self] res in
+            DispatchQueue.main.async {
+                self?.tableView.data = self?.viewModel.currentStocks.value[res]
+                self?.tableView.tableView.reloadData()
+            }
+        }
     }
 }
 

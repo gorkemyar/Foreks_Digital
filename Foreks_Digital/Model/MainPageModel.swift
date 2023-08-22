@@ -14,6 +14,10 @@ struct Stock: Codable, Identifiable{
     func copy() -> Stock{
         return Stock(gro: gro, cod: cod, tke: tke, def: def)
     }
+    func toDetailed () -> StockDetailed{
+        var tmp: [String: String] = ["cod": cod, "gro": gro, "tke": tke, "def": def]
+        return StockDetailed(stockDict: tmp)
+    }
 }
 
 struct StockDetailed: Codable, Identifiable{
