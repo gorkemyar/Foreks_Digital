@@ -7,7 +7,6 @@ class MainPageController: UIViewController, MainPageBaseCoordinated, Storyboarda
     var stockTableView: StockTableController?
     var spinnerView: SpinnerViewController?
     private var popUp: PopUp!
-    
 
     @IBOutlet weak var mainView: UIView!
     @IBOutlet var sembolBar: SembolBar!
@@ -84,7 +83,6 @@ extension MainPageController{
 
 extension MainPageController{
     func startSpinnerView() {
-        print("deneme")
         spinnerView = SpinnerViewController()
 
         addChild(spinnerView!)
@@ -112,7 +110,5 @@ extension MainPageController{
         mainView.addSubview(stockTableView!.view)
         stockTableView!.didMove(toParent: self)
     }
-    
-    
-    
+
 }

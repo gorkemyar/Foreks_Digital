@@ -15,6 +15,7 @@ struct Constants{
         static let segueDetail: String = "showDetail"
         static let popupCell: String = "PopUpCell"
         static let basketCell: String = "BasketCell"
+        static let changeCell: String = "ChangeTableCell"
     }
     
     struct edgeInsets {
@@ -26,6 +27,8 @@ struct Constants{
         static let arrowup: UIImage = UIImage(systemName: "arrow.up")!
         static let arrowdown: UIImage = UIImage(systemName: "arrow.down")!
         static let plus: UIImage = UIImage(systemName: "plus")!
+        static let settings: UIImage = UIImage(systemName: "gearshape")!
+        static let minuscircle: UIImage = UIImage(systemName: "minus.circle.fill")!
     }
     
     struct colors {
@@ -38,3 +41,4 @@ struct Constants{
         static let lineGray = UIColor.gray.withAlphaComponent(0.12)
     }
 }
+

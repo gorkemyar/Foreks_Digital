@@ -55,6 +55,10 @@
 		066E856D2A93A48E000A8A82 /* SegmentNamePopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066E856C2A93A48E000A8A82 /* SegmentNamePopUp.xib */; };
 		066E85702A95ED47000A8A82 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E856F2A95ED47000A8A82 /* SpinnerViewController.swift */; };
 		066E85722A95F195000A8A82 /* StockTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E85712A95F195000A8A82 /* StockTableController.swift */; };
+		066E85752A96284B000A8A82 /* ChangeBasketPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E85742A96284B000A8A82 /* ChangeBasketPageController.swift */; };
+		066E85772A96289C000A8A82 /* ChangeBasket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 066E85762A96289C000A8A82 /* ChangeBasket.storyboard */; };
+		066E857A2A964D66000A8A82 /* ChangeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E85782A964D66000A8A82 /* ChangeTableCell.swift */; };
+		066E857B2A964D66000A8A82 /* ChangeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066E85792A964D66000A8A82 /* ChangeTableCell.xib */; };
 		06DE53852A72E78D00358718 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53842A72E78D00358718 /* AppDelegate.swift */; };
 		06DE53872A72E78D00358718 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53862A72E78D00358718 /* SceneDelegate.swift */; };
 		06DE53892A72E78D00358718 /* MainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53882A72E78D00358718 /* MainPageController.swift */; };
@@ -113,6 +117,10 @@
 		066E856C2A93A48E000A8A82 /* SegmentNamePopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentNamePopUp.xib; sourceTree = "<group>"; };
 		066E856F2A95ED47000A8A82 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		066E85712A95F195000A8A82 /* StockTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTableController.swift; sourceTree = "<group>"; };
+		066E85742A96284B000A8A82 /* ChangeBasketPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBasketPageController.swift; sourceTree = "<group>"; };
+		066E85762A96289C000A8A82 /* ChangeBasket.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeBasket.storyboard; sourceTree = "<group>"; };
+		066E85782A964D66000A8A82 /* ChangeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeTableCell.swift; sourceTree = "<group>"; };
+		066E85792A964D66000A8A82 /* ChangeTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeTableCell.xib; sourceTree = "<group>"; };
 		06DE53812A72E78D00358718 /* Foreks_Digital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foreks_Digital.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DE53842A72E78D00358718 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06DE53862A72E78D00358718 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -184,9 +192,10 @@
 		0635E5372A7A3659007C11B3 /* NibViews */ = {
 			isa = PBXGroup;
 			children = (
+				066E857D2A964DB4000A8A82 /* ChangeCell */,
+				0635E5492A7B861A007C11B3 /* Component.swift */,
 				0635E5342A7932FA007C11B3 /* StockItemCell */,
 				066E85692A93A42A000A8A82 /* SegmentNamePopUp */,
-				0635E5492A7B861A007C11B3 /* Component.swift */,
 				066E85582A8B664E000A8A82 /* BasketCell */,
 				066E85472A86404B000A8A82 /* BasketBar */,
 				0635E5382A7A36E1007C11B3 /* SembolBar */,
@@ -346,6 +355,7 @@
 				0635E56B2A823EE1007C11B3 /* Detail.storyboard */,
 				066E85532A8A74A5000A8A82 /* Basket.storyboard */,
 				06DE538F2A72E79100358718 /* LaunchScreen.storyboard */,
+				066E85762A96289C000A8A82 /* ChangeBasket.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -362,6 +372,7 @@
 		066CE7C42A767BD7004503CF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				066E85732A962808000A8A82 /* ChangeBasketPage */,
 				066E856E2A95ED2F000A8A82 /* Spinner */,
 				066E85522A8A747A000A8A82 /* BasketPage */,
 				066CE7D32A77CA53004503CF /* DetailPage */,
@@ -443,6 +454,23 @@
 				066E856F2A95ED47000A8A82 /* SpinnerViewController.swift */,
 			);
 			path = Spinner;
+			sourceTree = "<group>";
+		};
+		066E85732A962808000A8A82 /* ChangeBasketPage */ = {
+			isa = PBXGroup;
+			children = (
+				066E85742A96284B000A8A82 /* ChangeBasketPageController.swift */,
+			);
+			path = ChangeBasketPage;
+			sourceTree = "<group>";
+		};
+		066E857D2A964DB4000A8A82 /* ChangeCell */ = {
+			isa = PBXGroup;
+			children = (
+				066E85782A964D66000A8A82 /* ChangeTableCell.swift */,
+				066E85792A964D66000A8A82 /* ChangeTableCell.xib */,
+			);
+			path = ChangeCell;
 			sourceTree = "<group>";
 		};
 		06DE53782A72E78D00358718 = {
@@ -553,11 +581,13 @@
 			files = (
 				066E85542A8A74A5000A8A82 /* Basket.storyboard in Resources */,
 				06DE53912A72E79100358718 /* LaunchScreen.storyboard in Resources */,
+				066E85772A96289C000A8A82 /* ChangeBasket.storyboard in Resources */,
 				0635E53C2A7A3799007C11B3 /* SembolBar.xib in Resources */,
 				066E85602A8B6B59000A8A82 /* BasketCell.xib in Resources */,
 				066E856D2A93A48E000A8A82 /* SegmentNamePopUp.xib in Resources */,
 				0635E56C2A823EE1007C11B3 /* Detail.storyboard in Resources */,
 				066CE7D02A76AA76004503CF /* StockItemCell.xib in Resources */,
+				066E857B2A964D66000A8A82 /* ChangeTableCell.xib in Resources */,
 				066E854D2A8640DD000A8A82 /* BasketBar.xib in Resources */,
 				06DE538E2A72E79100358718 /* Assets.xcassets in Resources */,
 				0635E52F2A791A3A007C11B3 /* PopUpCell.xib in Resources */,
@@ -645,6 +675,7 @@
 				0635E5632A80FFB5007C11B3 /* ExchangeController.swift in Sources */,
 				066CE7D92A77E3CF004503CF /* Extensions.swift in Sources */,
 				0635E58A2A84F7F5007C11B3 /* ExchangeCoordinator.swift in Sources */,
+				066E85752A96284B000A8A82 /* ChangeBasketPageController.swift in Sources */,
 				0635E5432A7A53E6007C11B3 /* PopUp.swift in Sources */,
 				066CE7B82A7674AC004503CF /* URLGeneration.swift in Sources */,
 				0635E5822A84F7B5007C11B3 /* MarketBaseCoordinator.swift in Sources */,
@@ -652,6 +683,7 @@
 				06DE53872A72E78D00358718 /* SceneDelegate.swift in Sources */,
 				066E85572A8A74DE000A8A82 /* BasketPageController.swift in Sources */,
 				0635E52E2A791A3A007C11B3 /* PopUpCell.swift in Sources */,
+				066E857A2A964D66000A8A82 /* ChangeTableCell.swift in Sources */,
 				0635E5702A83A0CD007C11B3 /* Coordinator.swift in Sources */,
 				0635E5722A83A184007C11B3 /* TabBarBaseCoordinator.swift in Sources */,
 				066E855F2A8B6B59000A8A82 /* BasketCell.swift in Sources */,

@@ -18,6 +18,8 @@ class MainPageViewModel {
     private(set) var field2: Observable<SearchTypes> = Observable(SearchTypes(name: "%Fark", key: "pdd"))
     private(set) var segments: Observable<[Segment]?> = Observable(nil)
     private(set) var selectedSegment: Observable<Int> = Observable(0)
+    private(set) var segmentEditing: Observable<Bool> = Observable(false)
+    
 
     func loadMainPage() {
         mainPageNetworkService.getMainPage() { result in
@@ -84,9 +86,13 @@ extension MainPageViewModel: StockTableControllerDelegate{
 }
 
 extension MainPageViewModel: BasketBarDelegate{
-    func clickButton() {
+    func clickAddButton() {
         coordinator.moveTo(flow: .main(.basketScreen), userData: nil)
     }
+    func clickChangeButton() {
+        coordinator.moveTo(flow: .main(.changeBasketScreen), userData: nil)
+    }
+    
     func changeSegment(index: Int){
         self.stopTimer()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
@@ -101,4 +107,8 @@ extension MainPageViewModel: BasketPageDelegate{
         self.currentStocks.value.append(nil)
         self.appendNewSegment(segment: segment)
     }
+}
+
+extension MainPageViewModel: ChangeBasketPageControllerDelegate{
+    
 }

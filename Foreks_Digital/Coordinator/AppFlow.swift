@@ -11,6 +11,7 @@ enum MainScreen {
     case initialScreen
     case detailScreen
     case basketScreen
+    case changeBasketScreen
 }
 enum MarketScreen {
     case initialScreen

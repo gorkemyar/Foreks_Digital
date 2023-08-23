@@ -10,7 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BasketBar" customModule="Foreks_Digital" customModuleProvider="target">
             <connections>
-                <outlet property="addButton" destination="hvX-Cd-rg9" id="Znf-KD-h0I"/>
+                <outlet property="addButton" destination="4x8-I7-eEN" id="sNQ-tS-LHD"/>
+                <outlet property="changeButton" destination="hvX-Cd-rg9" id="RAw-zT-hek"/>
                 <outlet property="segmentio" destination="c86-yW-fiR" id="8IE-5g-GM9"/>
             </connections>
         </placeholder>
@@ -28,6 +29,9 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c86-yW-fiR" customClass="Segmentio" customModule="Segmentio">
                                     <rect key="frame" x="0.0" y="0.0" width="305" height="50"/>
                                     <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="305" id="AgN-8B-bhr"/>
+                                    </constraints>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -38,34 +42,52 @@
                                 <constraint firstItem="c86-yW-fiR" firstAttribute="top" secondItem="VW9-xC-Yj0" secondAttribute="top" id="e8K-ew-5Fh"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFR-ej-7hl" userLabel="ButtonView">
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eiC-hF-6YG">
                             <rect key="frame" x="305" y="0.0" width="70" height="50"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvX-Cd-rg9">
-                                    <rect key="frame" x="0.0" y="0.0" width="70" height="50"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain"/>
-                                    <connections>
-                                        <action selector="click:" destination="-1" eventType="touchUpInside" id="jnb-5d-vME"/>
-                                    </connections>
-                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ube-kd-bPK" userLabel="Add">
+                                    <rect key="frame" x="0.0" y="0.0" width="35" height="50"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4x8-I7-eEN">
+                                            <rect key="frame" x="0.0" y="0.0" width="35" height="50"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain"/>
+                                            <connections>
+                                                <action selector="addClick:" destination="-1" eventType="touchUpInside" id="0Xo-XN-1lw"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <constraints>
+                                        <constraint firstItem="4x8-I7-eEN" firstAttribute="leading" secondItem="Ube-kd-bPK" secondAttribute="leading" id="O12-uR-ott"/>
+                                        <constraint firstAttribute="bottom" secondItem="4x8-I7-eEN" secondAttribute="bottom" id="TMQ-fc-01m"/>
+                                        <constraint firstAttribute="trailing" secondItem="4x8-I7-eEN" secondAttribute="trailing" id="d2a-qT-5XO"/>
+                                        <constraint firstItem="4x8-I7-eEN" firstAttribute="top" secondItem="Ube-kd-bPK" secondAttribute="top" id="z75-CL-meO"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFR-ej-7hl" userLabel="Change">
+                                    <rect key="frame" x="35" y="0.0" width="35" height="50"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvX-Cd-rg9">
+                                            <rect key="frame" x="0.0" y="0.0" width="35" height="50"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain"/>
+                                            <connections>
+                                                <action selector="changeClick:" destination="-1" eventType="touchUpInside" id="q6C-Ew-kzk"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="hvX-Cd-rg9" secondAttribute="bottom" id="165-aG-X3Z"/>
+                                        <constraint firstItem="hvX-Cd-rg9" firstAttribute="top" secondItem="FFR-ej-7hl" secondAttribute="top" id="RDc-dU-4mS"/>
+                                        <constraint firstItem="hvX-Cd-rg9" firstAttribute="leading" secondItem="FFR-ej-7hl" secondAttribute="leading" id="SE0-1p-6KC"/>
+                                        <constraint firstAttribute="trailing" secondItem="hvX-Cd-rg9" secondAttribute="trailing" id="pYt-xr-tzO"/>
+                                    </constraints>
+                                </view>
                             </subviews>
-                            <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="70" id="DjD-lm-x1g"/>
-                                <constraint firstItem="hvX-Cd-rg9" firstAttribute="top" secondItem="FFR-ej-7hl" secondAttribute="top" id="fy5-vE-UTt"/>
-                                <constraint firstAttribute="trailing" secondItem="hvX-Cd-rg9" secondAttribute="trailing" id="jsw-sI-Xv3"/>
-                                <constraint firstAttribute="bottom" secondItem="hvX-Cd-rg9" secondAttribute="bottom" id="noN-xY-ywO"/>
-                                <constraint firstItem="hvX-Cd-rg9" firstAttribute="leading" secondItem="FFR-ej-7hl" secondAttribute="leading" id="wuk-m3-gUU"/>
-                            </constraints>
-                        </view>
+                        </stackView>
                     </subviews>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="FFR-ej-7hl" secondAttribute="trailing" id="44I-qu-PBi"/>
-                        <constraint firstAttribute="bottom" secondItem="FFR-ej-7hl" secondAttribute="bottom" id="VuJ-KX-ebF"/>
-                        <constraint firstItem="FFR-ej-7hl" firstAttribute="top" secondItem="FBx-Fs-Hgl" secondAttribute="top" id="fR4-wi-sIC"/>
-                        <constraint firstAttribute="trailing" secondItem="VW9-xC-Yj0" secondAttribute="trailing" constant="70" id="s2M-X6-gwN"/>
-                    </constraints>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

@@ -174,8 +174,8 @@
             filePath = "Foreks_Digital/ViewModel/MainPage/MainPageViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "loadStocks(idx:)"
             landmarkType = "7">
          </BreakpointContent>

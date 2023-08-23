@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Change Basket Page Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="ChangeBasketPageController" id="Y6W-OH-hqX" customClass="ChangeBasketPageController" customModule="Foreks_Digital" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mhk-rw-3cX">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8B6-Kz-RTk">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="639"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="guw-hC-39X">
+                                        <rect key="frame" x="0.0" y="639" width="393" height="120"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="s1o-3Z-Wvw">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="120"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i89-FT-Ti0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eb-15-j2w">
+                                                                <rect key="frame" x="20" y="10" width="353" height="40"/>
+                                                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="tinted" title="Add Sembols"/>
+                                                                <connections>
+                                                                    <action selector="addSembols:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7Mx-gK-wd7"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="2eb-15-j2w" firstAttribute="top" secondItem="i89-FT-Ti0" secondAttribute="top" constant="10" id="4uO-n1-xjr"/>
+                                                            <constraint firstItem="2eb-15-j2w" firstAttribute="leading" secondItem="i89-FT-Ti0" secondAttribute="leading" constant="20" id="aZs-81-gkM"/>
+                                                            <constraint firstAttribute="trailing" secondItem="2eb-15-j2w" secondAttribute="trailing" constant="20" id="g1u-FC-7Sj"/>
+                                                            <constraint firstAttribute="bottom" secondItem="2eb-15-j2w" secondAttribute="bottom" constant="10" id="oFl-D0-hhI"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAV-xX-m5E">
+                                                        <rect key="frame" x="0.0" y="60" width="393" height="60"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9c-Mo-cbt">
+                                                                <rect key="frame" x="20" y="10" width="353" height="40"/>
+                                                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="tinted" title="Change Name"/>
+                                                                <connections>
+                                                                    <action selector="changeName:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="P4O-gz-Gbg"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="C9c-Mo-cbt" secondAttribute="bottom" constant="10" id="939-hV-cvm"/>
+                                                            <constraint firstAttribute="trailing" secondItem="C9c-Mo-cbt" secondAttribute="trailing" constant="20" id="dhT-l9-z0N"/>
+                                                            <constraint firstItem="C9c-Mo-cbt" firstAttribute="leading" secondItem="IAV-xX-m5E" secondAttribute="leading" constant="20" id="kqR-gX-lTY"/>
+                                                            <constraint firstItem="C9c-Mo-cbt" firstAttribute="top" secondItem="IAV-xX-m5E" secondAttribute="top" constant="10" id="lnf-b9-5zK"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="s1o-3Z-Wvw" secondAttribute="trailing" id="2w3-Bv-jnd"/>
+                                            <constraint firstAttribute="bottom" secondItem="s1o-3Z-Wvw" secondAttribute="bottom" id="DSv-wt-Z4T"/>
+                                            <constraint firstAttribute="height" constant="120" id="Hdj-qI-6xv"/>
+                                            <constraint firstItem="s1o-3Z-Wvw" firstAttribute="top" secondItem="guw-hC-39X" secondAttribute="top" id="IdZ-0W-fed"/>
+                                            <constraint firstItem="s1o-3Z-Wvw" firstAttribute="leading" secondItem="guw-hC-39X" secondAttribute="leading" id="XoF-n7-tiW"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="8B6-Kz-RTk" firstAttribute="top" secondItem="Mhk-rw-3cX" secondAttribute="top" id="7dX-Wy-tIw"/>
+                                    <constraint firstAttribute="bottom" secondItem="guw-hC-39X" secondAttribute="bottom" id="9Lh-OV-cvf"/>
+                                    <constraint firstItem="8B6-Kz-RTk" firstAttribute="leading" secondItem="Mhk-rw-3cX" secondAttribute="leading" id="Nhp-fJ-XZ3"/>
+                                    <constraint firstAttribute="trailing" secondItem="8B6-Kz-RTk" secondAttribute="trailing" id="UDr-B2-GVh"/>
+                                    <constraint firstAttribute="trailing" secondItem="guw-hC-39X" secondAttribute="trailing" id="VUS-7n-ng5"/>
+                                    <constraint firstItem="guw-hC-39X" firstAttribute="leading" secondItem="Mhk-rw-3cX" secondAttribute="leading" id="zLA-T7-hRH"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Mhk-rw-3cX" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="DZM-Yg-UI3"/>
+                            <constraint firstItem="Mhk-rw-3cX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="NSb-Om-85z"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Mhk-rw-3cX" secondAttribute="bottom" id="j8i-wn-5Gt"/>
+                            <constraint firstItem="Mhk-rw-3cX" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="xBT-vU-FJO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="2eb-15-j2w" id="UGb-XM-dF7"/>
+                        <outlet property="changeButton" destination="C9c-Mo-cbt" id="4w8-0D-WDY"/>
+                        <outlet property="tableView" destination="8B6-Kz-RTk" id="xMo-fF-Rbq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

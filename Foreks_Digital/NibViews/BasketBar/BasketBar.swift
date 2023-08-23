@@ -9,8 +9,14 @@ import Segmentio
     @IBOutlet weak var segmentio: Segmentio!
     @IBOutlet weak var addButton: UIButton!
     
-    @IBAction func click(_ sender: Any) {
-        delegate?.clickButton()
+    @IBOutlet weak var changeButton: UIButton!
+    
+    
+    @IBAction func changeClick(_ sender: Any) {
+        delegate?.clickChangeButton()
+    }
+    @IBAction func addClick(_ sender: Any) {
+        delegate?.clickAddButton()
     }
     override func setup(){
         super.setup()
@@ -26,9 +32,12 @@ import Segmentio
     }
     
     private func buttonSetup(){
-        let image: UIImage = Constants.images.plus
-        addButton.setImage(image, for: .normal)
+        let addImage: UIImage = Constants.images.plus
+        addButton.setImage(addImage, for: .normal)
         addButton.tintColor = Constants.colors.yellow
+        let settingImage: UIImage = Constants.images.settings
+        changeButton.setImage(settingImage, for: .normal)
+        changeButton.tintColor = Constants.colors.yellow
     }
     
     private func segmentioContent() -> [SegmentioItem] {
@@ -42,7 +51,10 @@ import Segmentio
 }
 
 protocol BasketBarDelegate{
-    func clickButton();
+    func clickAddButton();
+    func clickChangeButton();
+    
     func changeSegment(index: Int);
+    
 }
 

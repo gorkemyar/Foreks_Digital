@@ -33,7 +33,9 @@ class MainPageCoordinator: MainPageBaseCoordinator {
         case .detailScreen:
             goToDetailScreenWith(data: userData)
         case .basketScreen:
-            goToBasketScreen(data: userData)
+            goToBasketScreen()
+        case .changeBasketScreen:
+            goToChangeBasketScreen()
         }
     }
     
@@ -46,12 +48,20 @@ class MainPageCoordinator: MainPageBaseCoordinator {
         navigationRootViewController?.pushViewController(detailVC, animated: true)
     }
     
-    func goToBasketScreen(data: [String: Any]?){
+    func goToBasketScreen(){
         let basketVC = BasketPageController.instantiate(name: "Basket")
         basketVC.coordinator = self
         basketVC.data = viewModel.mainPage.value?.mainPageStocks.map{$0.copy()}
         basketVC.delegate = viewModel
         navigationRootViewController?.pushViewController(basketVC, animated: true)
+    }
+    
+    func goToChangeBasketScreen(){
+        let changeVC = ChangeBasketPageController.instantiate(name: "ChangeBasket")
+        changeVC.coordinator = self
+        changeVC.data = viewModel.segments.value?[viewModel.selectedSegment.value]
+        changeVC.delegate = viewModel
+        navigationRootViewController?.pushViewController(changeVC, animated: true)
     }
     
     func resetToRoot() -> Self {
