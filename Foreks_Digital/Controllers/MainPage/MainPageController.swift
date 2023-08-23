@@ -25,6 +25,7 @@ class MainPageController: UIViewController, MainPageBaseCoordinated, Storyboarda
         navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = false
         viewModel.startLoadingDataTimer()
+        createSpinnerView()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -32,8 +33,7 @@ class MainPageController: UIViewController, MainPageBaseCoordinated, Storyboarda
         navigationController?.setNavigationBarHidden(false, animated: animated)
         viewModel.stopTimer()
     }
-
-    
+ 
     
     private func setupViewModel(){
         viewModel.mainPage.bind{ [weak self] res in
@@ -93,5 +93,26 @@ extension MainPageController{
     
     @objc func outsideClick(){
         self.popUp.removeFromSuperview()
+    }
+}
+
+
+extension MainPageController{
+    func createSpinnerView() {
+        let child = SpinnerViewController()
+
+        // add the spinner view controller
+        addChild(child)
+        child.view.frame = view.frame
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
+
+        // wait two seconds to simulate some work happening
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            // then remove the spinner view controller
+            child.willMove(toParent: nil)
+            child.view.removeFromSuperview()
+            child.removeFromParent()
+        }
     }
 }

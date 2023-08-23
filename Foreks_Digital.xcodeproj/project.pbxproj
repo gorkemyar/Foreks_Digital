@@ -55,6 +55,7 @@
 		066E85602A8B6B59000A8A82 /* BasketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066E855E2A8B6B59000A8A82 /* BasketCell.xib */; };
 		066E856B2A93A475000A8A82 /* SegmentNamePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E856A2A93A475000A8A82 /* SegmentNamePopUp.swift */; };
 		066E856D2A93A48E000A8A82 /* SegmentNamePopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066E856C2A93A48E000A8A82 /* SegmentNamePopUp.xib */; };
+		066E85702A95ED47000A8A82 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E856F2A95ED47000A8A82 /* SpinnerViewController.swift */; };
 		06DE53852A72E78D00358718 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53842A72E78D00358718 /* AppDelegate.swift */; };
 		06DE53872A72E78D00358718 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53862A72E78D00358718 /* SceneDelegate.swift */; };
 		06DE53892A72E78D00358718 /* MainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53882A72E78D00358718 /* MainPageController.swift */; };
@@ -113,6 +114,7 @@
 		066E855E2A8B6B59000A8A82 /* BasketCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketCell.xib; sourceTree = "<group>"; };
 		066E856A2A93A475000A8A82 /* SegmentNamePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentNamePopUp.swift; sourceTree = "<group>"; };
 		066E856C2A93A48E000A8A82 /* SegmentNamePopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentNamePopUp.xib; sourceTree = "<group>"; };
+		066E856F2A95ED47000A8A82 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		06DE53812A72E78D00358718 /* Foreks_Digital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foreks_Digital.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DE53842A72E78D00358718 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06DE53862A72E78D00358718 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 		066CE7C42A767BD7004503CF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				066E856E2A95ED2F000A8A82 /* Spinner */,
 				066E85522A8A747A000A8A82 /* BasketPage */,
 				066CE7D32A77CA53004503CF /* DetailPage */,
 				0635E5692A8124C3007C11B3 /* Exchange */,
@@ -443,6 +446,14 @@
 				066E856C2A93A48E000A8A82 /* SegmentNamePopUp.xib */,
 			);
 			path = SegmentNamePopUp;
+			sourceTree = "<group>";
+		};
+		066E856E2A95ED2F000A8A82 /* Spinner */ = {
+			isa = PBXGroup;
+			children = (
+				066E856F2A95ED47000A8A82 /* SpinnerViewController.swift */,
+			);
+			path = Spinner;
 			sourceTree = "<group>";
 		};
 		06DE53782A72E78D00358718 = {
@@ -656,6 +667,7 @@
 				0635E5722A83A184007C11B3 /* TabBarBaseCoordinator.swift in Sources */,
 				066E855F2A8B6B59000A8A82 /* BasketCell.swift in Sources */,
 				066CE7B32A76725A004503CF /* DetailedModel.swift in Sources */,
+				066E85702A95ED47000A8A82 /* SpinnerViewController.swift in Sources */,
 				0635E55D2A7C3F24007C11B3 /* StockTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

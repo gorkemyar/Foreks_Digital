@@ -25,7 +25,6 @@ class MainPageViewModel {
             case .success(let data):
                 self.mainPage.value = data
                 self.segments.value = [Segment(key: "Default", search: data.mainPageStocks)]
-                
                 self.loadStocks(idx: 0)
             case .failure(let error):
                 print("Async Task 1 Failed: \(error)")
@@ -81,7 +80,7 @@ class MainPageViewModel {
 
 extension MainPageViewModel: StockTableDelegate{
     func goToDetailPage(indexOfCell: Int) {
-        coordinator.moveTo(flow: .main(.detailScreen), userData: ["stock": self.currentStocks.value[indexOfCell] as Any])
+        coordinator.moveTo(flow: .main(.detailScreen), userData: ["stock": self.currentStocks.value[selectedSegment.value]?[indexOfCell] as Any])
     }
 }
 
