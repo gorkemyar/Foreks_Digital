@@ -77,8 +77,7 @@ class MainPageViewModel {
     }
 }
 
-
-extension MainPageViewModel: StockTableDelegate{
+extension MainPageViewModel: StockTableControllerDelegate{
     func goToDetailPage(indexOfCell: Int) {
         coordinator.moveTo(flow: .main(.detailScreen), userData: ["stock": self.currentStocks.value[selectedSegment.value]?[indexOfCell] as Any])
     }
@@ -99,18 +98,7 @@ extension MainPageViewModel: BasketBarDelegate{
 
 extension MainPageViewModel: BasketPageDelegate{
     func addSegment(segment: Segment) {
-        self.currentStocks.value.append(convertToDummyDetailed(stocks: segment.search))
+        self.currentStocks.value.append(nil)
         self.appendNewSegment(segment: segment)
-    }
-    
-    private func convertToDummyDetailed(stocks: [Stock]) -> [StockDetailed]{
-        var list: [StockDetailed] = []
-        
-        for stock in stocks {
-            list.append(stock.toDetailed())
-        }
-        
-        return list
-        
     }
 }

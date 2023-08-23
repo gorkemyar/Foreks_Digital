@@ -4,20 +4,24 @@ class MainPageController: UIViewController, MainPageBaseCoordinated, Storyboarda
     
     var coordinator: MainPageBaseCoordinator?
     var viewModel: MainPageViewModel!
+    var stockTableView: StockTableController?
+    var spinnerView: SpinnerViewController?
     private var popUp: PopUp!
     
-    @IBOutlet weak var tableView: StockTable!
+
+    @IBOutlet weak var mainView: UIView!
     @IBOutlet var sembolBar: SembolBar!
     @IBOutlet weak var basketBar: BasketBar!
         
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
-        tableView.delegate = viewModel
         basketBar.delegate = viewModel
         basketBar.segmentio.selectedSegmentioIndex = viewModel.selectedSegment.value
         setButtonClick()
         setupViewModel()
+        
+        createStockTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,7 +29,7 @@ class MainPageController: UIViewController, MainPageBaseCoordinated, Storyboarda
         navigationController?.setNavigationBarHidden(true, animated: animated)
         self.tabBarController?.tabBar.isHidden = false
         viewModel.startLoadingDataTimer()
-        createSpinnerView()
+        
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -36,39 +40,20 @@ class MainPageController: UIViewController, MainPageBaseCoordinated, Storyboarda
  
     
     private func setupViewModel(){
-        viewModel.mainPage.bind{ [weak self] res in
-            DispatchQueue.main.async {
-                self?.tableView.tableView.reloadData()
-            }
-        }
-        viewModel.currentStocks.bind{ [weak self] res in
-            DispatchQueue.main.async {
-                self?.tableView.data = res[self?.viewModel.selectedSegment.value ?? 0]
-                self?.tableView.tableView.reloadData()
-            }
-        }
         viewModel.field1.bind{ [weak self] res in
             DispatchQueue.main.async {
                 self?.sembolBar.button1.setTitleWithPadding(field: res.name)
-                self?.tableView.field1 = res
             }
         }
         viewModel.field2.bind{ [weak self] res in
             DispatchQueue.main.async {
                 self?.sembolBar.button2.setTitleWithPadding(field: res.name)
-                self?.tableView.field2 = res
             }
         }
         viewModel.segments.bind{ [weak self] res in
             DispatchQueue.main.async {
                 self?.basketBar.segments = res ?? []
                 self?.basketBar.segmentioSetup()
-            }
-        }
-        viewModel.selectedSegment.bind{ [weak self] res in
-            DispatchQueue.main.async {
-                self?.tableView.data = self?.viewModel.currentStocks.value[res]
-                self?.tableView.tableView.reloadData()
             }
         }
     }
@@ -98,21 +83,36 @@ extension MainPageController{
 
 
 extension MainPageController{
-    func createSpinnerView() {
-        let child = SpinnerViewController()
+    func startSpinnerView() {
+        print("deneme")
+        spinnerView = SpinnerViewController()
 
-        // add the spinner view controller
-        addChild(child)
-        child.view.frame = view.frame
-        view.addSubview(child.view)
-        child.didMove(toParent: self)
-
-        // wait two seconds to simulate some work happening
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            // then remove the spinner view controller
-            child.willMove(toParent: nil)
-            child.view.removeFromSuperview()
-            child.removeFromParent()
+        addChild(spinnerView!)
+        spinnerView!.view.frame = view.frame
+        view.addSubview(spinnerView!.view)
+        spinnerView!.didMove(toParent: self)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.spinnerView?.willMove(toParent: nil)
+            self.spinnerView?.view.removeFromSuperview()
+            self.spinnerView?.removeFromParent()
         }
     }
+    func stopSpinnerView(){
+        
+    }
+    func createStockTableView(){
+        stockTableView = StockTableController()
+        stockTableView!.viewModel = viewModel
+        stockTableView!.delegate = viewModel
+        stockTableView!.startSpin = startSpinnerView
+        
+        addChild(stockTableView!)
+        stockTableView!.view.frame = view.frame
+        mainView.addSubview(stockTableView!.view)
+        stockTableView!.didMove(toParent: self)
+    }
+    
+    
+    
 }
