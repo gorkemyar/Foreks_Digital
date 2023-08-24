@@ -81,16 +81,16 @@ class MainPageViewModel {
 
 extension MainPageViewModel: StockTableControllerDelegate{
     func goToDetailPage(indexOfCell: Int) {
-        coordinator.moveTo(flow: .main(.detailScreen), userData: ["stock": self.currentStocks.value[selectedSegment.value]?[indexOfCell] as Any])
+        coordinator.moveTo(flow: .main(.detailScreen), userData: ["data": self.currentStocks.value[selectedSegment.value]?[indexOfCell] as Any])
     }
 }
 
 extension MainPageViewModel: BasketBarDelegate{
     func clickAddButton() {
-        coordinator.moveTo(flow: .main(.basketScreen), userData: nil)
+        coordinator.moveTo(flow: .main(.basketScreen), userData: ["data": mainPage.value?.mainPageStocks as Any])
     }
     func clickChangeButton() {
-        coordinator.moveTo(flow: .main(.changeBasketScreen), userData: nil)
+        coordinator.moveTo(flow: .main(.changeBasketScreen), userData: ["data": segments.value?[selectedSegment.value] as Any])
     }
     
     func changeSegment(index: Int){
@@ -110,5 +110,7 @@ extension MainPageViewModel: BasketPageDelegate{
 }
 
 extension MainPageViewModel: ChangeBasketPageControllerDelegate{
-    
+    func deleteStockFromSegment(delete index: Int) {
+        self.segments.value?[selectedSegment.value].search.remove(at: index)
+    }
 }

@@ -53,6 +53,6 @@ struct Page: Codable{
 }
 
 struct Segment{
-    let key: String
-    let search: [Stock]
+    var key: String
+    var search: [Stock]
 }
