@@ -54,6 +54,7 @@ class MainPageCoordinator: MainPageBaseCoordinator {
         basketVC.delegate = viewModel
         if (data != nil){
             basketVC.data = data!["data"] as? [Stock]
+            basketVC.isNew = data!["isNew"] as! Bool
         }
 
         navigationRootViewController?.pushViewController(basketVC, animated: true)

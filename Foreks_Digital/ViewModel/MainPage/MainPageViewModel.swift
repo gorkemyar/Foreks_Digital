@@ -87,7 +87,7 @@ extension MainPageViewModel: StockTableControllerDelegate{
 
 extension MainPageViewModel: BasketBarDelegate{
     func clickAddButton() {
-        coordinator.moveTo(flow: .main(.basketScreen), userData: ["data": mainPage.value?.mainPageStocks as Any])
+        coordinator.moveTo(flow: .main(.basketScreen), userData: ["data": mainPage.value?.mainPageStocks as Any, "isNew": true as Any])
     }
     func clickChangeButton() {
         coordinator.moveTo(flow: .main(.changeBasketScreen), userData: ["data": segments.value?[selectedSegment.value] as Any])
@@ -103,9 +103,15 @@ extension MainPageViewModel: BasketBarDelegate{
 }
 
 extension MainPageViewModel: BasketPageDelegate{
-    func addSegment(segment: Segment) {
-        self.currentStocks.value.append(nil)
-        self.appendNewSegment(segment: segment)
+    func addSegment(segment: Segment, isNew: Bool) {
+        if (isNew){
+            self.currentStocks.value.append(nil)
+            self.appendNewSegment(segment: segment)
+        }
+        else{
+            self.segments.value?[self.selectedSegment.value].search += segment.search
+            self.currentStocks.value[self.selectedSegment.value] = nil
+        }
     }
 }
 
@@ -113,4 +119,17 @@ extension MainPageViewModel: ChangeBasketPageControllerDelegate{
     func deleteStockFromSegment(delete index: Int) {
         self.segments.value?[selectedSegment.value].search.remove(at: index)
     }
+    func addNewStockFromBasketPage() {
+        let currentItems: [Stock] = segments.value?[selectedSegment.value].search ?? []
+        let data: [Stock] = mainPage.value!.mainPageStocks.filter({stock in
+            return !currentItems.contains(where: {$0.id == stock.id})
+        })
+        
+        coordinator.moveTo(flow: .main(.basketScreen), userData: ["data": data as Any, "isNew": false as Any])
+    }
+    func renameSegment(name: String) {
+        segments.value?[selectedSegment.value].key = name
+    }
+    
+    
 }

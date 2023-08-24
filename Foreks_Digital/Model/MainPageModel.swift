@@ -18,6 +18,9 @@ struct Stock: Codable, Identifiable{
         var tmp: [String: String] = ["cod": cod, "gro": gro, "tke": tke, "def": def]
         return StockDetailed(stockDict: tmp)
     }
+    static func ==(lhs:Stock, rhs:Stock) -> Bool { // Implement Equatable
+        return lhs.id == rhs.id
+    }
 }
 
 struct StockDetailed: Codable, Identifiable{

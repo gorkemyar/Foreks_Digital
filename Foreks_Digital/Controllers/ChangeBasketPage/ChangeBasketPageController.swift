@@ -7,16 +7,18 @@ class ChangeBasketPageController: UIViewController, MainPageBaseCoordinated, Sto
     var data: Segment?
     var delegate: ChangeBasketPageControllerDelegate?
     var coordinator: MainPageBaseCoordinator?
-    
+    private var segmentNamePopUp: SegmentNamePopUp?
     private var swipeButton: UIButton?
     private var cell: UITableViewCell?
     
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func addSembols(_ sender: Any) {
+        delegate?.addNewStockFromBasketPage()
     }
     
     @IBAction func changeName(_ sender: Any) {
+        segmentNamePopUpAppear()
     }
     
     override func loadView() {
@@ -112,9 +114,10 @@ extension ChangeBasketPageController{
     @objc
     func handleGestureTap(sender: UITapGestureRecognizer? = nil) {
       animateHideSwipeActionForRow()
+      segmentOutsideClick()
     }
     
-    @objc 
+    @objc
     func deleteCell(sender: UIButton){
         self.data?.search.remove(at: sender.tag)
         delegate?.deleteStockFromSegment(delete: sender.tag)
@@ -125,7 +128,31 @@ extension ChangeBasketPageController{
         }
     }
 }
-protocol ChangeBasketPageControllerDelegate{
-    func deleteStockFromSegment(delete index: Int)
+
+
+extension ChangeBasketPageController{
+    func segmentNamePopUpAppear(){
+        self.segmentNamePopUp = SegmentNamePopUp(frame: self.view.frame)
+        self.segmentNamePopUp!.buttonClick = renameSegmentHelper
+        self.view.addSubview(segmentNamePopUp!)
+    }
+    
+    func renameSegmentHelper(name: String){
+        delegate?.renameSegment(name: name)
+        segmentOutsideClick()
+    }
+    
+    
+    func segmentOutsideClick(){
+        self.segmentNamePopUp?.removeFromSuperview()
+        self.segmentNamePopUp = nil
+    }
+    
+    
 }
 
+protocol ChangeBasketPageControllerDelegate{
+    func deleteStockFromSegment(delete index: Int)
+    func addNewStockFromBasketPage()
+    func renameSegment(name: String)
+}

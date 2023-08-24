@@ -3,6 +3,7 @@ import UIKit
 class BasketPageController: UIViewController, MainPageBaseCoordinated , Storyboardable{
 
     var data: [Stock]?
+    var isNew: Bool = true
     var delegate: BasketPageDelegate?
     var coordinator: MainPageBaseCoordinator?
     private var segmentNamePopUp: SegmentNamePopUp!
@@ -14,7 +15,12 @@ class BasketPageController: UIViewController, MainPageBaseCoordinated , Storyboa
     @IBOutlet weak var createButton: UIButton!
     
     @IBAction func createList(_ sender: Any) {
-        segmentNamePopUpAppear()
+        if (isNew){
+            segmentNamePopUpAppear()
+        }else{
+            createSegment(name: "dummy")
+        }
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -23,15 +29,24 @@ class BasketPageController: UIViewController, MainPageBaseCoordinated , Storyboa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setup()
+    }
+    
+    func setup(){
         tableView.dataSource = self
         tableView.delegate = self
         tableView.backgroundColor = UIColor.black
         tableView.register(UINib(nibName: Constants.Identifiers.basketCell, bundle: nil), forCellReuseIdentifier: Constants.Identifiers.basketCell)
         self.createButton.isEnabled = false
+        
+        if (isNew){
+            self.createButton.setTitle("Create New Basket", for: .normal)
+        }else{
+            self.createButton.setTitle("Add Stocks", for: .normal)
+        }
     }
 }
-extension BasketPageController: UITableViewDataSource{
+extension BasketPageController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data?.count ?? 0
     }
@@ -44,7 +59,6 @@ extension BasketPageController: UITableViewDataSource{
         return cell
     }
 }
-extension BasketPageController: UITableViewDelegate{}
 
 extension BasketPageController{
     func addStock(stock: Stock){
@@ -77,7 +91,7 @@ extension BasketPageController{
     
     func createSegment(name: String){
         let segment: Segment = Segment(key: name, search: stockList)
-        delegate?.addSegment(segment: segment)
+        delegate?.addSegment(segment: segment, isNew: self.isNew)
         stockList = []
         coordinator?.resetToRoot(animated: true)
     }
@@ -85,5 +99,5 @@ extension BasketPageController{
 
 
 protocol BasketPageDelegate{
-    func addSegment(segment: Segment)
+    func addSegment(segment: Segment, isNew: Bool)
 }

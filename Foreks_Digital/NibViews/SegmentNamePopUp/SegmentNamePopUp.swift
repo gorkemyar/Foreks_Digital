@@ -50,7 +50,7 @@ import UIKit
         
         let button: UIButton = UIButton(frame: CGRect(x: 0, y: viewFrame.height / 2, width: viewFrame.width, height: viewFrame.height/2))
         button.backgroundColor = Constants.colors.bg
-        button.setTitle("Create a Segment", for: .normal)
+        button.setTitle("Name the Basket", for: .normal)
         button.tintColor = UIColor.white
         button.addTarget(self, action: #selector(createSegment) , for: .touchUpInside)
         
