@@ -1,4 +1,5 @@
 import UIKit
 
-protocol MainPageBaseCoordinator: Coordinator {}
+protocol MainPageBaseCoordinator: Coordinator {
+}
 

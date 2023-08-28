@@ -40,11 +40,9 @@ class BasketCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func fillStock(stock: Stock, add: @escaping (Stock) -> Void, remove: @escaping (Stock) -> Void){
+    func fillStock(stock: Stock){
         stockName.text = stock.cod
         self.stock = stock
-        self.add = add
-        self.remove = remove
     }
     
     private func setupGreen(){

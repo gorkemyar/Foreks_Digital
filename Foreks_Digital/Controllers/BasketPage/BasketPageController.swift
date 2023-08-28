@@ -2,11 +2,12 @@ import UIKit
 
 class BasketPageController: UIViewController, MainPageBaseCoordinated , Storyboardable{
 
-    var data: [Stock]?
+    
     var isNew: Bool = true
-    var delegate: BasketPageDelegate?
-    var coordinator: MainPageBaseCoordinator?
+    weak var delegate: BasketPageDelegate?
+    weak var coordinator: MainPageBaseCoordinator?
     private var segmentNamePopUp: SegmentNamePopUp!
+    var data: [Stock]?
     
     var stockList: [Stock] = []
     
@@ -32,6 +33,8 @@ class BasketPageController: UIViewController, MainPageBaseCoordinated , Storyboa
         setup()
     }
     
+    
+    
     func setup(){
         tableView.dataSource = self
         tableView.delegate = self
@@ -44,6 +47,16 @@ class BasketPageController: UIViewController, MainPageBaseCoordinated , Storyboa
         }else{
             self.createButton.setTitle("Add Stocks", for: .normal)
         }
+        
+    }
+    
+    func loadData(){
+        DispatchQueue.main.async {
+            print("helloooo")
+            self.data = self.delegate?.getStocks(isNew: self.isNew)
+            self.tableView.reloadData()
+        }
+
     }
 }
 extension BasketPageController: UITableViewDataSource, UITableViewDelegate{
@@ -54,7 +67,15 @@ extension BasketPageController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Identifiers.basketCell, for: indexPath) as! BasketCell
         let stockItem = data![indexPath.row]
-        cell.fillStock(stock: stockItem, add: addStock, remove: removeStock)
+        
+        cell.fillStock(stock: stockItem)
+        cell.add = {[weak self] stock in
+            self?.addStock(stock: stock)
+        }
+        cell.remove = {[weak self] stock in
+            self?.removeStock(stock: stock)
+        }
+        
         cell.selectionStyle = UITableViewCell.SelectionStyle.none;
         return cell
     }
@@ -80,7 +101,9 @@ extension BasketPageController{
     func segmentNamePopUpAppear(){
         self.segmentNamePopUp = SegmentNamePopUp(frame: self.view.frame)
         
-        self.segmentNamePopUp.buttonClick = createSegment
+        self.segmentNamePopUp.buttonClick = {
+            [weak self] name in self?.createSegment(name: name)
+        }
         self.segmentNamePopUp.backController.addTarget(self, action: #selector(outsideClick), for: .touchUpInside)
         self.view.addSubview(segmentNamePopUp)
     }
@@ -98,6 +121,7 @@ extension BasketPageController{
 }
 
 
-protocol BasketPageDelegate{
+protocol BasketPageDelegate: AnyObject{
     func addSegment(segment: Segment, isNew: Bool)
+    func getStocks(isNew: Bool) -> [Stock]
 }

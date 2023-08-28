@@ -113,6 +113,17 @@ extension MainPageViewModel: BasketPageDelegate{
             self.currentStocks.value[self.selectedSegment.value] = nil
         }
     }
+    func getStocks(isNew: Bool) -> [Stock]{
+        if (isNew){
+            return mainPage.value!.mainPageStocks
+        }else{
+            let currentItems: [Stock]! = segments.value![selectedSegment.value].search
+            return mainPage.value!.mainPageStocks.filter(
+                {stock in
+                    return !currentItems.contains(where: {$0.id == stock.id})
+                })
+        }
+    }
 }
 
 extension MainPageViewModel: ChangeBasketPageControllerDelegate{
@@ -130,6 +141,4 @@ extension MainPageViewModel: ChangeBasketPageControllerDelegate{
     func renameSegment(name: String) {
         segments.value?[selectedSegment.value].key = name
     }
-    
-    
 }

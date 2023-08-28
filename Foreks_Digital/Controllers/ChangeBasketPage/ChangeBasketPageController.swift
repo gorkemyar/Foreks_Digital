@@ -5,8 +5,8 @@ class ChangeBasketPageController: UIViewController, MainPageBaseCoordinated, Sto
     @IBOutlet weak var changeButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     var data: Segment?
-    var delegate: ChangeBasketPageControllerDelegate?
-    var coordinator: MainPageBaseCoordinator?
+    weak var delegate: ChangeBasketPageControllerDelegate?
+    weak var coordinator: MainPageBaseCoordinator?
     private var segmentNamePopUp: SegmentNamePopUp?
     private var swipeButton: UIButton?
     private var cell: UITableViewCell?
@@ -60,8 +60,8 @@ extension ChangeBasketPageController: UITableViewDataSource{
         let item = data!.search[indexPath.row]
         cell.fillCell(image: Constants.images.minuscircle, text: item.cod)
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
-        cell.swipeClick = { [self]() -> Void in
-            animateRevealSwipeActionForRow(tableView: tableView, indexPath: indexPath)
+        cell.swipeClick = { [weak self] in
+            self?.animateRevealSwipeActionForRow(indexPath: indexPath)
         }
         return cell
     }
@@ -71,7 +71,7 @@ extension ChangeBasketPageController: UITableViewDelegate{}
 
 extension ChangeBasketPageController{
     
-    func animateRevealSwipeActionForRow(tableView: UITableView, indexPath: IndexPath) {
+    func animateRevealSwipeActionForRow(indexPath: IndexPath) {
         if swipeButton != nil {
             animateHideSwipeActionForRow()
         }
@@ -133,7 +133,11 @@ extension ChangeBasketPageController{
 extension ChangeBasketPageController{
     func segmentNamePopUpAppear(){
         self.segmentNamePopUp = SegmentNamePopUp(frame: self.view.frame)
-        self.segmentNamePopUp!.buttonClick = renameSegmentHelper
+        self.segmentNamePopUp!.buttonClick = {
+            [weak self] name in
+            self?.renameSegmentHelper(name: name)
+        }
+        
         self.view.addSubview(segmentNamePopUp!)
     }
     
@@ -151,7 +155,7 @@ extension ChangeBasketPageController{
     
 }
 
-protocol ChangeBasketPageControllerDelegate{
+protocol ChangeBasketPageControllerDelegate: AnyObject{
     func deleteStockFromSegment(delete index: Int)
     func addNewStockFromBasketPage()
     func renameSegment(name: String)
