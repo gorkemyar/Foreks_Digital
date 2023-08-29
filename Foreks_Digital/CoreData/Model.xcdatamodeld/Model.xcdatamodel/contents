@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F66" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="SegmentCore" representedClassName="SegmentCore" syncable="YES">
+        <attribute name="key" optional="YES" attributeType="String"/>
+        <relationship name="segmentStocks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StockCore" inverseName="stockToSegment" inverseEntity="StockCore"/>
+    </entity>
+    <entity name="StockCore" representedClassName="StockCore" syncable="YES">
+        <attribute name="cod" optional="YES" attributeType="String"/>
+        <attribute name="def" optional="YES" attributeType="String"/>
+        <attribute name="gro" optional="YES" attributeType="String"/>
+        <attribute name="tke" optional="YES" attributeType="String"/>
+        <relationship name="stockToSegment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SegmentCore" inverseName="segmentStocks" inverseEntity="SegmentCore"/>
+    </entity>
+</model>

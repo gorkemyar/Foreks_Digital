@@ -20,13 +20,23 @@ class MainPageViewModel {
     private(set) var selectedSegment: Observable<Int> = Observable(0)
     private(set) var segmentEditing: Observable<Bool> = Observable(false)
     
+    
+    func loadSegments(){
+        self.segments.value = CoreDataManager.shared.getSegments()
+        self.currentStocks.value = Array(repeating: nil, count: (self.segments.value?.count ?? 0))
+    }
 
     func loadMainPage() {
         mainPageNetworkService.getMainPage() { result in
             switch result {
             case .success(let data):
                 self.mainPage.value = data
-                self.segments.value = [Segment(key: "Default", search: data.mainPageStocks)]
+                self.loadSegments()
+                if self.segments.value?.count ?? 0 == 0{
+                    CoreDataManager.shared.addSegment(segment: Segment(key: "Default", search: data.mainPageStocks))
+                    self.loadSegments()
+                }
+                //self.segments.value = [Segment(key: "Default", search: data.mainPageStocks)]
                 self.loadStocks(idx: 0)
             case .failure(let error):
                 print("Async Task 1 Failed: \(error)")
@@ -106,11 +116,15 @@ extension MainPageViewModel: BasketPageDelegate{
     func addSegment(segment: Segment, isNew: Bool) {
         if (isNew){
             self.currentStocks.value.append(nil)
-            self.appendNewSegment(segment: segment)
+            CoreDataManager.shared.addSegment(segment: segment)
+            self.loadSegments()
         }
         else{
-            self.segments.value?[self.selectedSegment.value].search += segment.search
+            let key: String = segments.value![selectedSegment.value].key
+            let stocks: [Stock] = self.segments.value![self.selectedSegment.value].search + segment.search
             self.currentStocks.value[self.selectedSegment.value] = nil
+            CoreDataManager.shared.updateSegmentStocks(key: key, stocks: stocks)
+            loadSegments()
         }
     }
     func getStocks(isNew: Bool) -> [Stock]{
@@ -128,7 +142,10 @@ extension MainPageViewModel: BasketPageDelegate{
 
 extension MainPageViewModel: ChangeBasketPageControllerDelegate{
     func deleteStockFromSegment(delete index: Int) {
+        let key: String = segments.value![selectedSegment.value].key
         self.segments.value?[selectedSegment.value].search.remove(at: index)
+        CoreDataManager.shared.updateSegmentStocks(key: key, stocks: self.segments.value![selectedSegment.value].search)
+        loadSegments()
     }
     func addNewStockFromBasketPage() {
         let currentItems: [Stock] = segments.value?[selectedSegment.value].search ?? []
@@ -139,6 +156,8 @@ extension MainPageViewModel: ChangeBasketPageControllerDelegate{
         coordinator.moveTo(flow: .main(.basketScreen), userData: ["data": data as Any, "isNew": false as Any])
     }
     func renameSegment(name: String) {
-        segments.value?[selectedSegment.value].key = name
+        let old: String = segments.value![selectedSegment.value].key
+        CoreDataManager.shared.updateSegmentName(oldName: old, newName: name)
+        loadSegments()
     }
 }

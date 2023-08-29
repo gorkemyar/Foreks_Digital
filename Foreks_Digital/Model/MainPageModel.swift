@@ -2,7 +2,7 @@ import Foundation
 
 
 
-struct Stock: Codable, Identifiable{
+struct Stock: Codable, Identifiable, Hashable{
     var id: String {
         return tke
     }
@@ -20,6 +20,10 @@ struct Stock: Codable, Identifiable{
     }
     static func ==(lhs:Stock, rhs:Stock) -> Bool { // Implement Equatable
         return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher){
+        hasher.combine(id)
     }
 }
 
