@@ -21,5 +21,4 @@ extension StockCore {
     @NSManaged public var tke: String?
     @NSManaged public var def: String?
     @NSManaged public var stockToSegment: SegmentCore?
-
 }

@@ -64,9 +64,9 @@ extension MainPageController{
         sembolBar.setClick(newClick: popupAppear)
     }
     func popupAppear(whichField: Int, pos: CGRect) {
-        self.popUp = PopUp(frame: self.view.frame, position: pos, data: viewModel.mainPage.value?.mainPageSearches ?? [])
+        self.popUp = PopUp(frame: self.view.frame, position: pos, data: viewModel.mainPage?.mainPageSearches ?? [])
         self.popUp.click = {(idx: Int) -> Void in
-            let field: SearchTypes = self.viewModel.mainPage.value!.mainPageSearches[idx]
+            let field: SearchTypes = self.viewModel.mainPage!.mainPageSearches[idx]
             self.viewModel.changeField(field: field, whichField: whichField);
             self.outsideClick();
         }

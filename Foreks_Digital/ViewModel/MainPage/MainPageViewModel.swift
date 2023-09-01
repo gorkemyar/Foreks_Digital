@@ -16,15 +16,14 @@ class MainPageViewModel {
     private var mainPageNetworkService: MainPageNetworkService
     
     private var timer: Timer?
-    private(set) var mainPage: Observable<Page?> = Observable(nil)
-    private(set) var currentStocks: Observable<[[StockDetailed]?]> = Observable([nil])
+    private(set) var mainPage: Page? = nil
     
     private(set) var field1: Observable<SearchTypes> = Observable(SearchTypes(name: "Son", key: "las"))
     private(set) var field2: Observable<SearchTypes> = Observable(SearchTypes(name: "%Fark", key: "pdd"))
     private(set) var segments: Observable<[Segment]?> = Observable(nil)
+    private(set) var currentStocks: Observable<[[StockDetailed]?]> = Observable([nil])
     
     private(set) var selectedSegment: Observable<Int> = Observable(0)
-    private(set) var segmentEditing: Observable<Bool> = Observable(false)
     
     
     func loadSegments(){
@@ -36,7 +35,7 @@ class MainPageViewModel {
         mainPageNetworkService.getMainPage() { result in
             switch result {
             case .success(let data):
-                self.mainPage.value = data
+                self.mainPage = data
                 if self.segments.value?.count ?? 0 == 0{
                     self.dataService.addSegment(segment: Segment(key: "Default", search: data.mainPageStocks))
                     self.loadSegments()
@@ -86,8 +85,10 @@ class MainPageViewModel {
             field2.value = field
         }
     }
-    
 }
+
+
+
 
 extension MainPageViewModel: StockTableControllerDelegate{
     func goToDetailPage(indexOfCell: Int) {
@@ -97,7 +98,7 @@ extension MainPageViewModel: StockTableControllerDelegate{
 
 extension MainPageViewModel: BasketBarDelegate{
     func clickAddButton() {
-        coordinator.moveTo(flow: .main(.basketScreen), userData: ["data": mainPage.value?.mainPageStocks as Any, "isNew": true as Any])
+        coordinator.moveTo(flow: .main(.basketScreen), userData: ["data": mainPage?.mainPageStocks as Any, "isNew": true as Any])
     }
     func clickChangeButton() {
         coordinator.moveTo(flow: .main(.changeBasketScreen), userData: ["data": segments.value?[selectedSegment.value] as Any])
@@ -129,10 +130,10 @@ extension MainPageViewModel: BasketPageDelegate{
     }
     func getStocks(isNew: Bool) -> [Stock]{
         if (isNew){
-            return mainPage.value!.mainPageStocks
+            return mainPage!.mainPageStocks
         }else{
             let currentItems: [Stock]! = segments.value![selectedSegment.value].search
-            return mainPage.value!.mainPageStocks.filter(
+            return mainPage!.mainPageStocks.filter(
                 {stock in
                     return !currentItems.contains(where: {$0.id == stock.id})
                 })
@@ -147,14 +148,15 @@ extension MainPageViewModel: ChangeBasketPageControllerDelegate{
         dataService.updateSegmentStocks(key: key, stocks: self.segments.value![selectedSegment.value].search)
         loadSegments()
     }
+    
     func addNewStockFromBasketPage() {
         let currentItems: [Stock] = segments.value?[selectedSegment.value].search ?? []
-        let data: [Stock] = mainPage.value!.mainPageStocks.filter({stock in
+        let data: [Stock] = mainPage!.mainPageStocks.filter({stock in
             return !currentItems.contains(where: {$0.id == stock.id})
         })
-        
         coordinator.moveTo(flow: .main(.basketScreen), userData: ["data": data as Any, "isNew": false as Any])
     }
+    
     func renameSegment(name: String) {
         let old: String = segments.value![selectedSegment.value].key
         dataService.updateSegmentName(oldName: old, newName: name)

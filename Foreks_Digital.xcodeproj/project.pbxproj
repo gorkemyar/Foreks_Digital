@@ -59,10 +59,10 @@
 		066E857B2A964D66000A8A82 /* ChangeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066E85792A964D66000A8A82 /* ChangeTableCell.xib */; };
 		066E85802A9CD64D000A8A82 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 066E857E2A9CD64D000A8A82 /* Model.xcdatamodeld */; };
 		066E858C2A9E22E2000A8A82 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E858B2A9E22E2000A8A82 /* CoreDataService.swift */; };
-		066E85912A9E2FEF000A8A82 /* StockCore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E858F2A9E2FEF000A8A82 /* StockCore+CoreDataClass.swift */; };
-		066E85922A9E2FEF000A8A82 /* StockCore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E858D2A9E2FEF000A8A82 /* StockCore+CoreDataProperties.swift */; };
-		066E85932A9E2FEF000A8A82 /* SegmentCore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E85902A9E2FEF000A8A82 /* SegmentCore+CoreDataProperties.swift */; };
-		066E85942A9E2FEF000A8A82 /* SegmentCore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E858E2A9E2FEF000A8A82 /* SegmentCore+CoreDataClass.swift */; };
+		066E85912A9E2FEF000A8A82 /* SegmentCore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E858F2A9E2FEF000A8A82 /* SegmentCore+CoreDataClass.swift */; };
+		066E85922A9E2FEF000A8A82 /* SegmentCore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E858D2A9E2FEF000A8A82 /* SegmentCore+CoreDataProperties.swift */; };
+		066E85932A9E2FEF000A8A82 /* StockCore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E85902A9E2FEF000A8A82 /* StockCore+CoreDataProperties.swift */; };
+		066E85942A9E2FEF000A8A82 /* StockCore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E858E2A9E2FEF000A8A82 /* StockCore+CoreDataClass.swift */; };
 		066E85962AA2019E000A8A82 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E85952AA2019E000A8A82 /* DataService.swift */; };
 		066E85992AA20796000A8A82 /* SegmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E85982AA20796000A8A82 /* SegmentModel.swift */; };
 		066E859B2AA207C0000A8A82 /* StockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E859A2AA207C0000A8A82 /* StockModel.swift */; };
@@ -128,10 +128,10 @@
 		066E85792A964D66000A8A82 /* ChangeTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeTableCell.xib; sourceTree = "<group>"; };
 		066E857F2A9CD64D000A8A82 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		066E858B2A9E22E2000A8A82 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
-		066E858D2A9E2FEF000A8A82 /* StockCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StockCore+CoreDataProperties.swift"; path = "/Users/foreks/Coding/Foreks_Digital/Foreks_Digital/StockCore+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		066E858E2A9E2FEF000A8A82 /* SegmentCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SegmentCore+CoreDataClass.swift"; path = "/Users/foreks/Coding/Foreks_Digital/Foreks_Digital/SegmentCore+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		066E858F2A9E2FEF000A8A82 /* StockCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StockCore+CoreDataClass.swift"; path = "/Users/foreks/Coding/Foreks_Digital/Foreks_Digital/StockCore+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		066E85902A9E2FEF000A8A82 /* SegmentCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SegmentCore+CoreDataProperties.swift"; path = "/Users/foreks/Coding/Foreks_Digital/Foreks_Digital/SegmentCore+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		066E858D2A9E2FEF000A8A82 /* SegmentCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SegmentCore+CoreDataProperties.swift"; path = "/Users/foreks/Coding/Foreks_Digital/Foreks_Digital/DataService/SegmentCore+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		066E858E2A9E2FEF000A8A82 /* StockCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StockCore+CoreDataClass.swift"; path = "/Users/foreks/Coding/Foreks_Digital/Foreks_Digital/DataService/StockCore+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		066E858F2A9E2FEF000A8A82 /* SegmentCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SegmentCore+CoreDataClass.swift"; path = "/Users/foreks/Coding/Foreks_Digital/Foreks_Digital/DataService/SegmentCore+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		066E85902A9E2FEF000A8A82 /* StockCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StockCore+CoreDataProperties.swift"; path = "/Users/foreks/Coding/Foreks_Digital/Foreks_Digital/DataService/StockCore+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		066E85952AA2019E000A8A82 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		066E85982AA20796000A8A82 /* SegmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentModel.swift; sourceTree = "<group>"; };
 		066E859A2AA207C0000A8A82 /* StockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockModel.swift; sourceTree = "<group>"; };
@@ -484,18 +484,18 @@
 			path = ChangeCell;
 			sourceTree = "<group>";
 		};
-		066E85822A9E1E61000A8A82 /* CoreData */ = {
+		066E85822A9E1E61000A8A82 /* DataService */ = {
 			isa = PBXGroup;
 			children = (
-				066E858F2A9E2FEF000A8A82 /* StockCore+CoreDataClass.swift */,
-				066E858D2A9E2FEF000A8A82 /* StockCore+CoreDataProperties.swift */,
-				066E858E2A9E2FEF000A8A82 /* SegmentCore+CoreDataClass.swift */,
-				066E85902A9E2FEF000A8A82 /* SegmentCore+CoreDataProperties.swift */,
 				066E857E2A9CD64D000A8A82 /* Model.xcdatamodeld */,
+				066E858F2A9E2FEF000A8A82 /* SegmentCore+CoreDataClass.swift */,
+				066E858D2A9E2FEF000A8A82 /* SegmentCore+CoreDataProperties.swift */,
+				066E858E2A9E2FEF000A8A82 /* StockCore+CoreDataClass.swift */,
+				066E85902A9E2FEF000A8A82 /* StockCore+CoreDataProperties.swift */,
 				066E858B2A9E22E2000A8A82 /* CoreDataService.swift */,
 				066E85952AA2019E000A8A82 /* DataService.swift */,
 			);
-			path = CoreData;
+			path = DataService;
 			sourceTree = "<group>";
 		};
 		066E859D2AA20864000A8A82 /* Main */ = {
@@ -530,7 +530,7 @@
 		06DE53832A72E78D00358718 /* Foreks_Digital */ = {
 			isa = PBXGroup;
 			children = (
-				066E85822A9E1E61000A8A82 /* CoreData */,
+				066E85822A9E1E61000A8A82 /* DataService */,
 				0635E56E2A83A07A007C11B3 /* Coordinator */,
 				0635E5362A7A3648007C11B3 /* Application */,
 				0635E51C2A78F223007C11B3 /* Constants */,
@@ -692,17 +692,17 @@
 				0635E53A2A7A375D007C11B3 /* SembolBar.swift in Sources */,
 				066E859B2AA207C0000A8A82 /* StockModel.swift in Sources */,
 				066E858C2A9E22E2000A8A82 /* CoreDataService.swift in Sources */,
-				066E85922A9E2FEF000A8A82 /* StockCore+CoreDataProperties.swift in Sources */,
+				066E85922A9E2FEF000A8A82 /* SegmentCore+CoreDataProperties.swift in Sources */,
 				0635E5612A80FF71007C11B3 /* NewsController.swift in Sources */,
 				066CE7B12A76723A004503CF /* MainPageModel.swift in Sources */,
 				0635E58C2A84F804007C11B3 /* MainPageCoordinator.swift in Sources */,
-				066E85932A9E2FEF000A8A82 /* SegmentCore+CoreDataProperties.swift in Sources */,
-				066E85942A9E2FEF000A8A82 /* SegmentCore+CoreDataClass.swift in Sources */,
+				066E85932A9E2FEF000A8A82 /* StockCore+CoreDataProperties.swift in Sources */,
+				066E85942A9E2FEF000A8A82 /* StockCore+CoreDataClass.swift in Sources */,
 				066CE7CA2A7681FC004503CF /* MainPageViewModel.swift in Sources */,
 				066CE7CF2A76AA76004503CF /* StockItemCell.swift in Sources */,
 				066CE7AE2A7671E2004503CF /* NetworkManager.swift in Sources */,
 				066CE7D62A77CA9D004503CF /* DetailPageController.swift in Sources */,
-				066E85912A9E2FEF000A8A82 /* StockCore+CoreDataClass.swift in Sources */,
+				066E85912A9E2FEF000A8A82 /* SegmentCore+CoreDataClass.swift in Sources */,
 				066E85512A8A61D6000A8A82 /* SegmentioBuilder.swift in Sources */,
 				0635E5902A84F824007C11B3 /* NewsCoordinator.swift in Sources */,
 				0635E5922A863345007C11B3 /* AppFlow.swift in Sources */,

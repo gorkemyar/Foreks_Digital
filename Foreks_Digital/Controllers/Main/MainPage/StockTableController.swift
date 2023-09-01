@@ -64,7 +64,6 @@ protocol StockTableControllerDelegate {
 extension StockTableController{
     private func setupViewModel(){
         viewModel.currentStocks.bind{ [weak self] res in
-
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }

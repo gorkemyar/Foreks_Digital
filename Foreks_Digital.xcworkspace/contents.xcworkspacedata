@@ -2,18 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/foreks/Coding/Foreks_Digital/Foreks_Digital/StockCore+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/foreks/Coding/Foreks_Digital/Foreks_Digital/StockCore+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/foreks/Coding/Foreks_Digital/Foreks_Digital/SegmentCore+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/foreks/Coding/Foreks_Digital/Foreks_Digital/SegmentCore+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
       location = "group:Foreks_Digital.xcodeproj">
    </FileRef>
    <FileRef
