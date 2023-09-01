@@ -35,8 +35,6 @@
 		0635E5922A863345007C11B3 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635E5912A863345007C11B3 /* AppFlow.swift */; };
 		066CE7AE2A7671E2004503CF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CE7AD2A7671E2004503CF /* NetworkManager.swift */; };
 		066CE7B12A76723A004503CF /* MainPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CE7B02A76723A004503CF /* MainPageModel.swift */; };
-		066CE7B32A76725A004503CF /* DetailedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CE7B22A76725A004503CF /* DetailedModel.swift */; };
-		066CE7B52A767281004503CF /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CE7B42A767281004503CF /* CurrencyModel.swift */; };
 		066CE7B82A7674AC004503CF /* URLGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CE7B72A7674AC004503CF /* URLGeneration.swift */; };
 		066CE7CA2A7681FC004503CF /* MainPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CE7C92A7681FC004503CF /* MainPageViewModel.swift */; };
 		066CE7CF2A76AA76004503CF /* StockItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066CE7CD2A76AA76004503CF /* StockItemCell.swift */; };
@@ -66,6 +64,8 @@
 		066E85932A9E2FEF000A8A82 /* SegmentCore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E85902A9E2FEF000A8A82 /* SegmentCore+CoreDataProperties.swift */; };
 		066E85942A9E2FEF000A8A82 /* SegmentCore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E858E2A9E2FEF000A8A82 /* SegmentCore+CoreDataClass.swift */; };
 		066E85962AA2019E000A8A82 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E85952AA2019E000A8A82 /* DataService.swift */; };
+		066E85992AA20796000A8A82 /* SegmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E85982AA20796000A8A82 /* SegmentModel.swift */; };
+		066E859B2AA207C0000A8A82 /* StockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E859A2AA207C0000A8A82 /* StockModel.swift */; };
 		06DE53852A72E78D00358718 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53842A72E78D00358718 /* AppDelegate.swift */; };
 		06DE53872A72E78D00358718 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53862A72E78D00358718 /* SceneDelegate.swift */; };
 		06DE53892A72E78D00358718 /* MainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53882A72E78D00358718 /* MainPageController.swift */; };
@@ -104,8 +104,6 @@
 		0635E5912A863345007C11B3 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		066CE7AD2A7671E2004503CF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		066CE7B02A76723A004503CF /* MainPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageModel.swift; sourceTree = "<group>"; };
-		066CE7B22A76725A004503CF /* DetailedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedModel.swift; sourceTree = "<group>"; };
-		066CE7B42A767281004503CF /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
 		066CE7B72A7674AC004503CF /* URLGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLGeneration.swift; sourceTree = "<group>"; };
 		066CE7C92A7681FC004503CF /* MainPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewModel.swift; sourceTree = "<group>"; };
 		066CE7CD2A76AA76004503CF /* StockItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItemCell.swift; sourceTree = "<group>"; };
@@ -135,6 +133,8 @@
 		066E858F2A9E2FEF000A8A82 /* StockCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StockCore+CoreDataClass.swift"; path = "/Users/foreks/Coding/Foreks_Digital/Foreks_Digital/StockCore+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		066E85902A9E2FEF000A8A82 /* SegmentCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SegmentCore+CoreDataProperties.swift"; path = "/Users/foreks/Coding/Foreks_Digital/Foreks_Digital/SegmentCore+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		066E85952AA2019E000A8A82 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		066E85982AA20796000A8A82 /* SegmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentModel.swift; sourceTree = "<group>"; };
+		066E859A2AA207C0000A8A82 /* StockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockModel.swift; sourceTree = "<group>"; };
 		06DE53812A72E78D00358718 /* Foreks_Digital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foreks_Digital.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DE53842A72E78D00358718 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06DE53862A72E78D00358718 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -348,8 +348,8 @@
 			isa = PBXGroup;
 			children = (
 				066CE7B02A76723A004503CF /* MainPageModel.swift */,
-				066CE7B22A76725A004503CF /* DetailedModel.swift */,
-				066CE7B42A767281004503CF /* CurrencyModel.swift */,
+				066E85982AA20796000A8A82 /* SegmentModel.swift */,
+				066E859A2AA207C0000A8A82 /* StockModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -386,12 +386,9 @@
 		066CE7C42A767BD7004503CF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				066E85732A962808000A8A82 /* ChangeBasketPage */,
+				066E859D2AA20864000A8A82 /* Main */,
 				066E856E2A95ED2F000A8A82 /* Spinner */,
-				066E85522A8A747A000A8A82 /* BasketPage */,
-				066CE7D32A77CA53004503CF /* DetailPage */,
 				0635E5692A8124C3007C11B3 /* Exchange */,
-				066CE7D42A77CA5C004503CF /* MainPage */,
 				0635E56A2A8124DE007C11B3 /* Market */,
 				0635E5682A8124B8007C11B3 /* News */,
 				0635E56D2A824545007C11B3 /* TabBar */,
@@ -499,6 +496,17 @@
 				066E85952AA2019E000A8A82 /* DataService.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		066E859D2AA20864000A8A82 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				066E85732A962808000A8A82 /* ChangeBasketPage */,
+				066E85522A8A747A000A8A82 /* BasketPage */,
+				066CE7D32A77CA53004503CF /* DetailPage */,
+				066CE7D42A77CA5C004503CF /* MainPage */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		06DE53782A72E78D00358718 = {
@@ -677,11 +685,12 @@
 				0635E5592A7C2854007C11B3 /* MainPageNetworkService.swift in Sources */,
 				0635E5762A84F3F6007C11B3 /* TabBarCoordinator.swift in Sources */,
 				066E854F2A8A56B4000A8A82 /* Storyboardable.swift in Sources */,
+				066E85992AA20796000A8A82 /* SegmentModel.swift in Sources */,
 				0635E5802A84F7A4007C11B3 /* NewsBaseCoordinator.swift in Sources */,
 				0635E5872A84F7DE007C11B3 /* ExchangeBaseCoordinator.swift in Sources */,
 				0635E5652A810007007C11B3 /* MarketController.swift in Sources */,
 				0635E53A2A7A375D007C11B3 /* SembolBar.swift in Sources */,
-				066CE7B52A767281004503CF /* CurrencyModel.swift in Sources */,
+				066E859B2AA207C0000A8A82 /* StockModel.swift in Sources */,
 				066E858C2A9E22E2000A8A82 /* CoreDataService.swift in Sources */,
 				066E85922A9E2FEF000A8A82 /* StockCore+CoreDataProperties.swift in Sources */,
 				0635E5612A80FF71007C11B3 /* NewsController.swift in Sources */,
@@ -723,7 +732,6 @@
 				0635E5702A83A0CD007C11B3 /* Coordinator.swift in Sources */,
 				0635E5722A83A184007C11B3 /* TabBarBaseCoordinator.swift in Sources */,
 				066E855F2A8B6B59000A8A82 /* BasketCell.swift in Sources */,
-				066CE7B32A76725A004503CF /* DetailedModel.swift in Sources */,
 				066E85702A95ED47000A8A82 /* SpinnerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
