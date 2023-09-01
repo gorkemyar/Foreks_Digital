@@ -6,10 +6,11 @@ class MainPageCoordinator: MainPageBaseCoordinator {
     
     lazy var rootViewController: UIViewController = UIViewController()
     var viewModel: MainPageViewModel!
+    var dataService: DataService = CoreDataService(modelName: "Model")
     
         
     func start() -> UIViewController {
-        viewModel = MainPageViewModel(coordinator: self)
+        viewModel = MainPageViewModel(coordinator: self, dataService: dataService)
         let vc = MainPageController.instantiate(name: "Main")
         vc.viewModel = viewModel
         vc.coordinator = self

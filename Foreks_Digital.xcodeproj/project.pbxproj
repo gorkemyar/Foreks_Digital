@@ -60,11 +60,12 @@
 		066E857A2A964D66000A8A82 /* ChangeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E85782A964D66000A8A82 /* ChangeTableCell.swift */; };
 		066E857B2A964D66000A8A82 /* ChangeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066E85792A964D66000A8A82 /* ChangeTableCell.xib */; };
 		066E85802A9CD64D000A8A82 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 066E857E2A9CD64D000A8A82 /* Model.xcdatamodeld */; };
-		066E858C2A9E22E2000A8A82 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E858B2A9E22E2000A8A82 /* CoreDataManager.swift */; };
+		066E858C2A9E22E2000A8A82 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E858B2A9E22E2000A8A82 /* CoreDataService.swift */; };
 		066E85912A9E2FEF000A8A82 /* StockCore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E858F2A9E2FEF000A8A82 /* StockCore+CoreDataClass.swift */; };
 		066E85922A9E2FEF000A8A82 /* StockCore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E858D2A9E2FEF000A8A82 /* StockCore+CoreDataProperties.swift */; };
 		066E85932A9E2FEF000A8A82 /* SegmentCore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E85902A9E2FEF000A8A82 /* SegmentCore+CoreDataProperties.swift */; };
 		066E85942A9E2FEF000A8A82 /* SegmentCore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E858E2A9E2FEF000A8A82 /* SegmentCore+CoreDataClass.swift */; };
+		066E85962AA2019E000A8A82 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E85952AA2019E000A8A82 /* DataService.swift */; };
 		06DE53852A72E78D00358718 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53842A72E78D00358718 /* AppDelegate.swift */; };
 		06DE53872A72E78D00358718 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53862A72E78D00358718 /* SceneDelegate.swift */; };
 		06DE53892A72E78D00358718 /* MainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53882A72E78D00358718 /* MainPageController.swift */; };
@@ -128,11 +129,12 @@
 		066E85782A964D66000A8A82 /* ChangeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeTableCell.swift; sourceTree = "<group>"; };
 		066E85792A964D66000A8A82 /* ChangeTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeTableCell.xib; sourceTree = "<group>"; };
 		066E857F2A9CD64D000A8A82 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		066E858B2A9E22E2000A8A82 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		066E858B2A9E22E2000A8A82 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		066E858D2A9E2FEF000A8A82 /* StockCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StockCore+CoreDataProperties.swift"; path = "/Users/foreks/Coding/Foreks_Digital/Foreks_Digital/StockCore+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		066E858E2A9E2FEF000A8A82 /* SegmentCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SegmentCore+CoreDataClass.swift"; path = "/Users/foreks/Coding/Foreks_Digital/Foreks_Digital/SegmentCore+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		066E858F2A9E2FEF000A8A82 /* StockCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "StockCore+CoreDataClass.swift"; path = "/Users/foreks/Coding/Foreks_Digital/Foreks_Digital/StockCore+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		066E85902A9E2FEF000A8A82 /* SegmentCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SegmentCore+CoreDataProperties.swift"; path = "/Users/foreks/Coding/Foreks_Digital/Foreks_Digital/SegmentCore+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		066E85952AA2019E000A8A82 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		06DE53812A72E78D00358718 /* Foreks_Digital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foreks_Digital.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DE53842A72E78D00358718 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06DE53862A72E78D00358718 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -493,7 +495,8 @@
 				066E858E2A9E2FEF000A8A82 /* SegmentCore+CoreDataClass.swift */,
 				066E85902A9E2FEF000A8A82 /* SegmentCore+CoreDataProperties.swift */,
 				066E857E2A9CD64D000A8A82 /* Model.xcdatamodeld */,
-				066E858B2A9E22E2000A8A82 /* CoreDataManager.swift */,
+				066E858B2A9E22E2000A8A82 /* CoreDataService.swift */,
+				066E85952AA2019E000A8A82 /* DataService.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -679,7 +682,7 @@
 				0635E5652A810007007C11B3 /* MarketController.swift in Sources */,
 				0635E53A2A7A375D007C11B3 /* SembolBar.swift in Sources */,
 				066CE7B52A767281004503CF /* CurrencyModel.swift in Sources */,
-				066E858C2A9E22E2000A8A82 /* CoreDataManager.swift in Sources */,
+				066E858C2A9E22E2000A8A82 /* CoreDataService.swift in Sources */,
 				066E85922A9E2FEF000A8A82 /* StockCore+CoreDataProperties.swift in Sources */,
 				0635E5612A80FF71007C11B3 /* NewsController.swift in Sources */,
 				066CE7B12A76723A004503CF /* MainPageModel.swift in Sources */,
@@ -704,6 +707,7 @@
 				0635E5542A7C2114007C11B3 /* Observable.swift in Sources */,
 				066E856B2A93A475000A8A82 /* SegmentNamePopUp.swift in Sources */,
 				0635E5632A80FFB5007C11B3 /* ExchangeController.swift in Sources */,
+				066E85962AA2019E000A8A82 /* DataService.swift in Sources */,
 				066CE7D92A77E3CF004503CF /* Extensions.swift in Sources */,
 				0635E58A2A84F7F5007C11B3 /* ExchangeCoordinator.swift in Sources */,
 				066E85752A96284B000A8A82 /* ChangeBasketPageController.swift in Sources */,

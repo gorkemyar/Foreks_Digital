@@ -1,8 +1,7 @@
 import Foundation
 import CoreData
 
-class CoreDataManager{
-    static let shared = CoreDataManager(modelName: "Model")
+class CoreDataService: DataService{
     
     let persistentContainer: NSPersistentContainer
     var viewContext: NSManagedObjectContext{
@@ -11,6 +10,7 @@ class CoreDataManager{
     
     init(modelName: String){
         persistentContainer = NSPersistentContainer(name: modelName)
+        load()
     }
     
     func load(completion: (()->Void)? = nil){
@@ -39,7 +39,7 @@ class CoreDataManager{
 }
 
 
-extension CoreDataManager{
+extension CoreDataService{
     func getSegments() -> [Segment]{
         do {
             let fetchRequest: NSFetchRequest<SegmentCore> = SegmentCore.fetchRequest()

@@ -28,7 +28,7 @@ extension SegmentCore {
     @NSManaged public func addToSegmentStocks(_ value: StockCore)
 
     @objc(removeSegmentStocksObject:)
-    @NSManaged public func removeFromSegmentStocks(_ value: StockCore)
+    @NSManaged public func  removeFromSegmentStocks(_ value: StockCore)
 
     @objc(addSegmentStocks:)
     @NSManaged public func addToSegmentStocks(_ values: NSSet)
