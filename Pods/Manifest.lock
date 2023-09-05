@@ -1,20 +1,26 @@
 PODS:
+  - DGCharts (5.0.0):
+    - DGCharts/Core (= 5.0.0)
+  - DGCharts/Core (5.0.0)
   - FontAwesome.swift (1.9.1)
   - Segmentio (4.1)
 
 DEPENDENCIES:
+  - DGCharts
   - FontAwesome.swift
   - Segmentio
 
 SPEC REPOS:
   trunk:
+    - DGCharts
     - FontAwesome.swift
     - Segmentio
 
 SPEC CHECKSUMS:
+  DGCharts: 6e0cf2644e8f81ad13f04caa8bc18502870a1c54
   FontAwesome.swift: 6b52cb7be66eacd28cbfaa0ca7ffd0de4a186a1d
   Segmentio: ab29def64e1bff6e6e9b97671788a99bed3f1d9f
 
-PODFILE CHECKSUM: d008a1f71b005f2ca48c4ae167ef02eb3d2c4e70
+PODFILE CHECKSUM: 85ec484a7730940a3e5d4465f0e97142d294c596
 
 COCOAPODS: 1.12.1

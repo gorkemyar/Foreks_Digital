@@ -13,7 +13,7 @@ struct Stock: Codable, Identifiable, Hashable{
         return Stock(gro: gro, cod: cod, tke: tke, def: def)
     }
     func toDetailed () -> StockDetailed{
-        var tmp: [String: String] = ["cod": cod, "gro": gro, "tke": tke, "def": def]
+        let tmp: [String: String] = ["cod": cod, "gro": gro, "tke": tke, "def": def]
         return StockDetailed(stockDict: tmp)
     }
     static func ==(lhs:Stock, rhs:Stock) -> Bool { // Implement Equatable

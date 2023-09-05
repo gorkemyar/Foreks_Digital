@@ -1,3 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-Foreks_Digital/Pods-Foreks_Digital-frameworks.sh
+${BUILT_PRODUCTS_DIR}/DGCharts/DGCharts.framework
 ${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework
 ${BUILT_PRODUCTS_DIR}/Segmentio/Segmentio.framework

@@ -12,7 +12,7 @@ import CoreData
 @objc(SegmentCore)
 public class SegmentCore: NSManagedObject {
     func toSegment() -> Segment{
-        var stocks: [Stock] = (self.segmentStocks as! Set<StockCore>).map{$0.toStock()}
+        let stocks: [Stock] = (self.segmentStocks as! Set<StockCore>).map{$0.toStock()}
         return Segment(key: key!, search: stocks)
     }
 }
