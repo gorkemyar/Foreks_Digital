@@ -19,17 +19,25 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2M-7i-96K">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ONG-mv-eat">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ONG-mv-eat" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="1400"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Txv-QD-LW0">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="1400"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VkG-N8-xeG">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VkG-N8-xeG" userLabel="Chart">
                                                         <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
-                                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vgf-Iz-1g5" customClass="LineChartView" customModule="DGCharts">
+                                                                <rect key="frame" x="5" y="10" width="383" height="180"/>
+                                                            </view>
+                                                        </subviews>
                                                         <constraints>
+                                                            <constraint firstItem="vgf-Iz-1g5" firstAttribute="leading" secondItem="VkG-N8-xeG" secondAttribute="leading" constant="5" id="9YF-5o-lCB"/>
                                                             <constraint firstAttribute="height" constant="200" id="DHn-vq-trd"/>
+                                                            <constraint firstItem="vgf-Iz-1g5" firstAttribute="top" secondItem="VkG-N8-xeG" secondAttribute="top" constant="10" id="HUb-eT-qGM"/>
+                                                            <constraint firstAttribute="trailing" secondItem="vgf-Iz-1g5" secondAttribute="trailing" constant="5" id="id3-6z-zdZ"/>
+                                                            <constraint firstAttribute="bottom" secondItem="vgf-Iz-1g5" secondAttribute="bottom" constant="10" id="wgj-Ld-qyy"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t0v-JK-8jb">
@@ -104,6 +112,9 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="C2M-7i-96K" secondAttribute="trailing" id="yvB-dc-fpZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lineChart" destination="vgf-Iz-1g5" id="kAV-BL-8y1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,9 +122,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
