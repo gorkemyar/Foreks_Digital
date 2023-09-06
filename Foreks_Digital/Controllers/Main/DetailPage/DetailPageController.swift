@@ -10,8 +10,9 @@ import DGCharts
 
 class DetailPageController: UIViewController, MainPageBaseCoordinated, Storyboardable {
 
+    @IBOutlet weak var infoBar: InfoBar!
     var coordinator: MainPageBaseCoordinator?
-    var stock: Observable<StockDetailed?> = Observable(nil)
+    var viewModel: DetailPageViewModel!
 
     @IBOutlet weak var lineChart: LineChartView!
     
@@ -22,15 +23,24 @@ class DetailPageController: UIViewController, MainPageBaseCoordinated, Storyboar
         
         setNavigationBar()
         setLineChartData()
+        line()
+        viewModel.startLoadingDataTimer()
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        viewModel.stopTimer()
+    }
 
     private func setup(){
-        stock.bind{ [weak self] res in
+        viewModel.stock.bind{ [weak self] res in
             DispatchQueue.main.async {
-                self?.navigationController?.navigationBar.topItem?.title = res?.id ?? "Empty"
+                self?.navigationController?.navigationBar.topItem?.title = res.id
+                
+                self?.infoBar.fillBar(change: res.changePositive, clock: res.stockDict["clo"] ?? "00.00", price: res.stockDict["las"] ?? "00.00")
+                
             }
         }
+
     }
 }
 
@@ -75,7 +85,24 @@ extension DetailPageController{
     }
 }
 
-
+extension DetailPageController{
+    func line(){
+        let layer = CAShapeLayer()
+        layer.strokeColor = Constants.colors.green.cgColor
+        layer.lineDashPattern = [5,5]; // Here you set line length
+        layer.backgroundColor = UIColor.clear.cgColor
+        layer.fillColor = UIColor.clear.cgColor
+        
+        let path = CGMutablePath()
+        path.addLines(between: [CGPoint(x: 10, y: infoBar.frame.height),
+                                CGPoint(x: infoBar.frame.width-20, y: infoBar.frame.height)])
+        
+        layer.path = path
+        
+        self.infoBar.layer.addSublayer(layer)
+    }
+    
+}
 
 
 

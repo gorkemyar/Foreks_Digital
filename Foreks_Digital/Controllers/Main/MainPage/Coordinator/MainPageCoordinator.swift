@@ -44,7 +44,8 @@ class MainPageCoordinator: MainPageBaseCoordinator {
         let detailVC = DetailPageController.instantiate(name: "Detail")
         detailVC.coordinator = self
         if (data != nil){
-            detailVC.stock.value = data!["data"] as? StockDetailed
+            let detailViewModel = DetailPageViewModel(stock:  data!["data"] as! StockDetailed)
+            detailVC.viewModel = detailViewModel
         }
         navigationRootViewController?.pushViewController(detailVC, animated: true)
     }

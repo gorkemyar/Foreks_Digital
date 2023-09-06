@@ -20,13 +20,29 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ONG-mv-eat" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1450"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Txv-QD-LW0">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="1400"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="1450"/>
                                                 <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4d-Ac-Aae" userLabel="Change">
+                                                        <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBN-RZ-VGb" customClass="InfoBar" customModule="Foreks_Digital" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            </view>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="MBN-RZ-VGb" secondAttribute="trailing" id="8W4-Ft-Saa"/>
+                                                            <constraint firstItem="MBN-RZ-VGb" firstAttribute="top" secondItem="c4d-Ac-Aae" secondAttribute="top" id="TiP-wa-HcS"/>
+                                                            <constraint firstItem="MBN-RZ-VGb" firstAttribute="leading" secondItem="c4d-Ac-Aae" secondAttribute="leading" id="Y0E-9d-DAh"/>
+                                                            <constraint firstAttribute="height" constant="50" id="zFR-fw-80n"/>
+                                                            <constraint firstAttribute="bottom" secondItem="MBN-RZ-VGb" secondAttribute="bottom" id="zfK-ja-i0w"/>
+                                                        </constraints>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VkG-N8-xeG" userLabel="Chart">
-                                                        <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
+                                                        <rect key="frame" x="0.0" y="50" width="393" height="200"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vgf-Iz-1g5" customClass="LineChartView" customModule="DGCharts">
                                                                 <rect key="frame" x="5" y="10" width="383" height="180"/>
@@ -41,48 +57,52 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t0v-JK-8jb">
-                                                        <rect key="frame" x="0.0" y="200" width="393" height="200"/>
+                                                        <rect key="frame" x="0.0" y="250" width="393" height="200"/>
                                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="200" id="VCj-Rh-VZz"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bw0-66-PBz">
-                                                        <rect key="frame" x="0.0" y="400" width="393" height="200"/>
+                                                        <rect key="frame" x="0.0" y="450" width="393" height="200"/>
                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="200" id="JWX-eY-Ghx"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rm7-gk-Xdt">
-                                                        <rect key="frame" x="0.0" y="600" width="393" height="200"/>
+                                                        <rect key="frame" x="0.0" y="650" width="393" height="200"/>
                                                         <color key="backgroundColor" systemColor="systemRedColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="200" id="MZT-3t-ddg"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YGg-s4-VNE">
-                                                        <rect key="frame" x="0.0" y="800" width="393" height="200"/>
+                                                        <rect key="frame" x="0.0" y="850" width="393" height="200"/>
                                                         <color key="backgroundColor" systemColor="tintColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="200" id="VOo-wc-r0V"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCl-YI-xCB">
-                                                        <rect key="frame" x="0.0" y="1000" width="393" height="200"/>
+                                                        <rect key="frame" x="0.0" y="1050" width="393" height="200"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="200" id="Jdc-ht-dhJ"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k2F-Og-t5S">
-                                                        <rect key="frame" x="0.0" y="1200" width="393" height="200"/>
+                                                        <rect key="frame" x="0.0" y="1250" width="393" height="200"/>
                                                         <color key="backgroundColor" red="1" green="0.3752787783" blue="0.76745536599999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="200" id="jbG-eL-bXI"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="c4d-Ac-Aae" firstAttribute="leading" secondItem="Txv-QD-LW0" secondAttribute="leading" id="aKX-Ps-7qz"/>
+                                                    <constraint firstAttribute="trailing" secondItem="c4d-Ac-Aae" secondAttribute="trailing" id="vqX-FA-1Hx"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <constraints>
@@ -113,6 +133,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="infoBar" destination="MBN-RZ-VGb" id="Kvl-QD-nu7"/>
                         <outlet property="lineChart" destination="vgf-Iz-1g5" id="kAV-BL-8y1"/>
                     </connections>
                 </viewController>
@@ -122,6 +143,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
