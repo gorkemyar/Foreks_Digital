@@ -20,10 +20,10 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ONG-mv-eat" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1450"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="980"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Txv-QD-LW0">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="1450"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="980"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4d-Ac-Aae" userLabel="Change">
                                                         <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
@@ -58,44 +58,54 @@
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t0v-JK-8jb">
                                                         <rect key="frame" x="0.0" y="250" width="393" height="200"/>
-                                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="200" id="VCj-Rh-VZz"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bw0-66-PBz">
-                                                        <rect key="frame" x="0.0" y="450" width="393" height="200"/>
-                                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                        <rect key="frame" x="0.0" y="450" width="393" height="150"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abb-E7-HiU" customClass="Information3" customModule="Foreks_Digital" customModuleProvider="target">
+                                                                <rect key="frame" x="10" y="10" width="373" height="130"/>
+                                                            </view>
+                                                        </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="200" id="JWX-eY-Ghx"/>
+                                                            <constraint firstItem="abb-E7-HiU" firstAttribute="top" secondItem="Bw0-66-PBz" secondAttribute="top" constant="10" id="HNb-Tp-Dbo"/>
+                                                            <constraint firstAttribute="bottom" secondItem="abb-E7-HiU" secondAttribute="bottom" constant="10" id="HSe-Jg-VeL"/>
+                                                            <constraint firstAttribute="height" constant="150" id="JWX-eY-Ghx"/>
+                                                            <constraint firstItem="abb-E7-HiU" firstAttribute="leading" secondItem="Bw0-66-PBz" secondAttribute="leading" constant="10" id="k5v-KO-bro"/>
+                                                            <constraint firstAttribute="trailing" secondItem="abb-E7-HiU" secondAttribute="trailing" constant="10" id="u5g-vQ-5nw"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rm7-gk-Xdt">
-                                                        <rect key="frame" x="0.0" y="650" width="393" height="200"/>
-                                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                        <rect key="frame" x="0.0" y="600" width="393" height="190"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jv2-Ll-bX5" customClass="Information4" customModule="Foreks_Digital" customModuleProvider="target">
+                                                                <rect key="frame" x="10" y="10" width="373" height="170"/>
+                                                            </view>
+                                                        </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="200" id="MZT-3t-ddg"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Jv2-Ll-bX5" secondAttribute="bottom" constant="10" id="4mo-oy-z9X"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Jv2-Ll-bX5" secondAttribute="trailing" constant="10" id="A2F-7g-e29"/>
+                                                            <constraint firstItem="Jv2-Ll-bX5" firstAttribute="top" secondItem="rm7-gk-Xdt" secondAttribute="top" constant="10" id="EWx-ma-jPV"/>
+                                                            <constraint firstAttribute="height" constant="190" id="MZT-3t-ddg"/>
+                                                            <constraint firstItem="Jv2-Ll-bX5" firstAttribute="leading" secondItem="rm7-gk-Xdt" secondAttribute="leading" constant="10" id="g0v-l8-1EN"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YGg-s4-VNE">
-                                                        <rect key="frame" x="0.0" y="850" width="393" height="200"/>
-                                                        <color key="backgroundColor" systemColor="tintColor"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="axh-gd-hAt">
+                                                        <rect key="frame" x="0.0" y="790" width="393" height="190"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ItO-74-IMV" customClass="Information4" customModule="Foreks_Digital" customModuleProvider="target">
+                                                                <rect key="frame" x="10" y="10" width="373" height="170"/>
+                                                            </view>
+                                                        </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="200" id="VOo-wc-r0V"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCl-YI-xCB">
-                                                        <rect key="frame" x="0.0" y="1050" width="393" height="200"/>
-                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="200" id="Jdc-ht-dhJ"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k2F-Og-t5S">
-                                                        <rect key="frame" x="0.0" y="1250" width="393" height="200"/>
-                                                        <color key="backgroundColor" red="1" green="0.3752787783" blue="0.76745536599999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="200" id="jbG-eL-bXI"/>
+                                                            <constraint firstItem="ItO-74-IMV" firstAttribute="leading" secondItem="axh-gd-hAt" secondAttribute="leading" constant="10" id="60h-Ps-vKi"/>
+                                                            <constraint firstAttribute="height" constant="190" id="B4x-AI-4JH"/>
+                                                            <constraint firstAttribute="bottom" secondItem="ItO-74-IMV" secondAttribute="bottom" constant="10" id="Kk6-Gh-PJN"/>
+                                                            <constraint firstAttribute="trailing" secondItem="ItO-74-IMV" secondAttribute="trailing" constant="10" id="aC7-rU-unf"/>
+                                                            <constraint firstItem="ItO-74-IMV" firstAttribute="top" secondItem="axh-gd-hAt" secondAttribute="top" constant="10" id="elf-PO-Lxe"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -133,8 +143,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="finance" destination="abb-E7-HiU" id="2T5-Cc-gbv"/>
                         <outlet property="infoBar" destination="MBN-RZ-VGb" id="Kvl-QD-nu7"/>
                         <outlet property="lineChart" destination="vgf-Iz-1g5" id="kAV-BL-8y1"/>
+                        <outlet property="profile" destination="ItO-74-IMV" id="nag-Zd-tIo"/>
+                        <outlet property="sector" destination="Jv2-Ll-bX5" id="DtK-vZ-UEu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -146,17 +159,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

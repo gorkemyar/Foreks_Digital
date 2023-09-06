@@ -14,16 +14,17 @@ class DetailPageController: UIViewController, MainPageBaseCoordinated, Storyboar
     var coordinator: MainPageBaseCoordinator?
     var viewModel: DetailPageViewModel!
 
+    
+    @IBOutlet weak var finance: Information3!
+    @IBOutlet weak var sector: Information4!
+    @IBOutlet weak var profile: Information4!
+    
     @IBOutlet weak var lineChart: LineChartView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        
-        setNavigationBar()
-        setLineChartData()
-        line()
         viewModel.startLoadingDataTimer()
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -32,15 +33,19 @@ class DetailPageController: UIViewController, MainPageBaseCoordinated, Storyboar
     }
 
     private func setup(){
+        setBindings()
+        setNavigationBar()
+        setLineChartData()
+        line()
+        setInformation()
+    }
+    private func setBindings(){
         viewModel.stock.bind{ [weak self] res in
             DispatchQueue.main.async {
                 self?.navigationController?.navigationBar.topItem?.title = res.id
-                
                 self?.infoBar.fillBar(change: res.changePositive, clock: res.stockDict["clo"] ?? "00.00", price: res.stockDict["las"] ?? "00.00")
-                
             }
         }
-
     }
 }
 
@@ -62,9 +67,6 @@ extension DetailPageController{
         line.fillColor = Constants.colors.green
         
         let data = LineChartData(dataSet: line)
-        
-        //lineChart.tintColor = Constants.colors.lightwhite
-        //lineChart.noDataTextColor = Constants.colors.lightwhite
         lineChart.leftAxis.drawGridLinesEnabled = false
         lineChart.leftAxis.axisMinimum = 500
         lineChart.leftAxis.axisMaximum = 1000
@@ -75,13 +77,7 @@ extension DetailPageController{
         lineChart.xAxis.labelPosition = .bottom
         lineChart.xAxis.labelTextColor = Constants.colors.lightwhite
         lineChart.legend.enabled = false
-        
-        
-        //lineChart.bottom.drawGridBackgroundEnabled = false
         lineChart.data = data
-        
-    
-        
     }
 }
 
@@ -120,5 +116,22 @@ extension DetailPageController{
             UINavigationBar.appearance().standardAppearance = appearance
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
         }
+    }
+}
+extension DetailPageController{
+    private func setInformation(){
+        finance.layer.borderWidth = 1
+        finance.layer.borderColor = Constants.colors.gray.cgColor
+        finance.layer.cornerRadius = 5
+        sector.layer.borderWidth = 1
+        sector.layer.borderColor = Constants.colors.gray.cgColor
+        sector.layer.cornerRadius = 5
+        profile.layer.borderWidth = 1
+        profile.layer.borderColor = Constants.colors.gray.cgColor
+        profile.layer.cornerRadius = 5
+        
+        finance.setInformation3(main: "Financial Summary", title1: "Registered Capital", title2: "Market Value", title3: "Net Income", value1: "4.200.000.000", value2: "215.880.000.000", value3: "71.618.204")
+        sector.setInformation4(main: "Sector Information", title1: "Sector", title2: "Company Count", title3: "F/K", title4: "PD/DD", value1: "BANKALAR", value2: "15", value3: "141.93", value4: "47.65")
+        profile.setInformation4(main: "Company Profile", title1: "Company Title", title2: "Establish Date", title3: "Address", title4: "Activity", value1: "Garanti", value2: "05/08/2008", value3: "Levent, Istanbul", value4: "Ticari Bankacılık")
     }
 }

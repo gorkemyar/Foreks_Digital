@@ -70,6 +70,10 @@
 		066E85B82AA8805E000A8A82 /* InfoBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066E85B72AA8805E000A8A82 /* InfoBar.xib */; };
 		066E85BB2AA88318000A8A82 /* DetailPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E85BA2AA88318000A8A82 /* DetailPageViewModel.swift */; };
 		066E85BD2AA884B2000A8A82 /* DetailPageNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E85BC2AA884B2000A8A82 /* DetailPageNetworkService.swift */; };
+		066E85C02AA8A33A000A8A82 /* Information3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E85BF2AA8A33A000A8A82 /* Information3.swift */; };
+		066E85C22AA8A345000A8A82 /* Information3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066E85C12AA8A345000A8A82 /* Information3.xib */; };
+		066E85C72AA8A5C0000A8A82 /* Information4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066E85C52AA8A5C0000A8A82 /* Information4.xib */; };
+		066E85C82AA8A5C0000A8A82 /* Information4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066E85C62AA8A5C0000A8A82 /* Information4.swift */; };
 		06DE53852A72E78D00358718 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53842A72E78D00358718 /* AppDelegate.swift */; };
 		06DE53872A72E78D00358718 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53862A72E78D00358718 /* SceneDelegate.swift */; };
 		06DE53892A72E78D00358718 /* MainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE53882A72E78D00358718 /* MainPageController.swift */; };
@@ -143,6 +147,10 @@
 		066E85B72AA8805E000A8A82 /* InfoBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoBar.xib; sourceTree = "<group>"; };
 		066E85BA2AA88318000A8A82 /* DetailPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewModel.swift; sourceTree = "<group>"; };
 		066E85BC2AA884B2000A8A82 /* DetailPageNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageNetworkService.swift; sourceTree = "<group>"; };
+		066E85BF2AA8A33A000A8A82 /* Information3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Information3.swift; sourceTree = "<group>"; };
+		066E85C12AA8A345000A8A82 /* Information3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Information3.xib; sourceTree = "<group>"; };
+		066E85C52AA8A5C0000A8A82 /* Information4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Information4.xib; sourceTree = "<group>"; };
+		066E85C62AA8A5C0000A8A82 /* Information4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Information4.swift; sourceTree = "<group>"; };
 		06DE53812A72E78D00358718 /* Foreks_Digital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foreks_Digital.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DE53842A72E78D00358718 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06DE53862A72E78D00358718 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -538,6 +546,7 @@
 		066E85B32AA8801D000A8A82 /* DetailPage */ = {
 			isa = PBXGroup;
 			children = (
+				066E85BE2AA8A317000A8A82 /* DetailInformation */,
 				066E85B42AA88024000A8A82 /* InfoBar */,
 			);
 			path = DetailPage;
@@ -559,6 +568,33 @@
 				066E85BC2AA884B2000A8A82 /* DetailPageNetworkService.swift */,
 			);
 			path = DetailPage;
+			sourceTree = "<group>";
+		};
+		066E85BE2AA8A317000A8A82 /* DetailInformation */ = {
+			isa = PBXGroup;
+			children = (
+				066E85C42AA8A559000A8A82 /* 4 */,
+				066E85C32AA8A54F000A8A82 /* 3 */,
+			);
+			path = DetailInformation;
+			sourceTree = "<group>";
+		};
+		066E85C32AA8A54F000A8A82 /* 3 */ = {
+			isa = PBXGroup;
+			children = (
+				066E85BF2AA8A33A000A8A82 /* Information3.swift */,
+				066E85C12AA8A345000A8A82 /* Information3.xib */,
+			);
+			path = 3;
+			sourceTree = "<group>";
+		};
+		066E85C42AA8A559000A8A82 /* 4 */ = {
+			isa = PBXGroup;
+			children = (
+				066E85C62AA8A5C0000A8A82 /* Information4.swift */,
+				066E85C52AA8A5C0000A8A82 /* Information4.xib */,
+			);
+			path = 4;
 			sourceTree = "<group>";
 		};
 		06DE53782A72E78D00358718 = {
@@ -676,6 +712,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				066E85C22AA8A345000A8A82 /* Information3.xib in Resources */,
 				066E85B82AA8805E000A8A82 /* InfoBar.xib in Resources */,
 				066E85542A8A74A5000A8A82 /* Basket.storyboard in Resources */,
 				06DE53912A72E79100358718 /* LaunchScreen.storyboard in Resources */,
@@ -683,6 +720,7 @@
 				0635E53C2A7A3799007C11B3 /* SembolBar.xib in Resources */,
 				066E85602A8B6B59000A8A82 /* BasketCell.xib in Resources */,
 				066E856D2A93A48E000A8A82 /* SegmentNamePopUp.xib in Resources */,
+				066E85C72AA8A5C0000A8A82 /* Information4.xib in Resources */,
 				0635E56C2A823EE1007C11B3 /* Detail.storyboard in Resources */,
 				066CE7D02A76AA76004503CF /* StockItemCell.xib in Resources */,
 				066E857B2A964D66000A8A82 /* ChangeTableCell.xib in Resources */,
@@ -758,6 +796,7 @@
 				066CE7B12A76723A004503CF /* MainPageModel.swift in Sources */,
 				066E85B62AA8804F000A8A82 /* InfoBar.swift in Sources */,
 				0635E58C2A84F804007C11B3 /* MainPageCoordinator.swift in Sources */,
+				066E85C82AA8A5C0000A8A82 /* Information4.swift in Sources */,
 				066E85932A9E2FEF000A8A82 /* StockCore+CoreDataProperties.swift in Sources */,
 				066E85942A9E2FEF000A8A82 /* StockCore+CoreDataClass.swift in Sources */,
 				066CE7CA2A7681FC004503CF /* MainPageViewModel.swift in Sources */,
@@ -780,6 +819,7 @@
 				066E856B2A93A475000A8A82 /* SegmentNamePopUp.swift in Sources */,
 				0635E5632A80FFB5007C11B3 /* ExchangeController.swift in Sources */,
 				066E85962AA2019E000A8A82 /* DataService.swift in Sources */,
+				066E85C02AA8A33A000A8A82 /* Information3.swift in Sources */,
 				066E85BB2AA88318000A8A82 /* DetailPageViewModel.swift in Sources */,
 				066CE7D92A77E3CF004503CF /* Extensions.swift in Sources */,
 				0635E58A2A84F7F5007C11B3 /* ExchangeCoordinator.swift in Sources */,
